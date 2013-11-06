@@ -1,13 +1,14 @@
 #!/bin/bash
 # Apple software RAID check
 # Created by Ben Bass
-vers="appleraidcheck-0.9.5"
+vers="appleraidcheck-0.9.6"
 # Copyright 2012 Technology Revealed. All rights reserved.
 # This script checks the internal Apple Software Raid to see if it is degraded.
 # It logs this to a file and if degraded sends an e-mail.
 # 0.9.1 now has the version as a live variable.
 # 0.9.2 Pulls the "to" variable from the address.plist.
 # 0.9.5 Adding Computer SN and model info to report e-mail.
+# 0.9.6 Pulls the "to" variable from the settings.plist.
 
 log="/Library/Logs/com.trmacs/appleraidcheck.log"
 err_log="/Library/Logs/com.trmacs/appleraidcheck-err.log"
