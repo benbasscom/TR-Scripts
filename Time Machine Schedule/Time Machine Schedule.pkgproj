@@ -513,7 +513,12 @@
 				<integer>1</integer>
 			</dict>
 			<key>PREINSTALL_PATH</key>
-			<dict/>
+			<dict>
+				<key>PATH</key>
+				<string>preflight</string>
+				<key>PATH_TYPE</key>
+				<integer>1</integer>
+			</dict>
 			<key>RESOURCES</key>
 			<array/>
 		</dict>
@@ -528,7 +533,7 @@
 			<key>OVERWRITE_PERMISSIONS</key>
 			<false/>
 			<key>VERSION</key>
-			<string>1.1</string>
+			<string>1.2</string>
 		</dict>
 		<key>PROJECT_COMMENTS</key>
 		<dict>
