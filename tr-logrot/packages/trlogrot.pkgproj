@@ -153,7 +153,7 @@
 										<key>GID</key>
 										<integer>0</integer>
 										<key>PATH</key>
-										<string>../../logrotation/com.trmacs.trlogrot.plist</string>
+										<string>../com.trmacs.trlogrot.plist</string>
 										<key>PATH_TYPE</key>
 										<integer>1</integer>
 										<key>PERMISSIONS</key>
@@ -285,7 +285,7 @@
 												<key>GID</key>
 												<integer>0</integer>
 												<key>PATH</key>
-												<string>../../logrotation/trlogrot.sh</string>
+												<string>../trlogrot.sh</string>
 												<key>PATH_TYPE</key>
 												<integer>1</integer>
 												<key>PERMISSIONS</key>

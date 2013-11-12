@@ -153,7 +153,7 @@
 										<key>GID</key>
 										<integer>0</integer>
 										<key>PATH</key>
-										<string>../../apple software raid check/com.trmacs.appleraidcheck.plist</string>
+										<string>../com.trmacs.appleraidcheck.plist</string>
 										<key>PATH_TYPE</key>
 										<integer>1</integer>
 										<key>PERMISSIONS</key>
@@ -285,23 +285,7 @@
 												<key>GID</key>
 												<integer>0</integer>
 												<key>PATH</key>
-												<string>../../apple software raid check/appleraidcheck.sh</string>
-												<key>PATH_TYPE</key>
-												<integer>1</integer>
-												<key>PERMISSIONS</key>
-												<integer>493</integer>
-												<key>TYPE</key>
-												<integer>3</integer>
-												<key>UID</key>
-												<integer>0</integer>
-											</dict>
-											<dict>
-												<key>CHILDREN</key>
-												<array/>
-												<key>GID</key>
-												<integer>0</integer>
-												<key>PATH</key>
-												<string>../PInotify/setaddress.app</string>
+												<string>../appleraidcheck.sh</string>
 												<key>PATH_TYPE</key>
 												<integer>1</integer>
 												<key>PERMISSIONS</key>
