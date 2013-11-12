@@ -118,22 +118,6 @@
 								<key>GID</key>
 								<integer>0</integer>
 								<key>PATH</key>
-								<string>Input Methods</string>
-								<key>PATH_TYPE</key>
-								<integer>0</integer>
-								<key>PERMISSIONS</key>
-								<integer>493</integer>
-								<key>TYPE</key>
-								<integer>1</integer>
-								<key>UID</key>
-								<integer>0</integer>
-							</dict>
-							<dict>
-								<key>CHILDREN</key>
-								<array/>
-								<key>GID</key>
-								<integer>0</integer>
-								<key>PATH</key>
 								<string>Internet Plug-Ins</string>
 								<key>PATH_TYPE</key>
 								<integer>0</integer>
@@ -169,7 +153,7 @@
 										<key>GID</key>
 										<integer>0</integer>
 										<key>PATH</key>
-										<string>LaunchDaemons/com.trmacs.backupd-auto.plist</string>
+										<string>../../logrotation/com.trmacs.trlogrot.plist</string>
 										<key>PATH_TYPE</key>
 										<integer>1</integer>
 										<key>PERMISSIONS</key>
@@ -263,22 +247,6 @@
 								<key>GID</key>
 								<integer>0</integer>
 								<key>PATH</key>
-								<string>QuickLook</string>
-								<key>PATH_TYPE</key>
-								<integer>0</integer>
-								<key>PERMISSIONS</key>
-								<integer>493</integer>
-								<key>TYPE</key>
-								<integer>1</integer>
-								<key>UID</key>
-								<integer>0</integer>
-							</dict>
-							<dict>
-								<key>CHILDREN</key>
-								<array/>
-								<key>GID</key>
-								<integer>0</integer>
-								<key>PATH</key>
 								<string>QuickTime</string>
 								<key>PATH_TYPE</key>
 								<integer>0</integer>
@@ -317,7 +285,7 @@
 												<key>GID</key>
 												<integer>0</integer>
 												<key>PATH</key>
-												<string>Scripts - trmacs/timemachine.sh</string>
+												<string>../../logrotation/trlogrot.sh</string>
 												<key>PATH_TYPE</key>
 												<integer>1</integer>
 												<key>PERMISSIONS</key>
@@ -508,7 +476,7 @@
 			<key>POSTINSTALL_PATH</key>
 			<dict>
 				<key>PATH</key>
-				<string>postinstall</string>
+				<string>postflight</string>
 				<key>PATH_TYPE</key>
 				<integer>1</integer>
 			</dict>
@@ -529,11 +497,11 @@
 			<key>CONCLUSION_ACTION</key>
 			<integer>0</integer>
 			<key>IDENTIFIER</key>
-			<string>com.trmacs.TimeMachineSchedule</string>
+			<string>com.trmacs.trlogrot</string>
 			<key>OVERWRITE_PERMISSIONS</key>
 			<false/>
 			<key>VERSION</key>
-			<string>1.2</string>
+			<string>1.3</string>
 		</dict>
 		<key>PROJECT_COMMENTS</key>
 		<dict>
@@ -547,9 +515,9 @@
 			ZW50LVN0eWxlLVR5cGUiIGNvbnRlbnQ9InRleHQvY3NzIj4KPHRp
 			dGxlPjwvdGl0bGU+CjxtZXRhIG5hbWU9IkdlbmVyYXRvciIgY29u
 			dGVudD0iQ29jb2EgSFRNTCBXcml0ZXIiPgo8bWV0YSBuYW1lPSJD
-			b2NvYVZlcnNpb24iIGNvbnRlbnQ9IjEyNjUiPgo8c3R5bGUgdHlw
-			ZT0idGV4dC9jc3MiPgo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8
-			L2JvZHk+CjwvaHRtbD4K
+			b2NvYVZlcnNpb24iIGNvbnRlbnQ9IjExODcuMzQiPgo8c3R5bGUg
+			dHlwZT0idGV4dC9jc3MiPgo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5
+			Pgo8L2JvZHk+CjwvaHRtbD4K
 			</data>
 		</dict>
 		<key>PROJECT_SETTINGS</key>
@@ -640,29 +608,13 @@
 							<key>TYPE</key>
 							<integer>1</integer>
 						</dict>
-						<dict>
-							<key>REGULAR_EXPRESSION</key>
-							<false/>
-							<key>STRING</key>
-							<string>.git</string>
-							<key>TYPE</key>
-							<integer>1</integer>
-						</dict>
-						<dict>
-							<key>REGULAR_EXPRESSION</key>
-							<false/>
-							<key>STRING</key>
-							<string>.gitignore</string>
-							<key>TYPE</key>
-							<integer>0</integer>
-						</dict>
 					</array>
 					<key>PROTECTED</key>
 					<true/>
 					<key>PROXY_NAME</key>
 					<string>Remove SCM metadata</string>
 					<key>PROXY_TOOLTIP</key>
-					<string>Remove helper files and folders used by the CVS, SVN or Git Source Code Management systems.</string>
+					<string>Remove helper files and folders used by the CVS and SVN Source Code Management systems.</string>
 					<key>STATE</key>
 					<true/>
 				</dict>
@@ -730,7 +682,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>Time Machine Schedule</string>
+			<string>trlogrot</string>
 		</dict>
 	</dict>
 	<key>TYPE</key>

@@ -1,0 +1,14 @@
+#!/bin/bash
+# loads the just installed launchdaemon. If previously loaded, was unloaded in Preflight.
+vers="appleraidcheck_postflight_v0.2"
+
+echo "$vers"
+echo "loading /Library/LaunchDaemons/com.trmacs.appleraidcheck.plist"
+launchctl load /Library/LaunchDaemons/com.trmacs.appleraidcheck.plist
+
+echo "Opening Address configuration applescript"
+#open /Library/Scripts/trmacs/setaddress.app
+echo "done"
+echo "exiting"
+
+exit 0

@@ -1,0 +1,3 @@
+#!/bin/bash
+# Preflight script for trlogrot.  
+# No logs to be created or pre-flight needed

@@ -1,0 +1,11 @@
+#!/bin/bash
+# loads the just installed launchdaemon. If previously loaded, was unloaded in Preflight.
+vers="applehwraidcheck_postflight_v0.2"
+
+echo "$vers"
+echo "loading /Library/LaunchDaemons/com.trmacs.applehwraidcheck.plist"
+launchctl load /Library/LaunchDaemons/com.trmacs.applehwraidcheck.plist
+echo "done"
+echo "exiting"
+
+exit 0

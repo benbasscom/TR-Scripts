@@ -1,0 +1,43 @@
+#!/bin/bash
+# Preflight script for applehwraidSMARTcheck package.
+# Need to create log files/log destination.
+vers="applehwraidSMARTcheck_preflight_v0.3"
+
+echo "$vers"
+
+# check for Log directory
+DIRECTORY="/Library/Logs/com.trmacs/"
+
+if [ -d "$DIRECTORY" ]; then
+
+	echo ""$Directory" exists, no need to create it."
+
+else
+	echo "Log directory does not exist, creating /Library/Logs/com.trmacs/"
+	mkdir /Library/Logs/com.trmacs/
+	echo "done"
+fi
+
+echo "Creating log files."
+# Create log file and error log.
+touch /Library/Logs/com.trmacs/SMARTcheck.log
+touch /Library/Logs/com.trmacs/SMARTcheck-err.log
+echo "done"
+
+# Checks to see if the launchd is loaded, and if not null (-n), then unload it.
+launchd_chk="$(launchctl list | grep trmacs.applehwsmartcheck)
+
+echo "checking for previously loaded plist."
+
+if [ -n "$launchd_chk" ]; then
+
+	echo "previous version found, unloading"
+	launchctl unload /Library/LaunchDaemons/com.trmacs.applehwsmartcheck.plist
+	echo "done"
+else
+	echo "No previous version found, nothing to unload."
+fi
+
+echo "exiting"
+
+exit 0
