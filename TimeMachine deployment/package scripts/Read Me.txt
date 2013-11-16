@@ -1,0 +1,4 @@
+-sets up the local machine to backup to time machine server - excluding everything but all users local Mailboxes
+
+Please configure the timemachine.sh to point to your own time machine server and the correct IP.
+Also change the postinstall to point to your own server with the correct user and password.

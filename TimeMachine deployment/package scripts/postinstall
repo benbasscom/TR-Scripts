@@ -1,0 +1,28 @@
+#!/bin/sh
+## postinstall
+
+pathToScript=$0
+pathToPackage=$1
+targetLocation=$2
+targetVolume=$3
+
+tmutil setdestination afp://user:password@server/share
+tmutil disable
+tmutil disablelocal
+tmutil addexclusion /Users/admin /Users/Shared
+find / -maxdepth 1 -not -name "Users" -not -name "/" -print0 | xargs -0 tmutil addexclusion
+find /Users -type d -depth 1 -maxdepth 2 -not -name "Shared" -not -name "admin" -exec find {} -depth 1 -not -name "Library" -print0 \; | xargs -0 tmutil addexclusion
+find /Users -type d -depth 1 -not -name "Shared" -not -name "admin" -exec find {}/Library -depth 1 -not -name "Mail" -print0 \; | xargs -0 tmutil addexclusion
+find /Users -type d -depth 1 -not -name "Shared" -not -name "admin" -exec find {}/Library/Mail -depth 1 -not -name "Mailboxes" -not -name "V2" -print0 \; | xargs -0 tmutil addexclusion
+find /Users -type d -depth 1 -not -name "Shared" -not -name "admin" -exec find {}/Library/Mail/V2 -depth 1 -not -name "Mailboxes" -print0 \; | xargs -0 tmutil addexclusion
+
+defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
+defaults write /Library/Preferences/com.apple.TimeMachine SkipSystemFiles -bool YES
+defaults write -g ApplePersistence -bool no
+
+launchctl load -w /Library/LaunchDaemons/com.trmacs.backupd-auto.plist
+
+tmutil startbackup
+
+exit 0		## Success
+exit 1		## Failure
