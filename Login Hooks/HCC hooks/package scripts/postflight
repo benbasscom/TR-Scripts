@@ -1,0 +1,7 @@
+#!/bin/bash
+# postflight script
+
+touch /var/log/usertracking.log
+
+sudo defaults write com.apple.loginwindow LoginHook /usr/local/bin/login.sh
+sudo defaults write com.apple.loginwindow LogoutHook /usr/local/bin/logout.sh

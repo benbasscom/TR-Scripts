@@ -1,0 +1,6 @@
+#!/bin/bash
+# postflight script
+
+
+# sudo chmod a+x /usr/local/bin/login.sh
+sudo defaults write com.apple.loginwindow LoginHook /usr/local/bin/login.sh

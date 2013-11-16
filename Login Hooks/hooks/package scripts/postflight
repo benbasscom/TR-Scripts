@@ -1,0 +1,25 @@
+#!/bin/bash
+# postflight script
+
+# Make sure the scripts are executable.
+sudo chmod u+x /usr/local/bin/scripts/login-wrapper.sh
+sudo chmod u+x /usr/local/bin/scripts/logout-wrapper.sh
+
+# Create log files for various scripts
+# Logs for login and logout hooks themselves.
+touch /var/log/loginhook.log
+touch /var/log/logouthook.log
+
+# Making sure every user can write to the log files.
+sudo chmod 777 /var/log/loginhook.log
+sudo chmod 777 /var/log/logouthook.log
+
+# User login/logout log and making sure it is world writeable.
+touch /var/log/usertracking.log
+sudo chmod 777 /var/log/usertracking.log
+
+# Set the login and logout wrappers scripts as the login and logout hooks.
+sudo defaults write com.apple.loginwindow LoginHook /usr/local/bin/scripts/login-wrapper.sh
+sudo defaults write com.apple.loginwindow LogoutHook /usr/local/bin/scripts/logout-wrapper.sh
+
+exit 0
