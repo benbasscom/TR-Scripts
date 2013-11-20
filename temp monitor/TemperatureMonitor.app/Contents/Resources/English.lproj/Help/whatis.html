@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html
+  xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>What are Temperature Monitor and Hardware Monitor?</title>
+    <meta content="1" name="AppleOrder" />
+    <link type="text/css" rel="stylesheet" href="mbshelp.css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" alt="Hardwaremonitor" src="Images/HWIcon48.png" /><img
+              width="48" height="48" alt="Temperaturmonitor" src="Images/TMIcon48.png" /></td>
+          <td>
+            <h1>What are Temperature Monitor and Hardware Monitor?</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The programs <cite>Temperature Monitor </cite>and <cite>Hardware
+        Monitor</cite> are part of an application suite for the Mac OS X
+      operating system.</p>
+    <p>The applications make it possible to read out all available hardware
+      sensors in Macintosh computers, to process their measured values, and to
+      store them. The application <cite>Temperature Monitor</cite> is available
+      for free, but is limited to accessing temperature sensors only. The
+      application <cite>Hardware Monitor</cite> on the other hand is not
+      gratis, but can access additional sensors if your computer is equipped
+      with them. This includes the following sensor types:</p>
+    <ul>
+      <li>Battery data of portable computers</li>
+      <li>Voltage sensors</li>
+      <li>Current (amperage) sensors</li>
+      <li>Fan speed sensors</li>
+      <li>Sensors for pulse-width controlled fans</li>
+      <li>Power and load sensors</li>
+      <li>Ambient light sensors</li>
+      <li>User-defined artificial sensors to monitor the operating system </li>
+    </ul>
+    <p>Moreover, the applications can display additional technical information
+      about your computer. Among other information this includes:</p>
+    <ul>
+      <li>Processor type</li>
+      <li>Processor and bus frequencies</li>
+      <li>Manufacturing information of the system</li>
+      <li>Manufacturing information of connected screen displays</li>
+    </ul>
+    <p>Of course the applications can read out the data only if your computer is
+      equipped with the necessary sensors, and if Mac OS X can access them
+      without needing third-party device drivers. Beginning in summer 2002,
+      Apple has begun to massively drive forward the use of monitoring probes in
+      the PowerMac series, the Xserve series, and in portable computers. Some
+      models are equipped with 90 and more sensors. But Temperature and Hardware
+      Monitor can detect sensors on many older systems as well if they are
+      available.</p>
+    <p>We try to detect all sensors on as many Macintosh computer types in the
+      support time range (see below) as possible. However, a prediction which
+      sensors are available in which models is not possible, because Apple very
+      often releases "silent product updates", where the hardware equipments of
+      some models are changed but the names are not (specifications are "subject
+      to change without notice"). The particular graphics card and hard disk
+      configuration used is also important because these parts can include
+      independent sensors, too.</p>
+    <p>Please note that Apple does not support an official or standardized way
+      of reading out sensor data in Mac OS X (the only exceptions are the <cite>Server
+        Monitor</cite> application for the Xserve series, and the IPMI support
+      of the LOM-processor of Intel-based Xserve systems). Moreover, there is no
+      documentation or other technical note about the individual function of the
+      sensors. For this reason, the development of Temperature Monitor and
+      Hardware Monitor is very costly because the necessary data has to be
+      determined by reverse engineering and tests run on a variety of computer
+      models. Please support the development of the applications by purchasing a
+      registration key for Hardware Monitor.</p>
+    <h2>Additional applications</h2>
+    <p>The distribution packages not only include the full versions of Hardware
+      Monitor and Temperature Monitor but also two additional variants of the
+      software:</p>
+    <ul>
+      <li>space-preserving Lite versions, which display the readings in the
+        menu-bar only, not consuming valuable Dock or screen real estate,</li>
+      <li>command-line versions which make it possible to acquire readings at
+        the Unix level or in combination with other applications, for example
+        via scripts.</li>
+    </ul>
+    <p>Another application, the add-on <cite>Hardware Monitor Remote</cite>
+      allows you to monitor remote computers as well, transferring the sensor
+      data over a network. The following table summarizes all available variants
+      of the applications:</p>
+    <table border="1" cellspacing="5" cellpadding="5">
+      <tbody>
+        <tr class="datatableheader">
+          <td>Application Name </td>
+          <td>Part of download package</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>Hardware Monitor</td>
+          <td>Hardware Monitor </td>
+          <td>main program with all features </td>
+        </tr>
+        <tr>
+          <td>Hardware Monitor Lite </td>
+          <td>Hardware Monitor </td>
+          <td>version running in the menu-bar only </td>
+        </tr>
+        <tr>
+          <td>Hardware Monitor Remote </td>
+          <td>Hardware Monitor Remote </td>
+          <td>"agent" program running on remote computers in a network</td>
+        </tr>
+        <tr>
+          <td>hwmonitor command-line tool </td>
+          <td>Hardware Monitor</td>
+          <td>version for the BSD command-line of Mac OS X </td>
+        </tr>
+        <tr>
+          <td>Temperature Monitor </td>
+          <td>Temperature Monitor </td>
+          <td>gratis version of the main program, limited to displaying
+            temperature sensors only </td>
+        </tr>
+        <tr>
+          <td>Temperature Monitor Lite </td>
+          <td>Temperature Monitor </td>
+          <td>version running in the menu-bar only, temperature sensors only </td>
+        </tr>
+        <tr>
+          <td>tempmonitor command-line tool </td>
+          <td>Temperature Monitor </td>
+          <td>version for the BSD command-line of Mac OS X, temperature sensors
+            only </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Data output and processing</h2>
+    <p>The applications support the following operations on the measured
+      readings:</p>
+    <ul>
+      <li>display in a default window</li>
+      <li>output in a screen display in front or in the background of the screen
+      </li>
+      <li>tabular display in an overview window</li>
+      <li>display in the menu-bar</li>
+      <li>display of a maximum of two readings in the Dock</li>
+      <li>graphical display of short-term and long-term history curves</li>
+      <li>speech output of readings</li>
+      <li>display of minimum and maximum values </li>
+      <li>export to text and CSV files</li>
+    </ul>
+    <h2>Compatible operating systems and computers</h2>
+    <p>Temperature Monitor and Hardware Monitor run with Mac OS X 10.4 or later.
+      This includes system versions named "OS X".</p>
+    <p>Using the applications with Mac OS X 10.7, OS X 10.8 or later is
+      possible, but due to efficiency problems in Apple's Objective-C runtime
+      support shipped with that systems, CPU load may be significantly higher.</p>
+    <p>The applications are only designed for use with Apple-branded computers
+      released between August 1, 2002 and October 31, 2012. They cannot be used
+      with other model series.</p>
+    <hr />
+    <p><a href="index.html">Table of contents</a></p>
+  </body>
+</html>

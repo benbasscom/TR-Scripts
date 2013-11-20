@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Steuerung externer alphanumerischer Anzeigen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="9" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /></td>
+    <td><h1>Steuerung externer alphanumerischer Anzeigen</h1></td>
+  </tr>
+</table>
+<p>In einigen Situationen reicht es m&ouml;glicherweise nicht aus, Ihr System &uuml;ber
+  einen angeschlossenen Monitor oder aus der Ferne &uuml;ber das Netzwerk zu &uuml;berwachen.
+  Es kann sinnvoll sein, &Uuml;berwachungsm&ouml;glichkeiten direkt am Computergeh&auml;use
+  zu haben, besonders wenn das System gar nicht mit einem Monitor ausger&uuml;stet
+  ist. Server, die in einer &quot;headless&quot; Konfiguration laufen, z.B. Xserve-Einheiten,
+  die &uuml;blicherweise noch nicht einmal mit einer Grafikkarte ausgestattet sind,
+  sind ein gutes Beispiel.</p>
+<p>F&uuml;r diese Art der Konfiguration kann Hardwaremonitor Ablesewerte auch
+  auf eine externe alphanumerische Fl&uuml;ssigkristallanzeige (LCD) senden, die &uuml;ber
+  eine USB-Schnittstelle an den Computer angeschlossen ist. Ein Beispiel
+  ist im folgenden Foto zu sehen:</p>
+<p align="center"><img src="Images/LCDisplay.jpg" alt="LCD output example" width="200" height="72" /> </p>
+<p>Erg&auml;nzend zu gesammelten Messwerten von Sensoren und Sonden erlaubt Ihnen
+  Hardwaremonitor auch, weitere Daten f&uuml;r die Ausgabe vorzusehen, z.B. die
+  aktuelle Uhrzeit oder die IP-Adresse eines bestimmten Netzwerkanschlusses.
+  Das Beispiel oben zeigt Datum und Uhrzeit, vier Temperaturwerte, eine Balkenanzeige
+  f&uuml;r Prozessorlast, drei S.M.A.R.T.-Statuswerte, einen RAID-Betriebszustand
+  und eine ausgew&auml;hlte IP-Adresse. Der Inhalt des Displays wird in der gleichen
+  H&auml;ufigkeit aktualisiert wie alle anderen Ausgabekan&auml;le von Hardwaremonitor.
+  Die erw&auml;hnten Funktionen stehen in Temperaturmonitor nicht zur Verf&uuml;gung. </p>
+<p>Hardwaremonitor unterst&uuml;tzt <em>ausschlie&szlig;lich</em> die folgende Hardware-Ausr&uuml;stung:</p>
+<ul>
+  <li>Alphanumerische Fl&uuml;ssigkristallmodule (LCDs), die sich an den originalen <strong>Hitachi
+      HD44780</strong>-Industriestandard halten. Die LCD-Anzeige <em>muss</em> &uuml;ber
+      eine USB-Steuereinheit des Typs <strong>&quot;IO-Warrior 24 &quot;</strong> angeschlossen
+    werden, eine Produktentwicklung der Firma <strong>Code Mercenaries Hard-
+    und Software GmbH</strong>.</li>
+  <li>Alphanumerische Fl&uuml;ssigkristrallmodule (LCDs) mit USB-Schnittstelle der
+    Firma <strong>Crystalfontz America Inc</strong>. Die Module der Baureihen
+    CF-632 (16 x 2 Zeichen) und CF-634 (20 x 4 Zeichen) werden unterst&uuml;tzt.</li>
+  <li>Grafische Flüssigkristallanzeigen, eingebaut als Komponente in Produkten
+    des Herstellers <cite>Logitech</cite>, zum Beispiel <cite>G15- oder G19-Tastaturen
+    der G-Baureihe</cite>,
+    oder <cite>Lautsprecher der Z-Baureihe</cite>.</li>
+</ul>
+<p>Bei den Crystalfontz-Anzeigen handelt es sich in Wirklichkeit um serielle
+  (RS-232) Module, die mit einem eingebauten USB-zu-seriell-Konverter geliefert
+  werden. Sie ben&ouml;tigen einen zus&auml;tzlichen Ger&auml;tetreiber f&uuml;r Ihre Version von
+  Mac OS X, um es dem Betriebssystem zu erm&ouml;glichen, sich mit diesem Konverter
+  zu verbinden. Der Konverter wird von <strong>Future Technology Devices International
+  Limited (FTDI) </strong>hergestellt. Kostenlose Treiber von FTDI sind auf dieser
+  Webseite erh&auml;ltlich: <a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a>.
+  F&uuml;r die IO-Warrior-L&ouml;sung wird keine zus&auml;tzliche Software ben&ouml;tigt. </p>
+<p class="infocell"><strong>Wir k&ouml;nnen keinerlei Fragen &uuml;ber diese
+    Hardwarekomponenten oder deren Vertrieb beantworten. </strong>Diese Produkte
+    werden von uns weder beworben, noch verkauft. Falls Sie Ihr eigenes LCD-Modul
+    bauen oder zusammenstellen m&ouml;chten, wenden
+    Sie sich zu Fragen bitte an die folgenden Webseiten <a href="http://www.codemercs.com/"></a> bez&uuml;glich
+    Dokumentation oder Kontaktinformationen:<br />
+    <br />
+    <a href="http://www.codemercs.com/">http://www.codemercs.com/</a><br />
+  <a href="http://www.crystalfontz.com/">http://www.crystalfontz.com/<br />
+</a><a href="http://www.logitech.com/">http://www.logitech.com/</a><br />
+    <br />
+Informationen &uuml;ber Produkte, die nicht von uns hergestellt werden, oder &uuml;ber
+die Webauftritte von Drittanbietern werden von uns ausschlie&szlig;lich zu Referenzzwecken
+genannt und stellen weder eine Empfehlung noch eine Zustimmung dar. Bitte wenden
+Sie sich an die jeweiligen Anbieter, um weitere Informationen zu erhalten. Wir
+stellen unseren Kunden diese Daten nur zur Arbeitserleichterung zur Verf&uuml;gung.
+Die Informationen der Drittanbieter sind von uns weder &uuml;berpr&uuml;ft, noch machen
+wir jegliche &Auml;u&szlig;erungen bez&uuml;glich deren Genauigkeit oder Zuverl&auml;ssigkeit. Die
+Verwendung von Informationen oder Produkten aus dem Internet birgt Risiken, f&uuml;r
+die wir keine Verantwortung &uuml;bernehmen k&ouml;nnen. Wir weisen darauf hin, dass Webauftritte
+von Drittanbietern nicht mit uns in Zusammenhang stehen und wir keinen Einfluss
+auf deren Inhalte haben. </p>
+<h2>Vorbereiten eines Crystalfontz-Moduls</h2>
+<p>Um ein Crystalfontz-USB-Modul nutzen zu k&ouml;nnen, m&uuml;ssen Sie vorher die folgenden
+  Schritte durchf&uuml;hren:</p>
+<ol>
+  <li>Laden Sie den notwendigen virtuellen COM-Port-Treiber f&uuml;r Ihre Version von
+    Mac OS X von <a href="http://www.ftdichip.com/Drivers/VCP.htm">FTDI</a> herunter.
+    Entpacken und installieren Sie den Treiber.</li>
+  <li>Verbinden Sie das Anzeigemodul mit einem USB-Port.</li>
+  <li>Stellen Sie sicher, dass der USB-zu-seriell-Konverter von Mac OS X erkannt
+      wird. &Ouml;ffnen Sie <cite>Systemeinstellungen</cite> und gehen Sie zu <cite>Netzwerk</cite>. Sie sollten
+      nun eine Meldung erhalten, dass ein neues serielles Ger&auml;t erkannt wurde.
+    Pr&uuml;fen Sie, ob die Einstellungen korrekt sind. Sie sollten keine Netzwerkfunktionen
+      auf der Kommunikationsleitung zum Modul einschalten.</li>
+</ol>
+<p class="infocell"><strong>WARNUNG:</strong> Wir haben keinen Einfluss auf die
+  Qualit&auml;t der Treiber von Drittanbietern. Der FTDI-Treiber kann unter bestimmten
+  Umst&auml;nden Kernel-Panics in Mac OS X ausl&ouml;sen, insbesondere bei Systemen mit
+  mehr als 2 GByte Hauptspeicher. Eine Kernel-Panic ist ein Absturz des Betriebssystems,
+  was Datenverlust verursachen kann. Falls Sie Probleme mit dem Treiber haben,
+  stellen Sie bitte sicher, dass Sie die neueste erh&auml;ltliche Version einsetzen,
+  oder wenden Sie sich an den Hersteller, um weitere Unterst&uuml;tzung zu erhalten.</p>
+<p class="infocell"><strong>WARNUNG:</strong> Weder der FTDI-USB-Konverter, noch
+  das Crystalfontz-Modul stellen Mac OS X eine g&uuml;ltige Seriennummer f&uuml;r die LCD-Einheit
+  zur Verf&uuml;gung. Aus diesem Grund k&ouml;nnen weder Mac OS X noch Hardwaremonitor
+  das Modul korrekt nachverfolgen, wenn Sie es vom System abh&auml;ngen und sp&auml;ter
+  wieder anstecken. Mac OS X kann unter Umst&auml;nden ein wieder angeschlossenes
+  Modul f&auml;lschlicherweise als <strong>neues</strong>  Ger&auml;t identifizieren,
+  dass danach wieder eingerichtet werden muss. Das hei&szlig;t, dass alle Einstellungen
+  f&uuml;r die LCD-Anzeige in Systemeinstellungen und in Hardwaremonitor noch einmal
+  gemacht werden m&uuml;ssen. </p>
+<h2>Vorbereiten eines Logitech LCD-Produktes</h2>
+<p>Logitech erlaubt nicht, dass Hardwaremonitor die LCD-Anzeige auf deren Produkten
+  direkt anspricht. Dies ist notwendig, da das Display von mehreren Programmen
+  unterschiedlicher Anbieter gleichzeitig verwendet werden kann, so dass der
+  Zugriff auf die Anzeige koordiniert werden muss. Die Software <cite>Logitech
+  LCD Manager Version 3</cite> muss installiert werden, bevor Hardwaremonitor
+  Displays von Logitech-Produkten erkennen und steuern kann. Diese Software wird
+  entweder mit dem Produkt geliefert oder kann von den Webseiten von Logitech
+  kostenlos heruntergeladen werden. Bitte ziehen Sie für weitere Informationen
+  die Dokumentation hinzu, die mit dem Produkt geliefert wurde.</p>
+<p>Hardwaremonitor unterstützt Logitech LCD-Produkte sowohl mit monochromen als
+  auch farbigen Anzeigen. Falls mehrere Geräte zur gleichen Zeit angeschlossen
+  sind, zeigt Hardwaremonitor auf allen Logitech-Displays die gleichen Inhalte
+  an. Sie können die Einstellungskarte <cite>LCD Manager</cite> in den Systemeinstellungen
+  verweden, um bestimmte Displays von der Nutzung durch Hardwaremonitor auszuschließen.
+  Bei der Nutzung eines Farb-Displays, verwendet die Ausgabe von Hardwaremonitor
+  ausschließlich die Farbe weiß. Nur das Display selbst wird unterstützt, eventuell
+  vorhandene Zusatzknöpfe, die auf gewissen Geräten vorhanden sein können, werden
+  ignoriert.</p>
+<p>Logitech unterstützt es nicht, dass Programme unterschiedliche LCD-Produkte
+  einzeln nachverfolgen können. Aus diesem Grund zeigt Hardwaremonitor nur einen
+  einzelnen Eintrag mit der Bezeichnung <cite>Logitech LCD Manager</cite> in seiner Liste
+  von erkannten USB-Geräten an, auch wenn mehrere Logitech LCD-Produkte angeschlossen
+  sind. Die von Hardwaremonitor angezeigte Seriennummer lautet immer <cite>00000000</cite>.</p>
+<ul>
+  <li>Es wird empfohlen, den Anzeigetyp <cite>3 x 25 Zeichen</cite> auszuwählen, falls Sie
+    ein monochromes Display von Logitech verwenden.</li>
+  <li>Es wird empfohlen, den Anzeigetyp <cite>17 x 52 Zeichen</cite> auszuwählen, falls Sie
+    ein Logitech-Display verwenden, das Farbe unterstützt.</li>
+</ul>
+<p>Ein Wechsel der Schriftart oder Schriftgröße wird zurzeit nicht unterstützt.</p>
+<h2>Das Einrichten von Anzeigemodulen</h2>
+<p>Die Konfiguration einer externen LCD-Einheit ist sehr leicht und kann &uuml;ber
+  simple Verschiebeoperationen mit der Maus vorgenommen werden.</p>
+<ol>
+  <li>Verbinden Sie eine oder mehrere LCD-Einheiten &uuml;ber die USB-Schnittstelle
+    mit Ihrem Computer.</li>
+  <li>Starten Sie Hardwaremonitor, &ouml;ffnen Sie das Fenster <cite>Einstellungen</cite> und
+    gehen Sie in den Bereich <cite>LCD-Modul</cite>.</li>
+  <li>Alle erkannten USB-Einheiten werden in der kleinen Tabelle im oberen Bereich
+    des Fensters angezeigt. Um auszuw&auml;hlen, welcher Typ von LCD mit welcher USB-Einheit
+    verbunden ist, klicken Sie auf eine Zeile in der Tabelle und verwenden Sie
+    dann das Aufklappmen&uuml; <cite>LCD-Typ f&uuml;r ausgew&auml;hltes USB-Ger&auml;t einstellen</cite> um anzugeben,
+    wie viele Zeilen und Spalten auf der LCD-Anzeige verf&uuml;gbar sind. Der Knopf
+    <cite>Testen&hellip;</cite> kann dazu eingesetzt werden, ein Testmuster auf das ausgew&auml;hlte Display
+    zu senden.</li>
+</ol>
+<p>Das LC-Display leuchtet auf, sobald Sie das Typmen&uuml; vom Punkt <cite>Kein
+    Display</cite>  auf einen der m&ouml;glichen Anzeigearten umgeschaltet haben. Die folgenden Testmuster
+  sind verf&uuml;gbar:</p>
+<ul>
+  <li>Textausgabe, die den Chiptyp und die Seriennummer der USB-Einheit angibt.
+    Hierdurch wird es einfacher zu pr&uuml;fen, welches Modul welches ist, falls Sie
+    mehr als ein Ger&auml;t angeschlossen haben.</li>
+  <li>Textausgabe mit Zeilen- und Spaltennummern. Dieser Test erlaubt Ihnen zu
+    pr&uuml;fen, oder der Displaytyp korrekt eingestellt ist.</li>
+  <li>eine Tabelle mit lateinischen Schriftzeichen.</li>
+  <li>eine Tabelle mit japanischen Katakana-Zeichen.</li>
+</ul>
+<p>Falls das ausgew&auml;hlte LCD-Modul in der Lage ist, zus&auml;tzliche Einstellungen
+  per Software zu unterst&uuml;tzen, wird der Knopf <cite>LCD-Einstellungen</cite> aktiv.
+  Nach dessen Bet&auml;tigung &ouml;ffnet sich ein Dialogfenster, in dem Betriebswerte
+  wie Helligkeit der Hintergrundbeleuchtung oder Anzeigekontrast eingestellt
+  werden k&ouml;nnen.</p>
+<p>Sie k&ouml;nnen zus&auml;tzlich einen &quot;LCD-Schoner&quot; f&uuml;r jedes angeschlossene LCD-Modul
+  einrichten, der sicherstellt, dass die Anzeige abgeschaltet wird, wenn Ihr
+  Computer f&uuml;r eine bestimmte Zeitdauer nicht benutzt wurde. W&auml;hlen Sie das gew&uuml;nschte
+  Zeitintervall (oder den Wert <cite>nie</cite>) mit dem Schieberegler bei <cite>LCD-Schoner
+  aktivieren</cite>  aus. Es ist eine praktische L&ouml;sung, das gleiche Zeitintervall einzustellen,
+  das Sie f&uuml;r den Bildschirmschoner in Systemeinstellungen definiert haben, aber
+  dies ist nicht notwendigerweise erforderlich.</p>
+<p class="infocell">Die IO-Warrior USB-Steuereinheit ben&ouml;tigt keine Treiber,
+  um von Mac OS X aus benutzbar zu sein. Um dies technisch m&ouml;glich zu machen,
+  verh&auml;lt sich die Einheit
+  wie ein Benutzerschnittstellenger&auml;t (Human Interface Device, HID), &auml;hnlich
+  wie eine Tastatur oder Maus. Aus diesem Grund interpretiert Mac OS X bestimmte
+  Signale des IO-Warrior als &quot;Benutzeraktivit&auml;t&quot;, was bewirkt,
+  dass Ihr System keinerlei Ruhezustandsfunktionen mehr automatisch einschaltet,
+  wenn die LCD-Anzeige aktiv ist. <strong>Falls Sie den automatischen Ruhezustand
+  f&uuml;r
+  den Bildschirm oder Ihren Computer einsetzen m&ouml;chten, m&uuml;ssen Sie
+  den LCD-Schoner f&uuml;r das IO-Warrior-Ger&auml;t einschalten.</strong> In
+  diesem Fall wird die Kommunikation mit dem LCD-Modul nach der eingestellten
+  Zeit gestoppt. Nach diesem Zeitpunkt wird Mac OS X den Datenaustausch mit der
+  Anzeige nicht mehr als aktiver Benutzer fehlinterpretieren und das normale
+  Ruhezustandsintervall wird wie erwartet beginnen. Beachten Sie, dass sich
+  das Gesamtzeitintervall f&uuml;r das Einsetzen des Ruhezustands als Summe
+  aus der LCD-Schoner-Zeit und der Ruhezustandszeit, die Sie in der Energiesparkarte
+  von Systemeinstellungen konfiguriert haben, berechnet. </p>
+<p align="center"><img src="Images/PrefLCD.png" alt="Hardware Monitor Preferences: LCD Module" width="620" height="538" /> </p>
+<p align="left">Nachdem der Displaytyp eingestellt worden ist, k&ouml;nnen Sie die
+  unteren Teile des Fensters dazu verwenden, um auszuw&auml;hlen, welche Ausgabeelemente
+  an die Anzeige gesendet werden sollen. Die linke Tabelle zeigt Ihnen alle Ausgabeelemente,
+  die auf dem lokalen Computer zur Verf&uuml;gung stehen. Die rechte Tabelle zeigt
+  Ihnen die aktiven Elemente, die im Moment zum Display gesendet werden. Zu Beginn
+  ist die Tabelle auf der rechten Seite leer. Sie k&ouml;nnen mit der Maus Elemente
+  von der linken zur rechten Tabelle ziehen und so die gew&uuml;nschte Ausgabe Schritt
+  f&uuml;r Schritt einstellen. </p>
+<p align="left">Die ausgew&auml;hlten Ausgabeelemente erscheinen mit aktuellen Messwerten
+  sofort auf dem Display, wobei das Zeitintervall zur Aktualisierung verwendet
+  wird, dass Sie im Bereich <cite>Allgemein</cite> des Einstellungsfensters angegeben
+  haben. Die Ausgabe erscheint auch im simulierten Bereich <cite>Vorschau</cite> in der linken
+  unteren Ecke des Fensters. </p>
+<p align="left">Die Ausgabeelemente werden in der Reihenfolge von oben nach unten
+  an das Display gesendet. Sie k&ouml;nnen die Elemente in der rechten Tabelle durch
+  Verschieben mit der Maus neu anordnen und in eine beliebige gew&uuml;nschte Reihenfolge
+  bringen. Die folgenden Elemente sind zur Ausgabe auf dem externen Anzeigemodul
+  verf&uuml;gbar: </p>
+<ul>
+  <li><cite>Text</cite>: frei gestaltbarer Text einer festen L&auml;nge. Sie k&ouml;nnen
+    jeden beliebigen Text nach Ihren W&uuml;nschen in den Bereich <cite>Einstellungen
+    f&uuml;r ausgew&auml;hltes Element</cite> eingeben, nachdem Sie ein Textelement von links nach
+    rechts gezogen haben und dieses Element immer noch ausgew&auml;hlt ist. Beachten
+    Sie, dass Hardwaremonitor jedes beliebige Zeichen als Eingabe zul&auml;sst, w&auml;hrend
+    die meisten LCD-Anzeigen allerdings nur einen eingeschr&auml;nkten Zeichensatz
+    unterst&uuml;tzen k&ouml;nnen. Ein Zeichen, das nicht angezeigt werden kann, wird automatisch
+    durch einen ausgef&uuml;llten Block ersetzt.</li>
+  <li><cite>Neue Zeile</cite>: bewirkt, dass das LCD-Display an der Position,
+    wo das Element eingef&uuml;gt wurde, eine neue Zeile anf&auml;ngt. Um leere Zeilen
+    zu vermeiden, unterdr&uuml;ckt Hardwaremonitor automatisch den Befehl zur neuen
+    Zeile, wenn das Display sowieso eine neue Zeile angefangen h&auml;tte, da die
+    vorige Zeile voll war.</li>
+  <li><cite>Datum</cite>: das aktuelle Datum. Hardwaremonitor w&auml;hlt automatisch
+    ein Ausgabeformat, das Ihren pers&ouml;nlichen Benutzereinstellungen f&uuml;r die Ausgabe
+    kurzer Datumsangaben folgt. Um dieses Format zu &auml;ndern, verwenden Sie den
+    Punkt
+    <cite>Formate</cite> auf der Karte <cite>Landeseinstellungen</cite> des Programms <cite>Systemeinstellungen</cite> und
+    starten Sie dann Hardwaremonitor neu.</li>
+  <li><cite>Zeit</cite>: die aktuelle Zeit. Hardwaremonitor w&auml;hlt automatisch
+    ein Ausgabeformat, das Ihren pers&ouml;nlichen Benutzereinstellungen f&uuml;r
+    die Ausgabe kurzer Zeitangaben mit Sekunden folgt. Um dieses Format zu &auml;ndern,
+    verwenden Sie den Punkt <cite>Formate</cite> auf der Karte <cite>Landeseinstellungen</cite> des
+    Programms <cite>Systemeinstellungen</cite> und starten Sie dann Hardwaremonitor
+    neu.</li>
+  <li><cite>Computername</cite>: der Name des lokalen Computers. Dies ist der
+    Name, der in Systemeinstellungen konfiguriert werden kann, kein DNS-Name.</li>
+  <li><cite>Kernel-Version</cite>: die Versionsnummer des Betriebssystemkerns. </li>
+  <li><cite>OS Version</cite>: die Versionsangabe von Mac OS X.</li>
+  <li><cite>OS Build</cite>: die Build-Nummer der gerade laufenden Version von Mac OS X. </li>
+  <li><cite>IPv4-Adresse</cite>: die IP-Version-4-Adresse jedes physischen Netzwerkanschlusses.
+    Die linke Tabelle bietet einen Eintrag f&uuml;r jede verf&uuml;gbare Netzwerkschnittstelle,
+    die erkannt wurde. Wenn die Schnittstelle nicht konfiguriert ist oder ihre
+    Adresse verloren hat, wird der Wert &quot;---.---.---.---&quot; angezeigt. </li>
+  <li><cite>Sensorwert</cite>: der Messwert f&uuml;r jeden zurzeit aktiven Hardwaresensor
+    oder eine k&uuml;nstliche Sonde. Details &uuml;ber die Art und Weise, wie der Wert
+    angezeigt werden soll, k&ouml;nnen im Bereich <cite>Einstellungen f&uuml;r
+    ausgew&auml;hltes Element</cite> konfiguriert werden. Der untenstehende Abschnitt
+    enth&auml;lt weitere Informationen hierzu. </li>
+  <li><cite>Sensorbalkenanzeige</cite>: der Sensormesswert f&uuml;r jeden zurzeit aktiven Hardwaresensor
+    oder eine k&uuml;nstliche Sonde, der einen Prozentwert repr&auml;sentiert, z.B. Prozessorlast
+    oder Speicherverbrauch. Die Balkenanzeige w&auml;chst von links nach rechts und
+    verbraucht 10 Zeichen. Der Balken wird durch gef&uuml;llte rechteckige Blockzeichen
+    dargestellt.</li>
+</ul>
+<p align="left">Wenn Sie einen Sensor oder eine Sonde zur Ausgabe gew&auml;hlt haben,
+  k&ouml;nnen Sie zus&auml;tzliche Parameter bei <cite>Einstellungen f&uuml;r
+  ausgew&auml;hltes Element</cite> eingeben:</p>
+<ul>
+  <li><cite>Maximale Feldl&auml;nge</cite>: die Anzahl der Zeichen, die auf dem
+    LCD verwendet werden soll, um diesen Sensorwert inklusive Dezimaltrennzeichen
+    und Einheit anzuzeigen. Um zu vermeiden, dass Werte auf dem Display hin-
+    und hergeschoben werden, versucht Hardwaremonitor immer, die L&auml;nge konstant
+    zu halten, auch wenn sich die Anzahl der Ziffern, die notwendig sind, um
+    den Wert anzuzeigen, &auml;ndert. Dies bedeutet auch, dass ein Wert abgeschnitten
+    wird, wenn die von Ihnen gew&auml;hlte L&auml;nge zu klein ist. Der Wert &quot;12,34V&quot; ben&ouml;tigt
+    beispielsweise 6 Zeichen. Wenn Sie eine Feldl&auml;nge von 4 w&auml;hlen, wird nur
+    der Teil &quot;12,3&quot; in der Anzeige sichtbar.</li>
+  <li><cite>Ziffern nach Dezimaltrenner</cite>: Die Anzahl der Ziffern, die nach
+    dem dezimalen Trennzeichen gezeigt werden sollen (bei deutschsprachiger Ausgabe
+    &uuml;blicherweise ein Komma). Hardwaremonitor wird die Werte automatisch in geeigneter
+    Weise runden.</li>
+  <li><cite>Einheit oder &quot;OK/FAIL&quot; anzeigen</cite>: Die Bedeutung
+    dieses Schalters h&auml;ngt davon ab, ob Sie einen physischen Sensorwert ausgew&auml;hlt
+    haben oder eine Sonde mit einem logischen &quot;0/1&quot;-Wert, zum Beispiel eine RAID-Statussonde.
+    Bei einem physischen Sensor wird eine Einheitsangabe angezeigt, wenn diese
+    Option eingeschaltet ist. Sie wird weggelassen, wenn das H&auml;kchen entfernt
+    wird. (Beachten Sie, dass Temperaturwerte ein einzelnes Gradzeichen als Einheit
+    tragen.) Bei einer logischen Sonde bewirkt das Setzen des H&auml;kchens, dass
+    eine Funktion eingeschaltet wird, die den Wert &quot;1&quot; in die Ausgabe &quot;OK&quot; und
+    den Wert &quot;0&quot; in die Ausgabe &quot;!!&quot; &uuml;bersetzt. Wenn diese Wahlm&ouml;glichkeit abgeschaltet
+    wird, werden logische Werte nicht mehr in Text &uuml;bersetzt. </li>
+</ul>
+<p>Es gibt bez&uuml;glich der Ausgabeelemente, die Sie w&auml;hlen, keinerlei Einschr&auml;nkungen.
+  Sie k&ouml;nnen zum Beispiel mehrere Textelemente verwenden oder den gleichen Sensorwert
+  zweimal anzeigen, an zwei unterschiedlichen Orten des LC-Displays. Hardwaremonitor
+  warnt Sie nicht, falls Sie mehr Ausgabe erzeugen, als auf das Display passt.</p>
+<h2>LCD-Module mit einem unbeaufsichtigten Computer verwenden</h2>
+<p>Es ist notwendig, dass Hardwaremonitor l&auml;uft, damit Werte an die externe LCD-Einheit
+  gesendet werden k&ouml;nnen. Wenn Sie sich allerdings abmelden, wird Mac OS X alle
+  laufenden Programme beenden. Das hei&szlig;t, Hardwaremonitor wird gestoppt und das
+  Display abgeschaltet. Dies ist nicht hilfreich, wenn Sie einen Server &uuml;berwachen
+  m&ouml;chten, der &uuml;blicherweise im unbeaufsichtigten Modus l&auml;uft, also kein Benutzer
+  am Bildschirm angemeldet ist. </p>
+<p>Sie k&ouml;nnen dieses Problem wie folgt l&ouml;sen: </p>
+<ol>
+  <li>Laden Sie ein Exemplar von Hardwaremonitor Remote herunter. Wenn es auf
+    dem gleichen Computer f&uuml;r den gleichen Benutzer l&auml;uft, ben&ouml;tigen Sie nur
+    einen Registrierungsschl&uuml;ssel, um beide Programme nutzen zu d&uuml;rfen.
+    (<a href="http://www.bresink.com/osx/HardwareMonitorRemote-de.html">http://www.bresink.com/osx/HardwareMonitorRemote-de.html</a>)</li>
+  <li>Schlie&szlig;en Sie die LCD-Einheit an und verwenden Sie Hardwaremonitor, um
+    die Anzeige einzurichten. Wenn die Ausgabe so wie gew&uuml;nscht funktioniert,
+    beenden Sie Hardwaremonitor.</li>
+  <li>Starten Sie Hardwaremonitor Remote auf dem gleichen Computer und Benutzerkonto
+    und verwenden Sie dessen Importfunktion, um die aktuelle LCD-Konfiguration
+    (zusammen mit der aktuellen Sondenkonfiguration falls n&ouml;tig) aus Hardwaremonitor
+    zu &uuml;bernehmen. F&uuml;r weitere Details ziehen Sie bitte das Referenzhandbuch
+    von Hardwaremonitor Remote hinzu.</li>
+  <li>Starten Sie den Hintergrunddienst von Hardwaremonitor Remote. Das Hintergrundprogramm
+    wird die LCD-Einheit steuern und das Display bleibt eingeschaltet, auch wenn
+    Sie sich abmelden.</li>
+</ol>
+<p>Sie k&ouml;nnen Hardwaremonitor Remote auch dazu konfigurieren, den Hintergrunddienst
+  automatisch w&auml;hrend des Starts von Mac OS X mit zu laden. In diesem Fall
+  wird das Display automatisch eingeschaltet, w&auml;hrend das Betriebssystem gestartet
+  wird. Es ist nicht notwendig, dass sich ein Benutzer anmeldet.</p>
+<p class="infocell">Diese Funktion kann mit Logitech LCD-Produkten nicht unterstützt
+  werden. Diese Produkte erfordern es, dass die Software Logitech LCD Manager
+  läuft, die darauf ausgelegt ist, nur innerhalb einer grafischen Benutzersitzung
+  zu arbeiten.</p>
+<h2>Das Verbinden und Trennen laufender LCD-Module </h2>
+<p>Hardwaremonitor und Hardwaremonitor Remote lassen es zu, dass Sie externe
+  LCD-Module anschlie&szlig;en oder vom Computer entfernen, w&auml;hrend diese benutzt werden.
+  Die Programme k&ouml;nnen jedes Modul identifizieren, und stoppen, bzw. starten
+  das Senden von Daten an die jeweilige Einheit, wenn diese vom Computer getrennt,
+  bzw. sp&auml;ter wieder verbunden werden. </p>
+<p class="infocell"><strong>Warnung:</strong> Trotz dieser Funktion erlauben
+  einige Versionen von Mac OS X das Umstecken im laufenden Betrieb nicht! Im
+  schlimmsten Fall kann Mac OS X mit einer Kernel-Panik abst&uuml;rzen, wenn Sie ein
+  LCD-Ger&auml;t mitten w&auml;hrend einer laufenden Daten&uuml;bertragung abziehen. Dies ist
+  ein Problem in den USB-Treibern von Mac OS X, das von Hardwaremonitor nicht
+  verhindert werden kann.<cite> Aus diesem Grund wird empfohlen, LCD-Einheiten nur
+  dann abzustecken, nachdem Sie das Programm, das die Einheit steuert, beendet
+  haben. </cite></p>
+<hr />
+<p><a href="index.html">Inhaltsverzeichnis</a></p>
+</body>
+</html>

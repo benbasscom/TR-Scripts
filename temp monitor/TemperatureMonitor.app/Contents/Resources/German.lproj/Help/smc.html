@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Programm nur in der Men&uuml;leiste verwenden</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="14" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Leistung auf Intel-basierten Systemen beeinflussen</h1></td>
+  </tr>
+</table>
+<p>Einige bestimmte Mac-Modelle mit Intel-Prozessoren, die nach Oktober 2008
+  freigegeben wurden, sind von einem technischen Problem betroffen, das Einfluss
+  auf die Systemlast hat, die das Überwachungsprogramm aufnimmt, um seine Arbeit
+  zu erledigen. Auf solchen Computern verbraucht das Programm möglicherweise
+  beträchtlich mehr Rechenleistung als normal.</p>
+<p class="infocell">Sie müssen dieses Kapitel nicht lesen, falls Sie einen PowerPC-basierten Mac
+  einsetzen oder einen Computer, der vor Oktober 2008 hergestellt wurde.</p>
+<p>Alle Programme der Hardwaremonitor- und Temperaturmonitor-Anwendungssuite
+  sind daraufhin optimiert, ihre Arbeit zu erledigen, ohne dabei irgendeinen
+  anderen Prozess zu behindern. Es sollten so gut wie keine Ressourcen für die
+  Überwachungsarbeit verbraucht werden, so dass fast die ganze Rechenleistung
+  für Ihre normalen Standardprogramme übrigbleibt. Sie können den folgenden Test
+  durchführen, um zu prüfen, ob das Überwachungsprogramm wie erwartet arbeitet:</p>
+<ol>
+  <li>Schließen Sie alle Fenster des Überwachungsprogramms. Dies schließt auch
+    die Funktion Bildschirmanzeige ein. Die Ausgabe in der Menüleiste und im
+    Docksymbol kann aktiv bleiben.</li>
+  <li>Öffnen Sie das Programm <cite>Aktivitätsanzeige</cite> aus dem Ordner <cite>Dienstprogramme</cite>    unter <cite>Programme</cite>. Stellen Sie sicher, dass das Fenster <cite>Aktivitätsanzeige</cite> offen
+    ist.</li>
+  <li>Klicken Sie auf die Spalte <cite>%CPU</cite> um alle laufenden Prozesse nach absteigender
+    CPU-Last zu sortieren (die höchsten Werte oben). Die Werte in dieser Spalte
+    stellen den prozentuellen Anteil der Rechenzeit dar, den jeder Prozess vom
+    verfügbaren Betrag der gesamten Rechenzeit verbraucht. Der Prozentwert wird
+    relativ zu einem einzelnen Prozessor angegeben. Ein schlafender Prozess,
+    der gerade nichts tut, hat einen Wert von 0. Ein Prozess, der 10 Prozent
+    von der Rechenleistung von 1 Prozessor verbraucht, trägt den Wert 10. Ein
+    Prozess, der die gesamte zur Verfügung stehende Rechenleistung (100%) von
+    2 Prozessoren in einem 2-Kern-System verbraucht, zeigt einen Wert von 200.</li>
+  <li>Suchen Sie in der Tabelle nach dem Überwachungsprogramm. Falls sie eine
+    mittelmäßige Anzahl von Sensoren mit dem vorgegebenen Auffrischungsintervall
+    von 2 Sekunden überwachen, sollte der CPU-Wert weniger als 2% betragen. Wenn
+    Sie eine große Zahl von Sensoren mit einem Auffrischungsintervall von 1 Sekunde
+    überwachen, sollte der CPU-Wert weniger als 4% betragen.</li>
+</ol>
+<p>Falls die gemessenen Werte jedoch beträchtlich höher liegen (der CPU-Wert
+  liegt bei 10% oder mehr), könnte Ihr System von dem oben beschriebenen Problem
+  betroffen sein.</p>
+<p class="infocell">Es ist normal, dass die CPU-Last, die vom Überwachungsprozess aufgenommen
+  wird, größer wird, wenn Sie mehrere Fenster offen haben oder die Funktion Bildschirmanzeige
+  einschalten. Das Auffrischen aller grafischen Inhalte in regelmäßigen Zeitabständen
+  benötigt fortlaufend Rechenleistung.</p>
+<h2>Technischer Hintergrund</h2>
+<p>Intel-basierte Apple-Computer verwenden einen spezialangefertigten Chip, den
+  <strong>Apple System Management Controller (SMC)</strong>, um die Daten der meisten Sensoren
+  zu sammeln, um die Lüfter zu steuern und um andere Dienste auszuführen, die
+  für das  Management des Computers erforderlich sind. Der zentrale Prozessor
+  kommuniziert mit dem SMC über eine spezielle interne Datenleitung.</p>
+<p>Bei bestimmten Computermodellen scheint dieser Kommunikationsbus, um Daten
+  zu oder vom SMC zu transportieren, vergleichsweise langsam zu ein, so dass
+  die Haupt-CPU manchmal warten muss, bis die Daten am anderen Ende der Kommunikationsleitung
+  angekommen sind. Wenn eine größere Datenmenge über den SMC-Bus übertragen werden
+  muss, ist es sehr oft nötig, den Zugriff zu verzögern und zu koordinieren,
+  wenn die Kommunikationsleitung belegt ist.</p>
+<p>Programme wie Hardwaremonitor und Temperaturmonitor müssen mit dem SMC kommunizieren,
+  um aktuelle Werte von den Sensoren des Systems zu erhalten, d.h. sie müssen
+  den SMC-Bus sehr intensiv nutzen. <strong>Auf gewissen Systemen
+  zwingt Mac OS X die Überwachungsprogramme dazu, einen ungewöhnlich hohen Betrag
+  an Prozessorleistung für die aktive Koordinierung des Zugriffs auf den SMC-Bus
+  aufzuwenden.</strong> Dies
+  bewirkt, dass die betroffenen Programme viel mehr aktive CPU-Zeit für die SMC-Kommunikation
+  verbrauchen. Beachten Sie, dass solch ein Programm den SMC nicht über seinen
+  eigenen Code ansprechen kann. Es muss dazu Dienste und Treiber von Mac OS X
+  verwenden. Die Rechenzeit wird durch indirekt aufgerufene Codeteile innerhalb
+  des Mac OS X-Systemkerns verbraucht, nicht durch den Code des Überwachungsprogramms
+  selbst.</p>
+<p>Es ist momentan unbekannt, ob dieser Effekt durch einen allgemeinen Konstruktionsfehler
+  in der Bus-Hardware bestimmter Chipsätze verursacht wird oder durch
+  unausgereifte Treiber in gegenwärtigen Versionen von Mac OS X.</p>
+<h2>Optimieren des SMC-Zugriffs</h2>
+<p>Um das Problem zu vermeiden, dass das Überwachungsprogramm einen ungewöhnlichen
+  hohen Betrag der Prozessorleistung dazu benötigt, Daten von SMC-gesteuerten
+  Sensoren zu empfangen, kann das Programm konfiguriert werden, seine SMC-Kommunikation
+  einzuschränken. Bitte beachten Sie, dass nicht alle Sensoren vom SMC betrieben
+  werden.</p>
+<p class="infocell">Um zu prüfen, ob ein bestimmter Sensor über den SMC gesteuert wird, öffnen
+  Sie das Fenster <cite>Sensorübersicht</cite> im Programm und doppelklicken Sie auf die Tabellenzeile
+  des zur Diskussion stehenden Sensors. Falls die Zeile <cite>Hardware</cite> im Detailinformationsfenster
+  des Sensors das Ergebnis <cite>Apple Systemmanagementsteuereinheit</cite> zeigt, benötigt
+  dieser Sensor SMC-Kommunikation.</p>
+<p align="center"><img src="Images/SMCPanel.png" alt="Leistung des Sensorzugriffs optimieren" width="570" height="335" /></p>
+<p>Wenn Sie den Zugriff auf den System Management Controller optimieren möchten,
+  führen Sie bitte folgende Schritte durch:</p>
+<ol>
+  <li>Wählen Sie den Menüpunkt <cite>Monitor &gt; Leistung des Sensorzugriffs optimieren
+    …</cite>.</li>
+  <li>Überprüfen Sie den Wert, der bei <cite>Reduzieren der Zugriffsrate empfohlen</cite>    in
+    der Mitte des Fensters angezeigt wird. Lautet der Wert <cite>Nein</cite>,
+    scheint Ihr Computer nicht von diesem Problem betroffen zu sein. Lautet der
+    Wert <cite>Ja</cite>,
+    sollten Sie die Rate reduzieren, mit der auf SMC-gesteuerte Sensoren zugegriffen
+    wird.</li>
+  <li>Verwenden Sie den Schieberegler, um zwischen einer der verfügbaren Zugriffsraten
+    zu wählen. Für einen <cite>Nein</cite>-Wert wählen Sie <cite>normaler Zugriff</cite>, für einen <cite>Ja</cite>-Wert
+    eine der reduzierten Raten.</li>
+</ol>
+<p>In der Einstellung <cite>normal</cite> greift das Programm auf SMC-Sensoren
+  immer dann zu, wenn es nötig ist. In der Einstellung <cite>reduzierter Zugriff</cite> stellt
+  das Programm sicher, mehr als einen Zugriff auf jeden SMC-gesteuerten Sensor
+  innerhalb eines Zeitintervalls von 10 Sekunden zu vermeiden. Bei <cite>stark
+  reduziertem Zugriff</cite>,
+  wird garantiert, dass Zugriffe auf jeden SMC-Sensor nicht öfter als einmal
+  pro Minute erfolgen.</p>
+<p>Beim Reduzieren der Zugriffsrate wird die Zeitauflösung für Messungen, die
+  mit SMC-Sensoren durchgeführt werden, nicht mehr so genau sein, wie vorher.
+  Die Werte, die im Sensorverlauf aufgezeichnet werden, scheinen innerhalb des
+  Zugriffszeitintervalls konstant zu bleiben. Wenn Sie eine Verlaufsgrafik anzeigen,
+  werden die Kurven in vertikaler Richtung nicht mehr glatt, sondern &quot;stufiger&quot;
+  sein. Sensoren, die nicht vom SMC gesteuert werden, sind von der Zugriffsrateneinstellung
+  nicht betroffen.</p>
+<p align="center"><img src="Images/SMCExample.png" alt="Beispiel von Sensorverlaufsgraphen" width="600" height="206" /></p>
+<p align="center">Links: normale Zugriffsrate * Rechts: reduzierte Zugriffsrate</p>
+<hr />
+<p><a href="index.html">Inhaltsverzeichnis</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

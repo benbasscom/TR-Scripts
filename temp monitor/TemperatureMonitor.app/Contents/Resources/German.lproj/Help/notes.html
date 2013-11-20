@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html
+  xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Aktuelle Hinweise</title>
+    <meta name="AppleOrder" content="19" />
+    <link href="mbshelp.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" src="Images/HWIcon48.png"
+              alt="Hardwaremonitor" /><img width="48" height="48" src="Images/TMIcon48.png"
+              alt="Temperaturmonitor" /></td>
+          <td>
+            <h1>Aktuelle Hinweise</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Das Überwachen von GPU-Sensoren auf Computern, die zwei
+        unabhängige umschaltbare Grafikeinheiten besitzen, wird vom Programm
+        nicht offiziell unterstützt: </strong>Bestimmte Apple-Computer sind mit
+      zwei alternativen GPU-Lösungen ausgestattet: Ein energiesparender
+      Grafikprozessor im Hauptprozessor und ein Hochleistungsgrafikprozessor auf
+      einem externen Chip. Solche Computermodelle zeigen die Wahlmöglichkeit <cite><span>Automatischer
+          Wechsel der Grafikmodi</span></cite> (oder ähnlich) auf der Karte <cite>Energie
+        sparen</cite> von <cite>Systemeinstellungen</cite>. Falls die Option
+      eingeschaltet ist, was die empfohlene Standardeinstellung ist, wechselt
+      der Computer im Betrieb möglicherweise die GPUs, wobei ein Grafikprozessor
+      aus- und der andere eingeschaltet wird. Alle Sensoren der in diesem Moment
+      abgeschalteten GPU werden ebenso inaktiv. Aufgrund architektureller
+      Probleme kann es unerwartete Nebenwirkungen geben, wenn Sie solche
+      Sensoren überwachen.</p>
+    <p><strong>Abhilfe:</strong> Wir empfehlen nicht, irgendeinen GPU-Sensor auf
+      solchen Computermodellen zu überwachen. Identifizieren Sie alle Sensoren
+      der Grafikprozessoren auf der Karte <cite>Sensoren</cite> des Fensters <cite>Einstellungen</cite>
+      im Programm und kreuzen Sie das Feld <cite>Datenerfassung: Keine
+        Sensordaten abfragen</cite> für jeden dieser betroffenen Sensoren an.</p>
+    <p> </p>
+    <p><strong>Nach dem Start des Programms erhalte ich eine Warnung, dass
+        Betriebsdateien beschädigt sind. Aber auch wenn ich eine frische Kopie
+        vom offiziellen Server herunterlade, bleibt das Problem bestehen und ich
+        kann die Anwendung nicht verwenden:</strong> Auf bestimmten
+      Betriebssysteminstallationen erscheint ein Warnfenster mit der Meldung
+      "Warnung: Die Betriebsdateien dieses Programms sind beschädigt", obwohl
+      das Programmpaket authentisch ist.</p>
+    <p><strong>Abhilfe:</strong> Dieses Problem wird von einer Sicherheitslücke
+      verursacht, die vom Programm erkannt wurde. Wenn ein Sicherheitsproblem
+      gefunden wird, verwendet das Programm eine Fehlermeldung, die
+      fälschlicherweise den Eindruck erweckt, die eigenen Dateien wären
+      beschädigt, obwohl stattdessen kritische Berechtigungseinstellungen im
+      Betriebssystem beschädigt sind. Einige schlechte Installationsprogramme
+      für Anwendungen auf den unteren UNIX-Ebene sind bekannt dafür, einen
+      solchen Defekt zu verursachen. Sie können das System wie folgt reparieren:</p>
+    <ol>
+      <li>Beenden Sie das Programm, falls es immer noch offen ist und die
+        Fehlermeldung zeigt.</li>
+      <li>Öffnen Sie das Programm <cite>Terminal</cite> aus dem Ordner <span style="font-weight: bold;">Dienstprogramme</span><cite></cite>.</li>
+      <li>Geben Sie die beiden folgenden Befehle genau wie gezeigt ein (am
+        besten über Kopieren/Einsetzen), wobei Sie nach jeder Zeile den
+        Zeilenschalter betätigen:</li>
+    </ol>
+    <p style="margin-left: 40px;"><code>sudo chown -R root:wheel /usr/bin<br />
+        sudo chmod -R go-w /usr/bin</code></p>
+    <p> Das Programm sollte nach Ausführen dieser Schritte korrekt starten. Die
+      Sicherheitslücke, die durch das Installationsprogramm des Drittanbieters
+      geöffnet wurde, wird hierdurch ebenso geschlossen.</p>
+    <p> </p>
+    <p><strong>Nach dem Aktualisieren auf Mac OS X 10.7.4 werden die Sensoren
+        mit den Bezeichnungen "Akku 1 Zelle x" möglicherweise als nicht mehr
+        angeschlossen angezeigt:</strong> Mac OS X 10.7.4 ist nicht in der Lage,
+      die Spannungsdaten einzelner Akkuzellen abzufragen. Beim Arbeiten mit
+      dieser Systemversion sind solche Sensoren nicht mehr länger verfügbar.
+      Andere Versionen von Mac OS X sind nicht betroffen.</p>
+    <p><strong>Abhilfe:</strong> Dies ist ein bekannter Defekt von Mac OS X
+      10.7.4 und es gibt keine Abhilfe. Das Problem wird durch eine defekte
+      Version des Akkutreibers verursacht, der mit Mac OS X 10.7.4 ausgeliefert
+      wird. Wir haben Apple auf dieses Problem aufmerksam gemacht und hoffen,
+      dass es in zukünftigen Versionen des Betriebssystems repariert wird.</p>
+    <p> </p>
+    <p><strong>Bei der Verwendung eines MacBook Pro der Modellreihe "Anfang
+        2011" (der Identifikationscode beginnt mit "MacBookPro8") liefert das
+        System möglicherweise ungültige Hardware-Informationen:</strong>
+      Apple-Computer der Baureihen MacBook Pro 13 Zoll (Anfang 2011), MacBook
+      Pro 15 Zoll (Anfang 2011) und MacBook Pro 17 Zoll (Anfang 2011) werden im
+      Originalzustand mit einer speziellen Fassung von Mac OS X geliefert, die
+      als Version 10.6.6 Build 10J3210 bekannt ist, sowie der Firmware-Fassung
+      MBP81.88Z.0047.B04. Beide Komponenten scheinen unausgereift zu sein, so
+      dass noch nicht alle Aspekte der MacBook Pro-Computer korrekt unterstützt
+      werden. Die Systeme liefern möglicherweise inkorrekte Daten über
+      technische Details des Prozessorchips und tragen ungültige Einträge in
+      ihrem Systemmanagementbereich. Programme wie Hardwaremonitor und
+      Temperaturmonitor sind darauf angewiesen, dass das Betriebssystem korrekt
+      auf Informationsanfragen über die Hardware antwortet. Die folgenden
+      Details könnten fehlerhaft angezeigt werden: Anzahl der Prozessorkerne pro
+      Prozessoreinheit, Systembustaktfrequenz, Busbreiten von Speicher-Chips,
+      Onboard-Geräte, verfügbare Erweiterungssteckplätze. Diese Liste ist
+      möglicherweise nicht vollständig.</p>
+    <p><strong>Abhilfe:</strong> Es gibt keine bekannte Abhilfe. Apple behebt
+      diese Probleme möglicherweise oder möglicherweise auch nicht in
+      zukünftigen Versionen von Mac OS X und der Firmware MBP81. Es ist Apples
+      Politik, technische Details von Intel-basierten Computern nicht zu
+      kommentieren.</p>
+    <p> </p>
+    <p><strong>Bei der Nutzung von Überwachungsprogrammen fremder Anbieter, die
+        auch auf S.M.A.R.T.-Funktionen von Festplatten zugreifen, können
+        Hardwaremonitor und Temperaturmonitor vom Zugriff auf
+        S.M.A.R.T.-Messwerte ausgeschlossen werden: </strong>Gewisse
+      Überwachungsprogramme niederer Qualität von Drittanbietern sind bekannt
+      dafür, sich exklusiven Zugriff auf die S.M.A.R.T.-Schnittstellen von
+      Festplatten zu reservieren. Laufen solche Programme, können weder
+      Hardwaremonitor, noch Temperaturmonitor, noch andere Programme, wie Apples
+      Festplatten-Dienstprogramm oder System-Profiler, irgendwelche
+      S.M.A.R.T.-Funktionen nutzen, bis das sich falsch verhaltende Programm
+      beendet wird. S.M.A.R.T.-Sensoren oder -Sonden zeigen einen Wert von "---"
+      an, das Laufwerksübersichtsfenster zeigt "S.M.A.R.T.-Status: nicht
+      verfügbar".</p>
+    <p><strong>Abhilfe:</strong> Schalten Sie entweder S.M.A.R.T.-Überwachung im
+      Drittanbieterprogramm ab oder setzen Sie sich mit dessen Anbieter in
+      Verbindung, um das Problem beheben zu lassen. Es ist schlechtes
+      Praxisverhalten, exklusiven Zugriff auf die S.M.A.R.T.-Schnittstellen von
+      Plattenlaufwerken zu verwenden.</p>
+    <p> </p>
+    <p><strong>Nach dem Aufwachen aus dem Ruhezustand zeigt der Sensor
+        "Hauptplatine Lufteinlass" einiger Power Macintosh G5 Dual Core-Systeme
+        negative oder keine Werte an: </strong>Wenn ein Dual-Core PowerMac G5
+      aus dem Ruhezustand erwacht, zeigt die Temperaturanzeige für den
+      Lufteinlasssensor möglicherweise ungültige Messwerte. </p>
+    <p><strong>Abhilfe:</strong> Dies ist ein bekannter Defekt in einigen
+      Versionen von Mac OS X Tiger. Dieser bestimmte Sensor wird vom
+      Betriebssystem nicht korrekt aus dem Ruhezustand aufgeweckt. Wir haben
+      Apple auf dieses Problem aufmerksam gemacht und hoffen, dass es in
+      zukünftigen Versionen von Mac OS X behoben wird. Sie können in der
+      Zwischenzeit den Computer neu starten, um die Sensorhardware zurück zu
+      setzen, oder Sie können die Datenerfassung für diesen Sensor in den
+      Einstellungen des Programms abschalten.</p>
+    <p> </p>
+    <p><strong>Computer der Baureihe "iMac (Late 2006)" zeigen möglicherweise
+        ungewöhnlich hohe Messwerte für den CPU A Stromsensor an:</strong> Wenn
+      Sie einen Apple iMac mit der Modellidentifikation "iMac5,1" verwenden,
+      scheinen die Werte, die für den Stromsensor der CPU angezeigt werden, zu
+      hoch und inkonsistent mit dem Leistungsaufnahmesensor der CPU zu sein.</p>
+    <p><strong>Abhilfe:</strong> Dies ist ein bekanntes Problem des
+      System-Management-Controllers (SMC), der in dieser speziellen Baureihe
+      verwendet wird. (Andere iMac-Reihen sind von diesem Problem nicht
+      betroffen.) Es ist unbekannt, ob Apple eine SMC-Firmware-Aktualisierung
+      veröffentlichen wird, um dieses Problem zu beheben. Möglicherweise möchten
+      Sie die Datenerfassung für diesen Sensor in den Einstellungen des
+      Programms abschalten.</p>
+    <p> </p>
+    <p><strong>In bestimmten Konfigurationen wird der Eintrag "Logitech LCD
+        Manager" nicht in der Liste der LCD-Geräte anzeigt, selbst wenn ein
+        Logitech-Produkt mit LCD-Unterstützung mit dem Computer verbunden ist
+        (nur Hardwaremonitor):</strong> Obwohl Sie ein Logitech LCD-Produkt
+      angeschlossen und die Logitech-Treiber-Software installiert haben,
+      erscheint kein Geräteeintrag für dieses Produkt im Einstellungsfenster von
+      Hardwaremonitor. Das Display arbeitet nicht und kann nicht konfiguriert
+      werden.</p>
+    <p><strong>Abhilfe:</strong> Die Logitech LCD Manager-Software startet unter
+      bestimmten Umständen nicht zuverlässig. In diesem Fall sind Programme
+      nicht in der Lage, die entsprechenden LCD-Anzeigen zu sehen, bzw. sich mit
+      ihnen zu verbinden. Nicht nur Hardwaremonitor, sondern alle Programme, die
+      versuchen, LCD-ausgerüstete Logitech-Geräte zu verwenden, sind von diesem
+      Problem betroffen. Versuchen Sie folgenden Schritte, um den LCD Manager
+      manuell zu starten:</p>
+    <ol>
+      <li>Starten Sie die <cite>Aktivitätsanzeige</cite> (aus dem Ordner <cite>Programme
+          &gt; Dienstprogramme</cite>), wählen Sie den Prozess mit dem Namen <cite>LCDManager</cite>
+        aus, und betätigen Sie den Stopp-Knopf, um den Prozess zu beenden.</li>
+      <li>Prüfen Sie, ob die Datei <cite>~/Library/Caches/TemporaryItems/com.logitech.lcdmon.xxx</cite>
+        in Ihrem privaten Ordner vorhanden ist ("xxx" ist eine beliebige Zahl,
+        die variieren kann). Falls ja, löschen Sie diese Datei, indem Sie sie in
+        den Papierkorb ziehen.</li>
+      <li>Öffnen Sie die Einstellungskarte <cite>LCD Manager</cite> in den <cite>Systemeinstellungen</cite>.
+        Hierdurch sollte ein funktionierendes Exemplar des Logitech LCD Manager
+        gestartet werden.</li>
+      <li>Beenden Sie Hardwaremonitor und starten Sie ihn erneut.</li>
+    </ol>
+    <p>Logitech wird dieses Problem möglicherweise in zukünftigen Versionen der
+      Treiber-Software beheben.</p>
+    <hr />
+    <p><a href="index.html">Inhaltsverzeichnis</a></p>
+  </body>
+</html>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Displaying system information</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="3" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+     <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Displaying system information</h1></td>
+  </tr>
+</table>
+<h2>The System Information window </h2>
+<p>The monitor program can display detailed technical information about your
+  computer. Select the menu item <cite>Window &gt; Show system info</cite> or
+  press <kbd>⌘</kbd>+<kbd>4</kbd>.
+  Among the displayed items are:</p>
+<ul>
+  <li>Apple model code and name of the computer type</li>
+  <li>serial number of the unit</li>
+  <li>unique identification code of the unit. This code is similar to a serial
+    number and is used by Mac OS X to identify  computers.</li>
+  <li>Production date and place (if available)</li>
+  <li>type and number of processors</li>
+  <li>64 bit capability of the processors</li>
+  <li>nominal, maximum, minimum and current clock frequencies of processor and
+    memory bus</li>
+  <li>size of main memory and cache units</li>
+  <li>operating system and system kernel version</li>
+  <li>information whether the kernel is operating in 32 or 64 bit mode</li>
+  <li>boot ROM version</li>
+</ul>
+<p>If your computer is equipped with self-contained micro-processing units (MPUs)
+- this is the case for the top models of the Power Mac G5 series -, or if you
+  are using an Intel-based Macintosh system, you can open a detail sheet which
+  gives you  more information. To open the additional info panel, press the
+  button <cite>More
+  Info&hellip;</cite>. If your computer has a built-in system management database
+  compliant with  industry standards, pressing the button <cite>Management Info&hellip;</cite>  will
+  open a second detail panel with other types of information (see below).</p>
+<p align="center"><img src="Images/SysInfo.png" alt="System Information" width="460" height="598" /></p>
+<h2>The MPU information sheet (systems with MPU cards only) </h2>
+<p>The detail sheet on computers using MPU cards has the following
+  information available:</p>
+<ul>
+  <li>card slot number</li>
+  <li>number of processors per unit</li>
+  <li>lot and part numbers of processors</li>
+  <li>serial number of the unit and its parent main logic board</li>
+  <li>cooling parameters for this unit</li>
+</ul>
+<p align="center"><img src="Images/MPUInfo.png" alt="Micro Processor Unit Card Info" width="407" height="265" /></p>
+<p align="left">If your computer is equipped with multiple MPU cards, each board can be selected by the navigation buttons in the upper right corner.</p>
+<h2 align="left">The information sheet for x86 processors</h2>
+<p align="left">If your computer uses a processor of the x86 architecture (Intel-based
+  Macintosh systems), pressing the <cite>More Info</cite> button will give you the following
+  information:</p>
+<ul>
+  <li>the identification of the processor typically used when communicating
+      the name to end customers (marketing name) </li>
+  <li>the true internal identification of the processor</li>
+  <li>family, model, and stepping numbers</li>
+  <li>the number of processor cores per processor package. This can include virtual
+    cores.</li>
+  <li>information about Intel® Turbo Boost: When some of the cores within a multi-core
+    processor are powered down, because there is currently not enough to do to
+    keep all cores busy, modern processors make use of a feature to accelerate
+    the remaining cores. Because not all parts of the CPU chip are active in
+    this case, there is enough headroom to draw more power and to produce more
+    heat than normal, making safe overclocking possible. The maximum clock frequencies
+    depending on the number of active cores (or hardware threads) are shown in
+    the table. If you are using a processor without this acceleration feature,
+    only the line <cite>all</cite>    with
+    the nominal clock frequency will be displayed.</li>
+</ul>
+<p align="center"><img src="Images/x86Details.png" alt="x86 Detail Info" width="508" height="301" /> </p>
+<p align="left">If your computer is equipped with multiple processor packages,
+  each unit can be selected by the navigation buttons in the upper right corner.</p>
+<h2 align="left">The System Management Information sheet (computers with Intel-based
+  architecture only)</h2>
+<p align="left">The detail sheet on computers containing a system management
+  table has the following information available:</p>
+<ul>
+  <li>data about the system unit</li>
+  <li>detail information on each processor</li>
+  <li>detail information on each cache unit</li>
+  <li>detail information on each memory slot or memory device</li>
+  <li>data abour the system's firmware</li>
+  <li>management data regarding the system board</li>
+  <li>management data regarding the system enclosure</li>
+  <li>detail information about each connector on the system board and/or
+      system enclosure</li>
+  <li>detail information on each expansion slot</li>
+  <li>list of built-in system devices</li>
+  <li>list of jumpers and switches on the system board</li>
+</ul>
+<p align="center"><img src="Images/SMInfo.png" alt="System Management Information" width="862" height="376" /></p>
+<p>If your computer is equipped with multiple processors, cache units, or memory
+  slots, you can navigate between the different objects by pressing the arrow
+  buttons in the upper left corner of the sheet. </p>
+<h2 align="left">Displaying battery information</h2>
+<p align="left">When using the full version of Hardware Monitor you can also
+  get detailed information about the batteries used. Select the menu item <cite>Window &gt; Show
+  battery info</cite> or press <kbd>⌘</kbd>+<kbd>5</kbd>. Hardware Monitor will
+  use different types of display panels depending on whether you are using up-to-date
+  battery units or not. In any case, the following information will be shown:</p>
+<ul>
+  <li>current voltage</li>
+  <li>current amperage</li>
+  <li>total capacity, the maximum amount the battery can reach with
+    its current age when you fully charge it</li>
+  <li>current capacity, the present charge</li>
+  <li>the maximum capacity this type of battery originally supported, as designed
+    by the factory</li>
+</ul>
+<p>The following two items are only available for specific battery units and
+  can be displayed only when using certain operating system versions: </p>
+<ul>
+  <li>number of charge/discharge cycles</li>
+  <li>current mode of operation and state</li>
+</ul>
+<p align="left">On computers equipped with multiple battery slots, data for each
+  unit is available. You can select between different battery units using the
+  navigation buttons in the upper right corner of the window. If your battery
+  unit is compliant with the industry standard for &quot;smart batteries&quot;,
+  you can press the button <cite>Details&hellip;</cite> to
+  display additional manufacturing data like vendor, serial number, or production
+date. The following example shows the battery panel for an older PowerBook battery
+  unit:</p>
+<p align="center"><img src="Images/Battery.png" alt="Battery information" width="450" height="372" /></p>
+<p align="left">In case your battery unit is compliant with the Smart Battery
+  industry standard, and you are using an Intel-based system with Mac
+  OS X 10.4.9 or a later version, Hardware Monitor will use a panel like this
+  to display the battery information:</p>
+<p align="center"><img src="Images/SmartBattery.png" alt="Smart Battery Information" width="600" height="435" /></p>
+<p>This panel additionally shows the current temperature of the battery and the
+  individual voltages for each cell if the unit discloses this information. The
+  current charge is displayed by a bar graph, as well as the comparison between
+  the current total capacity and the original  capacity, which is characteristic
+  for the health of your battery. It is normal that the battery  will wear
+  out with use after time, so the maximum capacity will decrease in relation
+  to the capacity &quot;as designed&quot; when the battery was new.</p>
+<p>The battery unit may no longer work correctly if one battery cell shows a
+  voltage very different from the voltages of the remaining cells. This is a
+  good indication that the battery has reached the end of its life and should
+  be replaced.</p>
+<h2>Displaying disk monitoring data</h2>
+<p>Depending on your computer and the version of Mac OS X it is running, the
+  operating system might monitor the correct function of all connected hard disks
+  to predict whether a disk drive could fail. This function is based on a feature
+called S.M.A.R.T.</p>
+<p>S.M.A.R.T. is the abbreviation of <em>Self Monitoring, Analysis, and Reporting
+    Technology .</em> It is an industry standard introduced in 1992 to react
+    earlier on hard disk failures. A hard disk supporting the S.M.A.R.T. standard
+    monitors itself with its own micro processor and allows the operating system
+    to request information if technical parameters have changed in such a way
+    that the hard disk might become defective in the near future. In this case
+    the hard disk can be replaced before any data is lost.</p>
+<p>S.M.A.R.T. is available for all up-to-date hard disk drives that are connected
+  via an ATA or SATA interface. To display the current status of your drives
+  select the menu item <cite>Window &gt; Show Drive Overview</cite> or press <kbd>⌘</kbd>+<kbd>8</kbd>.</p>
+<p align="center"><img src="Images/DriveOverview.png" alt="Drive Overview Window" width="698" height="206" /></p>
+<p>The
+    columns in the table have the following meaning:</p>
+<ul>
+  <li><cite>Drive:</cite> The name of the disk  unit as specified by the drive.
+    Note that the vendor and drive names might be abbreviated because the identification
+    texts are limited in length for technical reasons. For example, a drive might
+    identify as
+    &quot;MATSHITA&quot; although the correct vendor name is &quot;Matsushita
+    Kotobuki Electronics (Panasonic)&quot;.</li>
+  <li><cite>Serial number:</cite> The serial number of the drive. The application will display
+      the number for S.M.A.R.T.-supporting drives only.</li>
+  <li><cite>Protocol:</cite> The bus protocol used to talk to the drive unit.</li>
+  <li><cite>S.M.A.R.T.:</cite> shows whether this drive is currently capable
+    of supporting the <em>Self
+    Monitoring, Analysis, and Reporting Technology </em>standard. Note that some
+    protocols are unable to transport S.M.A.R.T. data, so a drive unit capable
+    of supporting S.M.A.R.T. might  not support it in the current situation because
+    it is connected via an incompatible protocol.</li>
+  <li><cite>Status:</cite> shows the diagnostic status of the disk drive. <cite>Verified</cite> means
+    the diagnostic processor of the drive unit has checked the drive with the
+    result that all operating parameters are within normal conditions, diagnosing
+    the drive to be OK. <cite>Failing</cite> means the diagnostic processor is
+    predicting a failure of the drive in the near future. In this case you should
+    replace the drive as soon as possible. <cite>Not available</cite> means no
+    diagnostic info is available because the drive cannot support S.M.A.R.T.</li>
+  <li><cite>LED</cite>: If you are not sure which drive of your system is identified
+    by which model code and serial number, but the drives are equipped with activity
+    lights (LEDs), the monitor application can help you to identify the drives:
+    When pressing the button <cite>Test</cite>, the  drive identified in that
+    respective line will light up its activity LED for one second. The <cite>Test</cite> button
+    can only be pressed for drives which have readable media online.</li>
+</ul>
+<p class="infocell">The table does not update automatically because continuous monitoring would
+  slow down all drives. If you want to make sure the table is up-to-date, close,
+  then reopen the window. </p>
+<h2>Displaying hard disk monitoring data for Xserve computers </h2>
+<p>The S.M.A.R.T. verification status explained in the previous section allows
+  you to check whether the disk drives are OK. The status is based on information
+  acquired by the diagnostic processor of the drive unit's controller. In some
+  cases the detail data on which the verification status is based can be monitored
+  as well. Mac OS X is doing this automatically for Apple Xserve computers. </p>
+<p> Select the menu item <cite>Window &gt; Show Xserve Disk Info</cite> or press <kbd>⌘</kbd>+<kbd>7</kbd>. A
+  window like the following will be displayed:</p>
+<p align="center"><img src="Images/Xserve.png" alt="Hard Disk Monitoring Information" width="550" height="336" /></p>
+<p align="left">Under normal circumstances, this feature is only available if
+  all of the following conditions are true:</p>
+<ul>
+  <li>You are using an Apple Xserve computer.</li>
+  <li>You are using original Apple hard drives, manufactured for the
+      Xserve. </li>
+  <li>The computer is running Mac OS X Server.</li>
+</ul>
+<p>On computers equipped with multiple monitored disk drives, data for each unit
+  is available. You can select between different drives using the navigation
+  buttons in the upper right corner of the window.</p>
+<p>The table shows the following
+    information:</p>
+<ul>
+  <li><cite>S.M.A.R.T. Attribute</cite>: The name of the attribute monitored
+    by the drive's processor. This name is defined by the disk manufacturer and
+    is not interpreted by Mac OS X or Hardware Monitor.</li>
+  <li><cite>Current</cite>: The current value of the attribute, as measured by the drive.
+    The meaning of the value is defined by the disk manufacturer. Higher values
+    mean better performance or reliability.</li>
+  <li><cite>Worst</cite>: The worst value of the attribute that has been recorded during the
+      drive's lifetime.</li>
+  <li><cite>Threshold</cite>: The threshold value for the attribute, as defined
+    by the disk manufacturer. If the measured value is equal or below the threshold,
+    this will indicate a problem with the drive.</li>
+  <li><cite>Status</cite>: The interpretation of the current attribute value.</li>
+</ul>
+<p>There are three possible cases:</p>
+<ul>
+  <li><cite>OK</cite>: the monitored attribute is within specifications for this drive.</li>
+  <li><cite>Failure imminent</cite>: the disk drive has detected a problem, because the
+                currently measured value does not fall within specifications.
+    A failure of the disk drive could be imminent. The drive should be replaced
+        as soon as possible.</li>
+  <li><cite>Lifetime exceeded</cite>: the currently measured value indicates that the drive
+                  has exceeded the lifetime it had been designed for. It is recommended
+              to replace the drive.</li>
+</ul>
+<h2>Showing information about connected screen displays</h2>
+<p>This feature is only available in Hardware Monitor, not in Temperature Monitor.
+  The application can try to identify all  displays currently connected
+  to the system. Select the menu item <cite>Window &gt; Show Display Info</cite>,
+  or press <kbd>⌘</kbd>+<kbd>9</kbd>. The following data about each display unit
+  should become accessible:</p>
+<ul>
+  <li>the identification code of the manufacturer</li>
+  <li>the plug-and-play identification code of the display model</li>
+  <li>the readable product name</li>
+  <li>additional info on the product (if provided by the manufacturer)</li>
+  <li>the manufacturing date or the model year of the product (if provided)</li>
+  <li>the serial number of the display (may not be provided, or may not match
+    the printed serial number for some manufacturers)</li>
+</ul>
+<p class="infocell">The amount of information provided will vary between different
+  display vendors. This feature will not work with monitors built before 1995.
+  In case you are using a display cable not compliant with VESA standards, or
+  the signal is routed through a switch or similar device, neither Mac OS X nor
+  Hardware Monitor may be capable of identifying the display.</p>
+<p>If multiple displays are connected, you can switch between them using the
+  buttons in the upper right corner. When connecting or disconnecting cables
+  for external monitors, you should close and reopen the information window to
+ensure you are getting up-to-date information. An example is shown in the following
+picture:</p>
+<p align="center"><img src="Images/DisplayInfo.png" alt="Display Info Panel" width="448" height="228" /></p>
+<p class="infocell">Display units built into mobile Apple computers usually identify
+  themselves as &quot;Color LCDs&quot; built by 'APP' (Apple Inc.). However, in
+  most cases, the true part number of the original manufacturer is disclosed
+  in the line <cite>Additional Info</cite>. If you search for this part number
+  on the Internet, you will be able to identify the true vendor of the display
+  unit. In the example above, it would be <cite>LTN154BT</cite>, a display panel
+  manufactured by SAMSUNG.</p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+</body>
+</html>

@@ -1,0 +1,77 @@
+body {
+	font-family: "Lucida Grande", Helvetica, Arial;
+}
+h1 {
+	font-size: 125%;
+}
+h2 {
+	font-size: 100%;
+	font-weight: bold;
+	padding-top: 1em;}
+p {
+	font-size: 80%;
+}
+.footnote {
+	font-size: 60%;
+}
+a:link {
+	color: #0000FF;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF6600;
+	text-decoration: underline;
+}
+a:active {
+	color: #FF6600;
+	text-decoration: underline;
+}
+a:visited {
+	color: #0000AA;
+	text-decoration: none;
+}
+table {
+	font-size: 80%;
+}
+.datatableheader {
+	font-weight: bold;
+	background-color: #CCCCCC;
+}
+.markedtablerow {
+	background-color: #FFFFCC;
+}
+.infocell {
+	padding: 1em;
+	background-color: #CCCCCC;
+	border: 1px solid #000000;}
+.toc {
+	font-size: 125%;
+	color: #666666;}
+ul {
+	font-size: 80%;
+}
+ol {
+	font-size: 80%;
+}
+code {
+	font-family: "Courier New", Courier, mono;
+	font-size: 125%;
+	text-indent: 2em;
+}
+cite {
+	font-weight: bold;
+	font-style: normal;
+}
+kbd {
+	font-style: normal;
+	font-size: 120%;
+	padding: 2px;
+	border: 1px solid;
+}
+.toc a:link {	color: #666666;	text-decoration: none;}.toc a:visited {	color: #666666;	text-decoration: none;}.toc a:hover {	color: #666666;	text-decoration: underline;}.toc a:active {	color: #666666;	text-decoration: underline;}.sectionalheader {
+	font-weight: bold;
+	font-size: 90%;
+	padding-top: 10px;
+	border-top-style: solid;
+	border-top-width: thin;
+}

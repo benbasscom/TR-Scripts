@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>TemperatureMonitor</string>
+	<key>CFBundleExecutable</key>
+	<string>TemperatureMonitor</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Temperature Monitor version 4.98, Copyright © 2003 - 2013 by Marcel Bresink Software-Systeme</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Hardware Monitor Help</string>
+	<key>CFBundleIconFile</key>
+	<string>TempMonitor</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.bresink.system.tempmonitor</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>TemperatureMonitor</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>4.98</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>4.98 (130919)</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.4</string>
+	<key>MBSHardwareSupportLimit</key>
+	<date>2012-10-30T23:00:00Z</date>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2003 - 2013 by Marcel Bresink Software-Systeme</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

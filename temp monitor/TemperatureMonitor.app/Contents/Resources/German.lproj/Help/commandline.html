@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html
+  xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Kommandozeilenversion verwenden</title>
+    <meta content="15" name="AppleOrder" />
+    <link type="text/css" rel="stylesheet" href="mbshelp.css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" alt="Hardwaremonitor" src="Images/HWIcon48.png" /><img
+              width="48" height="48" alt="Temperaturmonitor" src="Images/TMIcon48.png" /></td>
+          <td>
+            <h1>Kommandozeilenversion verwenden</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Wenn Sie Erfahrung mit der BSD-Kommandozeile haben oder Messwerte in
+      Ihren eigenen Skripten verwenden möchten, ist dies möglich. Sie können
+      eine Version des Monitorprogramms verwenden, das keine grafische
+      Benutzerschnittstelle besitzt. Das ausführbare Programm ist jeweils im
+      Programm-Bundle der Anwendung zu finden. Um es aufzurufen, verwenden Sie
+      den folgenden relativen Pfad:</p>
+    <p><code>Hardware Monitor.app/Contents/MacOS/hwmonitor</code>
+      beziehungsweise</p>
+    <p><code>Temperature Monitor.app/Contents/MacOS/tempmonitor</code></p>
+    <h2>Aufrufparameter von hwmonitor</h2>
+    <p>Die Parametersyntax lautet wie folgt:</p>
+    <p><code>hwmonitor [-c | -f | -k] [-ds] [-q] [-th | -tv]</code></p>
+    <p>Das Programm gibt nach dem Aufruf die aktuellen Messwerte aller
+      vorgefundenen Sensoren zeilenweise in der Form</p>
+    <p><code>Sensorname: Messwert Einheit</code></p>
+    <p>aus. Als Sensornamen werden hierbei die von Apple definierten internen
+      Bezeichnungen der Sensoren verwendet, die in der Firmware des jeweiligen
+      Computermodells verankert sind. Falls Sie die Optionen <code>-c, -f</code>
+      oder <code>-k</code> angeben, erzwingen Sie eine Anzeige von
+      Temperaturdaten in Grad Celsius, Grad Fahrenheit, beziehungsweise Kelvin.</p>
+    <p class="infocell">Sensoren, die erkannt wurden, aber offline sind, zum
+      Beispiel weil sie Teil eines Gerätes sind, das sich gerade im Ruhezustand
+      befindet, oder weil sie gerade von einem technischen Problem betroffen
+      sind, werden mit einem Wert von "<code>-</code>" (ein einzelnes
+      Minuszeichen) angezeigt.</p>
+    <p>Wenn Sie die Option <code>-ds</code> hinzufügen, wird der Zugriff auf
+      S.M.A.R.T.-Festplattensensoren abgeschaltet. Dies kann nützlich sein, wenn
+      Sie das Programm in regelmäßigen Abständen in einem fortlaufendem Skript
+      verwenden, wenn Sie sicherstellen möchten, dass die Festplatten nicht
+      ständig in Betrieb gehalten werden und somit in den Ruhezustand gehen
+      können.</p>
+    <p>Nach Hinzufügen der Option <code>-q</code> werden
+      Meßgrößenbeschreibungen an das Ende jeder Sensorortsbezeichnung angehängt.
+      Dies hilft dabei, zwischen Sensoren auf bestimmten Hardware-Modellen zu
+      unterscheiden, bei denen mehrere physikalische Größen (z.B. Spannung,
+      Strom und Leistung) am gleichen Ort gemessen werden. Die Messgröße wird
+      zwischen eckigen Klammern angegeben. Hier ein Beispiel:</p>
+    <pre>SMC MEMORY VRM SUPPLY A [VOLTAGE]: 1.52344 V
+SMC MEMORY VRM SUPPLY A [CURRENT]: 1.23828 A
+SMC MEMORY VRM SUPPLY A [POWER]: 1.89062 W
+</pre>
+    <p>Das Befehlszeilenprogramm verwendet die folgenden Bezeichnungen für die
+      einzelnen Größen:</p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <th>Bezeichner</th>
+          <th>Bedeutung</th>
+        </tr>
+        <tr>
+          <td>TEMPERATURE</td>
+          <td>Temperatur</td>
+        </tr>
+        <tr>
+          <td>VOLTAGE</td>
+          <td>Spannung</td>
+        </tr>
+        <tr>
+          <td>CURRENT</td>
+          <td>Strom</td>
+        </tr>
+        <tr>
+          <td>POWER</td>
+          <td>Leistung</td>
+        </tr>
+        <tr>
+          <td>CAPACITY</td>
+          <td>Kapazität</td>
+        </tr>
+        <tr>
+          <td>RPMS</td>
+          <td>Umdrehungen pro Minute</td>
+        </tr>
+        <tr>
+          <td>PULSE WIDTH</td>
+          <td>Tastverhältnis in Prozent bei Pulsbreitenmodulierung</td>
+        </tr>
+        <tr>
+          <td>LIGHT</td>
+          <td>photometrischer Wert für einfallendes Licht</td>
+        </tr>
+        <tr>
+          <td>LOAD</td>
+          <td>Last in Prozent</td>
+        </tr>
+        <tr>
+          <td>MEMORY SIZE</td>
+          <td>Speichergröße</td>
+        </tr>
+        <tr>
+          <td>STATUS</td>
+          <td>logischer Status (0 = nein, 1 = ja)</td>
+        </tr>
+        <tr>
+          <td>COUNTER</td>
+          <td>Zählerwert</td>
+        </tr>
+        <tr>
+          <td>FREQUENCY</td>
+          <td>Frequenz</td>
+        </tr>
+        <tr>
+          <td>DISCONNECTED</td>
+          <td>Sensor ist zurzeit offline</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Die Optionen mit dem Anfangsbuchstaben "t" können verwendet werden, um
+      eine Tabelle im CSV-Format (Comma-Separated Values, durch Kommata
+      getrennte Werte) zu erzeugen. CSV ist ein Industriestandard, der es
+      erlaubt, Daten in fast jede Datenbank- oder Tabellenkalkulationsanwendung
+      zu importieren.</p>
+    <p>Die Option -th erzeugt eine Überschriftenzeile, die alle Sensornamen
+      auflistet. Die Option -tv erzeugt eine Zeile mit Werten für die Tabelle,
+      wobei alle aktuellen Messdaten ausgegeben werden, wie es die
+      Überschriftenzeile vorgibt. Einheiten werden weggelassen. Die erste Zeile
+      der Tabelle enthält Datum und Uhrzeit in einem Format, das sich an die
+      internationalen ISO-Normen hält.</p>
+    <p class="infocell">Ähnlich wie beim Vollprogramm benötigt hwmonitor einen
+      Lizenzschlüssel um ohne Einschränkungen zu laufen, so dass alle Sensoren,
+      nicht nur Temperaturwerte angezeigt werden. Die Kommandozeilenversion
+      verwendet automatisch den Schlüssel des Hauptprogramms nachdem dieser
+      eingegeben wurde. Es wird empfohlen, das Programm mit der Option <cite>Gültig
+        für alle Benutzer dieses Computers</cite> <a href="unlock.html">freizuschalten</a>.
+    </p>
+    <h2>Aufrufparameter von tempmonitor</h2>
+    <p>Die Parametersyntax lautet wie folgt:</p>
+    <p><code>tempmonitor [-c | -f | -k] [-ds] [[-a] [-l] | [-th | -tv]]</code></p>
+    <p>Das Programm gibt nach dem Aufruf den aktuellen Messwert des ersten
+      Temperatursensors, der sich in der Nähe des ersten Prozessors befindet,
+      als Zahlenwert mit Einheit aus. Falls Sie die Optionen <code>-c, -f</code>
+      oder <code>-k</code> angeben, erzwingen Sie eine Anzeige von
+      Temperaturdaten in Grad Celsius, Grad Fahrenheit, beziehungsweise Kelvin.</p>
+    <p class="infocell">Sensoren, die erkannt wurden, aber offline sind, zum
+      Beispiel weil sie Teil eines Gerätes sind, das sich gerade im Ruhezustand
+      befindet, oder weil sie gerade von einem technischen Problem betroffen
+      sind, werden mit einem Wert von "<code>-</code>" (ein einzelnes
+      Minuszeichen) angezeigt.</p>
+    <p>Wenn Sie die Option <code>-ds</code> hinzufügen, wird der Zugriff auf
+      S.M.A.R.T.-Festplattensensoren abgeschaltet. Dies kann nützlich sein, wenn
+      Sie das Programm in regelmäßigen Abständen in einem fortlaufendem Skript
+      verwenden, wenn Sie sicherstellen möchten, dass die Festplatten nicht
+      ständig in Betrieb gehalten werden und somit in den Ruhezustand gehen
+      können.</p>
+    <p>Wenn Sie die Option <code>-a</code> verwenden, werden alle Messwerte
+      aller vorhandenen Temperatursensoren zeilenweise ausgegeben. Wenn Sie die
+      Option <code>-l</code> verwenden, wird der Wertausgabe jeweils ein
+      Sensorname vorangestellt und die Ausgabe erfolgt in der Form</p>
+    <p><code>Sensorname: Messwert Einheit</code></p>
+    <p>Als Sensornamen werden hierbei die von Apple definierten internen
+      Bezeichnungen der Sensoren verwendet, die in der Firmware des jeweiligen
+      Computermodells verankert sind.</p>
+    <p>Die Optionen mit dem Anfangsbuchstaben "t" können verwendet werden, um
+      eine Tabelle im CSV-Format (Comma-Separated Values, durch Kommata
+      getrennte Werte) zu erzeugen. CSV ist ein Industriestandard, der es
+      erlaubt, Daten in fast jede Datenbank- oder Tabellenkalkulationsanwendung
+      zu importieren.</p>
+    <p>Die Option <code>-th</code> erzeugt eine Überschriftenzeile, die alle
+      Sensornamen auflistet. Die Option <code>-tv</code> erzeugt eine Zeile mit
+      Werten für die Tabelle, wobei alle aktuellen Messdaten ausgegeben werden,
+      wie es die Überschriftenzeile vorgibt. Einheiten werden weggelassen. Die
+      erste Zeile der Tabelle enthält Datum und Uhrzeit in einem Format, das
+      sich an die internationalen ISO-Normen hält. </p>
+    <p class="infocell">Das Programm <cite>tempmonitor</cite> ist mit dem
+      früher in Zusammenhang mit Temperaturmonitor vertriebenen Programm <cite>tempSensor</cite>
+      kompatibel und versucht, sich ähnlich zu verhalten. Die in <cite>tempSensor</cite>
+      unterstützte Option <code>-i</code> zur Anzeige von Sensordaten wird
+      jedoch nicht mehr unterstützt.</p>
+    <h2>Zugriff auf S.M.A.R.T.-Festplattensensoren auf Computern mit
+      PPC-Prozessoren</h2>
+    <p>Die Anzeige von S.M.A.R.T.-Festplattensensoren ist nur dann möglich, wenn
+      sich das Kommandozeilenprogramm innerhalb des zugehörigen Bundles der
+      "großen" Applikation befindet und vorher ein <cite>chdir (cd)</cite>
+      ausgeführt wurde, so dass der <cite>Resources</cite>-Ordner das aktuelle
+      Verzeichnis ist. Sind diese Voraussetzungen nicht erfüllt, werden die
+      Festplattensensoren ohne Anzeige von Fehlermeldungen weggelassen. Dies
+      betrifft ausschließlich Computer mit Prozessoren auf Basis der
+      PowerPC-Technik. Auf Intel-basierten Macs sind
+      S.M.A.R.T.-Laufwerkssensoren ohne diese Vorausssetzung zugreifbar.</p>
+    <h2>Fehlermeldungen und Rückgabewerte</h2>
+    <p>Bei Problemen geben die Programme Fehlermeldungen auf dem
+      Standardfehlerkanal aus. Bei Beendigung verwendet die Programme die
+      folgenden Rückgabewerte:<br />
+      0 - der Befehl wurde erfolgreich ausgeführt, 1 - ein Fehler in den
+      Befehlszeilenargumenten wurde gefunden, 2 - der Befehl kann auf diesem
+      Computer nicht eingesetzt werden, da keinerlei Sensoren gefunden wurden.</p>
+    <h2>Einfaches Beispiel: Erzeugen eines "endlosen" Werteverlaufs in einer
+      CSV-Datei</h2>
+    <p>Das folgende Skript zeigt ein sehr einfaches Beispiel, wie man die
+      Kommandozeilenversion von Hardwaremonitor dazu verwenden kann, alle Werte
+      aller Sensoren mit einer Zeitauflösung von einer Minute in einer
+      CSV-Datenbankdatei aufzuzeichnen. Mithilfe dieser Technik können Sie die
+      Beschränkung der Langzeitverläufe in Hardwaremonitor auf eine Woche
+      umgehen, und so eine "unendliche" Verlaufsdatei erzeugen. Beachten Sie,
+      dass diese Lösung extrem vereinfacht ist und nur das Grundprinzip umreißen
+      soll. Das Skript muss an Ihre speziellen Bedürfnisse angepasst werden und
+      sollte in der Praxis eleganter sein. Zum Beispiel sollte es die ganze
+      Verlaufsdatei nicht einfach löschen wenn das Skript angehalten und dann
+      neu gestartet wird.</p>
+    <pre>#!/bin/sh
+cd /ExamplePath/HardwareMonitor.app/Contents/MacOS/<br />./hwmonitor -th &gt; /Some/Document/Path/HistoryData.csv<br />while true<br />do<br />    ./hwmonitor -tv &gt;&gt; /Some/Document/Path/HistoryData.csv<br />    /bin/sleep 60<br />done</pre>
+    <hr />
+    <p><a href="index.html">Inhaltsverzeichnis</a></p>
+  </body>
+</html>

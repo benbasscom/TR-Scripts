@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>BRESINKx86Monitoring</string>
+	<key>CFBundleGetInfoString</key>
+	<string>x86 Monitoring Driver 9,0, Copyright © 2006 - 2012 by Marcel Bresink Software-Systeme</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.bresink.driver.BRESINKx86Monitoring</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>BRESINKx86Monitoring</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>9.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>9.0</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>BRESINKx86Monitoring</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.bresink.driver.BRESINKx86Monitoring</string>
+			<key>IOClass</key>
+			<string>com_bresink_driver_BRESINKx86Monitoring</string>
+			<key>IOMatchCategory</key>
+			<string>BRESINKx86Monitoring</string>
+			<key>IOProviderClass</key>
+			<string>IOResources</string>
+			<key>IOResourceMatch</key>
+			<string>IOKit</string>
+		</dict>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2006 - 2012 by Marcel Bresink Software-Systeme</string>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.kernel.iokit</key>
+		<string>7.9.9</string>
+		<key>com.apple.kernel.libkern</key>
+		<string>7.9.9</string>
+		<key>com.apple.kernel.mach</key>
+		<string>7.9.9</string>
+	</dict>
+	<key>OSBundleLibraries_x86_64</key>
+	<dict>
+		<key>com.apple.kpi.iokit</key>
+		<string>10.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>10.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>10.0</string>
+	</dict>
+</dict>
+</plist>

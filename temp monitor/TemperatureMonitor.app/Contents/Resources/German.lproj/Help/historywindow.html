@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Werteverlauf darstellen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="6" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+     <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Werteverlauf darstellen</h1></td>
+  </tr>
+</table>
+<p>Das Monitorprogramm ist mit einer leistungsstarken Verlaufsfunktion ausgestattet, die es erlaubt, die Historie von Messwerten &uuml;ber eine l&auml;ngere Zeit hinweg zu verfolgen und die Daten grafisch sichtbar zu machen. Verlaufsdaten k&ouml;nnen in zwei verschiedenen Betriebsarten angezeigt werden:</p>
+<ul>
+  <li><cite>Kurzzeitverlauf:</cite> es werden die letzten 380 Messwerte je Sensor dargestellt. Der Gesamtzeitraum richtet sich nach dem gerade eingestellten <a href="prefs.html">Aktualisierungsintervall</a>. Die Kurzzeitwerte gehen beim Verlassen des Programms verloren.</li>
+  <li><cite>Langzeitverlauf</cite>: es wird ein Zeitraum von maximal einer Woche je Sensor dargestellt. Hierbei ist jeweils ein (1) Messwert pro Minute gespeichert, solange das Programm aktiv ist. Die Werte bleiben beim Verlassen des Programms erhalten. In einem Netzwerk mit &quot;roamenden&quot; Benutzern erfolgt die Speicherung pro Benutzer und pro Computer. In der grafischen Darstellung k&ouml;nnen die Messwerte stufenlos &uuml;ber einen Zeitraum von 1 Stunde bis 7 Tagen abgerufen werden.</li>
+</ul>
+<p>Die grafische Darstellung der Werte erfolgt in einem oder beliebig vielen Fenstern nach dem Beispiel in nachfolgender Abbildung.</p>
+<p align="center"><img src="Images/History.png" alt="Verlaufsbeispiel" width="480" height="556" /></p>
+<p align="left" class="infocell">Ist eine Kurve unterbrochen, zeigt dies an,
+  dass im betreffenden Zeitabschnitt kein Messwert erfasst wurde. Das Monitorprogramm
+lief zu dieser Zeit  nicht oder der Computer war abgeschaltet. </p>
+<p align="left">Mit den Kn&ouml;pfen links unten kann zwischen den beiden Darstellungsarten gew&auml;hlt werden. Ist der Langzeitverlauf gew&auml;hlt, kann der betrachtete Zeitraum mit dem Schieberegler eingestellt werden. Die Zeitachse verl&auml;uft von links nach rechts, wobei rechts jeweils die aktuellen Messwerte gezeigt werden.</p>
+<p align="left">Wenn der ausgew&auml;hlte Zeitraum so gro&szlig; wird, dass er nicht mehr
+  mit voller Aufl&ouml;sung in der aktuellen Fensterbreite angezeigt werden kann,
+  erlaubt Ihnen das Programm, die Messwerte horizontal durchzurollen. Eine Lupe
+  mit dem Symbol <cite>-</cite> erscheint in diesem Fall (siehe unten). Falls
+  Sie auf dieses Symbol klicken, wird die Zeitachse so verkleinert, dass sie
+  vollst&auml;ndig in das Fenster passt und das Symbol &auml;ndert sich in ein Pluszeichen <cite>+</cite>.
+  Beachten Sie, dass isoliert stehende Bereiche von Kurven (im Falle von gr&ouml;&szlig;eren
+  L&uuml;cken in den Verlaufsdaten) hierbei m&ouml;glicherweise so weit verkleinert werden,
+  dass sie nicht mehr sichtbar sind. Um wieder auf volle Aufl&ouml;sung
+  zur&uuml;ck zu schalten, dr&uuml;cken Sie auf das Symbol <cite>+</cite>.</p>
+<p align="center"><img src="Images/HistoryZoom.png" alt="Verkleinern der Zeitachse" width="416" height="47" /></p>
+<p align="left">Kreuzen Sie das Feld <cite>Farben/Extremwerte</cite> an,  erscheint
+  in einem Schubfach des Fensters eine Legende, welcher Sensor durch welche Kurvenfarbe
+  repr&auml;sentiert wird. Die Tabelle im Schubfach zeigt au&szlig;erdem die Extremwerte
+  f&uuml;r den ausgew&auml;hlten Zeitraum an, was detailliert <a href="extreme.html">in
+  einem anderen Abschnitt des Referenzhandbuchs</a> beschrieben wird. Sie k&ouml;nnen
+  die Farbe f&uuml;r
+  jeden Sensor sofort hier einstellen, indem Sie die Farbe in der Tabelle anklicken,
+  oder hierzu <a href="output.html">das Einstellungsfenster verwenden</a>.</p>
+<p align="left">Nach Ankreuzen von <cite>Lineale</cite> erscheinen
+  zwei Lineale, die als Fadenkreuz dienen, um den exakten Wert jedes einzelnen
+  Punktes einer Kurve zu bestimmen. Die Daten f&uuml;r Zeitpunkt und Messwert
+  werden zum Fadenkreuz hinzugeblendet.</p>
+<p align="left">Der Schalter <cite>Kurvenbeschriftung</cite> dient dazu, ein kleines Etikett
+  zur Identifizierung neben jeder Kurve einzublenden. Die Etiketten verwenden
+  die Sensorkurznamen, die Sie <a href="output.html">im Einstellungsfenster</a> definiert haben. </p>
+<p align="left">Um alle konfigurierten Verlaufsfenster zu &ouml;ffnen, w&auml;hlen
+  Sie den Men&uuml;punkt <cite>Fenster &gt; Verlaufsfenster einblenden</cite> oder
+  dr&uuml;cken
+  Sie <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>H</kbd>. Sie k&ouml;nnen diesen
+  Punkt auch verwenden, falls Sie ein paar (aber nicht unbedingt alle) Verlaufsfenster
+  geschlossen haben und wieder &ouml;ffnen m&ouml;chten. Um alle offenen Verlaufsfenster
+  gleichzeitig zu schlie&szlig;en, w&auml;hlen Sie <cite>Fenster &gt; Verlaufsfenster
+  ausblenden</cite> oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>W</kbd>.</p>
+<p align="left">Die Anzahl der Verlaufsfenster ist beliebig und wird nur durch den Speicherplatz Ihres Computers begrenzt. Sie k&ouml;nnen Verlaufsfenster und die dort darzustellenden Sensoren &uuml;ber die Rubrik <cite>Verlauf</cite> im Einstellungsfenster konfigurieren.</p>
+<p align="center"><img src="Images/PrefHistory.png" alt="Verlauf" width="620" height="538" /></p>
+<p align="left">Um ein neues Verlaufsfenster einzurichten, bet&auml;tigen Sie den Knopf <cite>+</cite> links neben der oberen Tabelle. Es erscheint ein neuer Eintrag in der Tabelle und Sie k&ouml;nnen nach Anklicken den Titel des neuen Verlaufsfensters nach Ihren W&uuml;nschen anpassen. Um ein oder mehrere Fenster zu l&ouml;schen, w&auml;hlen Sie die entsprechenden Eintr&auml;ge in der Tabelle aus und bet&auml;tigen den Knopf <cite>-</cite>.</p>
+<p align="left">Ist ein Fenster ausgew&auml;hlt, so k&ouml;nnen Sie in der unteren
+  H&auml;lfte der Fensters Sensoren in der Tabelle hinzuf&uuml;gen oder l&ouml;schen,
+  so wie es <a href="output.html">oben bereits beschrieben</a> wurde. Beachten
+  Sie, dass ein Verlaufsfenster immer nur Sensoren des gleichen Typs enthalten
+  darf. Ansonsten k&ouml;nnte die senkrechte Achse nicht sauber beschriftet werden.
+  Sie k&ouml;nnen also einen Temperatursensor nicht in ein gemeinsames Fenster
+  mit einem Akkukapazit&auml;tssensor legen. Die Hintergrundfarbe f&uuml;r jedes Fenster
+  kann mit dem kleinen Farbnapf &uuml;ber der Tabelle eingestellt werden. </p>
+<p align="left" class="infocell">Es ist  erlaubt, einen Sensor mehrmals in verschiedenen
+  Verlaufsfenstern darstellen zu lassen. Bei leistungsschwachen Computern sollten
+Sie allerdings nicht zu viele Verlaufsfenster einrichten, da die st&auml;ndige Aktualisierung der Grafiken Rechenzeit kostet und so nicht mehr gen&uuml;gend Leistung f&uuml;r andere Programme zur Verf&uuml;gung steht.</p>
+<h2 align="left">Kombinieren von Verlaufsfenstern</h2>
+<p align="left">Ein einzelnes Verlaufsfenster kann nur Sensoren der gleichen
+  Messgr&ouml;&szlig;e, zum Beispiel ausschlie&szlig;lich Temperatursensoren enthalten. Dies ist
+  notwendig, um sicherzustellen, dass die Graphen einheitliche Ma&szlig;st&auml;be und Einheiten
+  auf ihrer senkrechten Achse zeigen. In einigen F&auml;llen m&ouml;chten Sie jedoch vielleicht
+  beobachten, wie Sensoren verschiedener Messgr&ouml;&szlig;en sich zu einem bestimmten
+  Zeitpunkt verhalten haben. Zum Beispiel eine hohe Prozessorauslastung, die
+  h&ouml;here CPU-Temperaturen und h&ouml;here Stromst&auml;rken verursacht, die wiederum h&ouml;here
+  L&uuml;fterdrehzahlen verursachen.</p>
+<p align="left">Um ein Zeitintervall zu &uuml;berwachen, wobei Sensoren verschiedener
+  Typen in direkter Beziehung zueinander sichtbar sein sollen, k&ouml;nnen Sie mehrere
+  Fenster miteinander kombinieren, wodurch deren Verlaufsgraphen &uuml;berlagert werden:</p>
+<ol>
+  <li>&Ouml;ffnen Sie die Verlaufsfenster, die Teil des kombinierten Fensters
+      werden sollen.</li>
+  <li>W&auml;hlen Sie den Men&uuml;punkt <cite>Fenster &gt; Verlaufsfenster
+        kombinieren&hellip;</cite>.
+      Es wird sich ein Inspektorfenster &ouml;ffnen.</li>
+  <li>Klicken Sie auf das Verlaufsfenster, das das Hauptfenster der
+      Kombination werden soll. Das kombinierte Verlaufsfenster wird das ausgew&auml;hlte
+      Zeitintervall, den Ma&szlig;stab und die Ma&szlig;einheit dieses Hauptfensters &uuml;bernehmen.</li>
+  <li>Kreuzen Sie im Inspektorfenster in der Spalte <cite>&Uuml;berlagern</cite> jedes
+      Verlaufsfenster an, das mit dem ausgew&auml;hlten Hauptfenster kombiniert werden
+      soll.</li>
+</ol>
+<p align="left">Sie k&ouml;nnen alle &Uuml;berlagerungen aus dem ausgew&auml;hlten Hauptfenster
+  entfernen, indem Sie den Knopf <cite>&Uuml;berlagerungen abschalten</cite> im
+  Inspektorfenster bet&auml;tigen. Beachten Sie, dass f&uuml;r kombinierte Verlaufsfenster
+  die folgenden Einschr&auml;nkungen gelten:</p>
+<ul>
+  <li>Die Sensoren der &uuml;berlagerten Fenster erscheinen nicht in den
+      Schubladen f&uuml;r Farb&uuml;bersicht und Extremwerte des Hauptfensters.</li>
+  <li>Sie k&ouml;nnen keine Fenster kombinieren, die bereits Teil einer
+      anderen Kombination sind.</li>
+  <li>Die Beschriftung der y-Achsen aller &uuml;berlagerten Graphen werden
+      ausgeblendet. Das Hauptfenster zeigt eine Warnung an, dass die Anzeige
+    Kurven mit verschiedenen Einheiten und Ma&szlig;st&auml;ben enth&auml;lt. </li>
+</ul>
+<h2 align="left">Speichern der Verlaufswerte</h2>
+<p align="left">Die Verlaufswerte werden jedes Mal automatisch gesichert, wenn
+  das Programm beendet wird. Falls Ihr Computer allerdings defekt ist und Sie
+  das Programm verwenden wollen, um zu pr&uuml;fen, ob der Defekt durch eine &Uuml;berhitzungssituation
+  ausgel&ouml;st wird, k&ouml;nnten die Daten verloren gehen, wenn der Computer
+  abst&uuml;rzt
+  bevor die Daten gesichert werden konnten. Aus diesem Grund k&ouml;nnen Sie
+  eine Option aktivieren, die Daten in regelm&auml;&szlig;igen Abst&auml;nden
+  speichern zu lassen. Setzen Sie ein H&auml;kchen bei <cite>Verlaufsdaten automatisch
+  alle x Minuten sichern</cite>  und geben Sie einen Wert zwischen 1 und 1440
+  Minuten (einem Tag) ein. Der Wert gilt nur f&uuml;r diesen Computer, nicht f&uuml;r fern&uuml;berwachte
+  Rechner. </p>
+<h2 align="left">Verlaufswerte l&ouml;schen</h2>
+<p align="left">Sie k&ouml;nnen die Messwerte des Kurzzeitverlaufs aller Sensoren &uuml;ber den Men&uuml;punkt <cite>Monitor &gt; Kurzzeitverlauf l&ouml;schen</cite> oder dr&uuml;cken von <kbd>⌘</kbd>+<kbd>K</kbd> l&ouml;schen. </p>
+<p align="left">Sollte es einmal n&ouml;tig sein, die gespeicherten Werte des Langzeitverlaufs zu l&ouml;schen, ziehen Sie den Ordner</p>
+<p align="left"><code>~/Library/Application Support/Hardware Monitor</code>, beziehungsweise</p>
+<p align="left"><code>~/Library/Application Support/Temperature Monitor</code></p>
+<p align="left">aus Ihrem privaten Ordner in den Papierkorb. Beachten Sie, dass hierbei alle Messwerte f&uuml;r alle Computer, die Sie in der Vergangenheit benutzt haben, verloren gehen!</p>
+<p align="left" class="infocell">Der Kurzzeitverlauf wird automatisch gel&ouml;scht, sobald Sie das Aktualisierungsintervall der Messungen &auml;ndern.</p>
+<hr />
+<p><a href="index.html">Inhaltsverzeichnis</a></p>
+</body>
+</html>

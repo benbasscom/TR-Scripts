@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html
+  xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Release Notes</title>
+    <meta name="AppleOrder" content="19" />
+    <link href="mbshelp.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" src="Images/HWIcon48.png"
+              alt="Hardwaremonitor" /><img width="48" height="48" src="Images/TMIcon48.png"
+              alt="Temperaturmonitor" /></td>
+          <td>
+            <h1>Release Notes</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Monitoring GPU sensors on computers which have two independent
+        switchable graphics units is not officially supported by the
+        application:</strong> Some specific Apple computers come with two
+      alternative GPU solutions: One energy-saving graphics processor inside the
+      main processor and one high-performance graphics processor on an external
+      chip. Such computer models show the option <cite>Automatic graphics
+        switching</cite> (or similar) in the pane <cite><span>Energy Saver</span></cite>
+      of <cite>System Preferences</cite>. If the option is active, which is the
+      recommended default setting, the computer may change GPUs during
+      operation, switching one graphics processor off and the other graphics
+      processor on. All sensors of the GPU currently powered down will also
+      become inactive. Due to architectural problems, there can be unexpected
+      side effects in the application when you monitor such sensors.</p>
+    <p><strong>Workaround:</strong> We don't recommend to monitor any of the GPU
+      sensors for such computer models. Identify all graphics processor sensors
+      in the pane <cite>Sensors</cite> of the <cite>Preferences</cite> panel
+      of the application and set the check mark <cite>Data query: Don't acquire
+        readings from this sensor</cite> for each of them.</p>
+    <p> </p>
+    <p><strong>After starting the program, I receive a warning that some
+        resources have been damaged. Even when I download a fresh copy from the
+        distribution site, the problem persists and I cannot use the
+        application:</strong> On particular operating system installations, a
+      warning panel with the message "Warning: The resources of this application
+      have been damaged" may appear although the program bundle is authentic.</p>
+    <p><strong>Workaround:</strong> This problem is caused by a security hole
+      detected by the application. When a security problem is found, the program
+      uses an error message which may mistakenly indicate that its own resources
+      are damaged although critical permission settings in the operating system
+      are damaged instead. Some bad installers for low-level UNIX applications
+      are known to cause such a defect. You can repair the system as follows:</p>
+    <ol>
+      <li>Quit the application if it is still open and displaying the error
+        message.</li>
+      <li>Open the application <cite>Terminal</cite> from the folder <cite>Utilities</cite>.</li>
+      <li>Enter the following two commands exactly as shown (or better use
+        copy/paste), pressing the return key after each line:</li>
+    </ol>
+    <p style="margin-left: 40px;"><code>sudo chown -R root:wheel /usr/bin<br />
+        sudo chmod -R go-w /usr/bin</code></p>
+    <p> The program should launch correctly after performing these steps. The
+      security hole opened by the third-party installer will also have been
+      closed.</p>
+    <p> </p>
+    <p><strong>After upgrading to Mac OS X 10.7.4, the sensors named "Battery 1
+        Cell x" may be shown as being disconnected:</strong> Mac OS X 10.7.4 is
+      not capable of accessing voltage data of individual battery cells. When
+      running this OS version, such sensors will no longer be available. Other
+      versions of Mac OS X are not affected.</p>
+    <p><strong>Workaround:</strong> This is a known defect of Mac OS X 10.7.4
+      and there is no workaround. The problem is caused by a defective version
+      of the battery driver which is shipped with Mac OS X 10.7.4. We have made
+      Apple aware of this problem and hope they will fix it in future versions
+      of the operating system.</p>
+    <p> </p>
+    <p><strong>When using a MacBook Pro of the "Early 2011" model series (having
+        identification codes beginning with "MacBookPro8"), the system might
+        return invalid hardware information:</strong> Apple computers of the
+      model series MacBook Pro 13-inch (Early 2011), MacBook Pro 15-inch (Early
+      2011), and MacBook Pro 17-inch (Early 2011) are originally shipped with a
+      special release of Mac OS X, known as version 10.6.6 Build 10J3210, and
+      the firmware version MBP81.88Z.0047.B04. Both components appear to be
+      immature, not supporting all aspects of the MacBook Pro computers
+      correctly yet. The systems might return incorrect information about
+      technical details of the processor package and contain invalid entries in
+      their System Management data. Applications such as Hardware Monitor or
+      Temperature Monitor depend on the operating system to respond correctly on
+      hardware information requests. The following details could be display
+      incorrectly: number of processor cores per processor package, system bus
+      clock frequency, bus widths of memory chips, onboard devices, available
+      expansion slots. This list might not be complete.</p>
+    <p><strong>Workaround:</strong> There is no known workaround. Apple might or
+      might not resolve these problems with future versions of Mac OS X and the
+      MBP81 firmware. It is Apple's policy not to comment on any technical
+      details of Intel-based computers.</p>
+    <p> </p>
+    <p><strong>When running monitoring utilities of other vendors which also
+        access S.M.A.R.T. features of hard drives, Hardware Monitor and
+        Temperature Monitor can be blocked from accessing S.M.A.R.T. readings:</strong>
+      Certain low-quality monitoring applications of third-party vendors are
+      known to reserve exclusive access to the S.M.A.R.T. interfaces of hard
+      drives. When running such applications, neither Hardware Monitor, nor
+      Temperature Monitor, nor other applications, like Apple's Disk Utility or
+      System Profiler, can access any S.M.A.R.T. features until the misbehaving
+      application is quit. S.M.A.R.T. sensors or probes show a value of "---",
+      the Drive Overview window shows "S.M.A.R.T. status: not available".</p>
+    <p><strong>Workaround:</strong> Either disable S.M.A.R.T. monitoring in the
+      third-party application, or contact its vendor to have the problem
+      resolved. It is bad practice to use exclusive access to the S.M.A.R.T.
+      interfaces of hard drives.</p>
+    <p> </p>
+    <p><strong>After waking from sleep mode, the Main Logic Board Air Inlet
+        sensor of some Power Macintosh G5 Dual Core systems shows negative or no
+        readings:</strong> When a dual core PowerMac G5 wakes from sleep mode,
+      the temperature reading of the air inlet sensor may show incorrect values.
+    </p>
+    <p><strong>Workaround:</strong> This is a known defect in specific versions
+      of Mac OS X Tiger. This particular sensor is not correctly woken up by the
+      operating system. We have made Apple aware of this problem and hope they
+      will resolve it in future versions of Mac OS X. In the meantime, you can
+      restart the computer to reset the sensor hardware, or disable data
+      acquisition for this sensor in the preferences of the application.</p>
+    <p> </p>
+    <p><strong>Computers of the model series "iMac (Late 2006)" may show
+        unusually high readings for the CPU A Current Sensor:</strong> When you
+      are using an Apple iMac with model identification "iMac5,1", the values
+      displayed for the current (amperage) sensor of the CPU appear to be too
+      high and inconsistent with CPU power readings.</p>
+    <p><strong>Workaround: </strong>This is a known problem with the System
+      Management Controller (SMC) used in this particular model series. (Other
+      iMac series are not affected by this problem.) It is unknown if Apple will
+      release an SMC firmware update to fix this problem. You might like to
+      disable data acquisition for this sensor in the preferences section of the
+      application.</p>
+    <p> </p>
+    <p><strong>In certain configurations, the entry "Logitech LCD Manager" may
+        not be displayed in the list of LCD devices, even if a Logitech product
+        with LCD support is connected to the computer (Hardware Monitor only):</strong>
+      Although you have attached a Logitech LCD product and installed the
+      Logitech driver software, no device entry for this product appears in the
+      preferences panel of Hardware Monitor. The display does not work and
+      cannot be configured.</p>
+    <p><strong>Workaround:</strong> The Logitech LCD Manager software does not
+      start reliably under specific circumstances. In this case, applications
+      are not able to see or connect to the respective LC displays. Not only
+      Hardware Monitor, but all applications trying to use LCD-enabled Logitech
+      devices are affected by this problem. Try the following to start the LCD
+      Manager manually:</p>
+    <ol>
+      <li>Launch <cite>Activity Monitor</cite> (from the folder <cite>/Applications/Utitilies</cite>),
+        select the process called <cite>LCDManager</cite>, and press the stop
+        button to force-quit it.</li>
+      <li>Check if the file <cite>~/Library/Caches/TemporaryItems/com.logitech.lcdmon.xxx
+          </cite>exists in your home folder ("xxx" is an arbitrary number which
+        can vary.) If yes, delete this file by dragging it to the Trash.</li>
+      <li>Open the pane <cite>LCD Manager</cite> in <cite>System Preferences</cite>.
+        This should start a working copy of Logitech LCD Manager.</li>
+      <li>Quit and relaunch Hardware Monitor.</li>
+    </ol>
+    <p>Logitech might resolve this problem in future versions of their driver
+      software.</p>
+    <hr />
+    <p><a href="index.html">Table of contents</a></p>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Sensordaten anzeigen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="4" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Sensordaten anzeigen</h1></td>
+  </tr>
+</table>
+<h2>Die Anzeige „---“</h2>
+<p>Unter besonderen Umständen können die normalen Messwerte eines Sensors durch
+  die Anzeige „---“ (drei Bindestriche) ersetzt werden. Dies hat die Bedeutung
+  „kein Messwert verfügbar“. Eine solche Situation kann auftreten, wenn ein Sensor
+  während des Starts des Programms erkannt wurde, im Moment aber aus irgendeinem
+  Grund offline (getrennt) ist. Typische Situationen sind:</p>
+<ul>
+  <li>Der Sensor hat keinen Strom. Er ist Teil eines Gerätes, das in den Ruhezustand
+    gegangen ist, z.B. eine Festplatte oder ein Prozessorkern.</li>
+  <li>Mac OS X hat technische Problem, Messwerte von diesem Sensor einzuholen.</li>
+  <li>Das Programm hat ein technisches Versagen dieses Sensors erkannt. Alle
+    Werte werden unterdrückt, bis sich der Sensor wieder erholt.</li>
+  <li>Es gibt ein Kommunikationsproblem auf dem Hardware-Bus, der verwendet wird,
+    um Daten von diesem Sensor zu empfangen.</li>
+  <li>Innerhalb des Sensors ist ein Hardware-Fehler aufgetreten.</li>
+</ul>
+<p>Falls technisch möglich, verbindet sich das Programm automatisch wieder mit
+  diesem Sensor, sobald er  verfügbar wird. Es ist kein Benutzereingriff
+  erforderlich.</p>
+<h2>Grunds&auml;tzliche Vorgaben f&uuml;r Sensoren</h2>
+<p>Zu jedem Sensor k&ouml;nnen Sie Basiseinstellungen machen, die grunds&auml;tzlich
+  festlegen, wie die jeweiligen Messwerte dargestellt werden sollen. W&auml;hlen
+  Sie hierzu im Hauptmen&uuml; den Men&uuml;punkt <cite>Einstellungen&#8230;</cite> oder
+  dr&uuml;cken Sie die Tastenkombination <kbd>⌘</kbd>+<kbd>,</kbd>. Gehen
+  Sie dann zur Rubrik <cite>Sensoren</cite>. Das Programm zeigt eine &Uuml;bersicht
+  von allen Sensoren, die von diesem Computer aus in der Vergangenheit &uuml;berwacht
+  wurden. Dies schlie&szlig;t sowohl alle Sensoren des lokalen Systems als auch
+  die von fernen Computern mit ein. Die Liste wird automatisch nach Computernamen
+  und Sensornamen sortiert.</p>
+<p>Klicken Sie auf die Dreiecke links neben den Computernamen um die Sensorliste
+  des gew&auml;hlten Computers aufzuklappen. Nachdem einer der Sensoren ausgew&auml;hlt
+  wurde, werden dessen Einstellungen in der unteren H&auml;lfte des Fensters
+  sichtbar. Sie k&ouml;nnen jeweils folgende Vorgaben festlegen:</p>
+<ul>
+  <li><cite>Angepasster Name:</cite> dieser Text wird in allen Ausgabefenstern als &Uuml;berschrift verwendet, um diesen Sensor eindeutig zu identifizieren. Das Monitorprogramm versucht automatisch, einen aussagekr&auml;ftigen Namen aus der Hardwarebeschreibung Ihres Computers zu ermitteln. Wenn Ihnen der Standardname nicht gef&auml;llt, k&ouml;nnen Sie an dieser Stelle einen selbst gew&auml;hlten Namen vorgeben.</li>
+  <li><cite>Kurzname:</cite> mit dieser Einstellung kann ein weiterer, kurzer Name f&uuml;r einen Sensor vorgegeben werden. Dieser Name wird bei der Anzeige von Messdaten in der Men&uuml;leiste verwendet. Da besonders bei Computern mit kleinem Bildschirm der Platz in der Men&uuml;leiste recht begrenzt ist, sollten Sie eine  Abk&uuml;rzung verwenden.</li>
+  <li><cite>Angepasste Sprachausgabe: </cite>diese Zeile wird als Beschreibungstext
+    f&uuml;r die
+    Sprachausgabe des gew&auml;hlten Sensors verwendet, wenn Sie das Programm
+    anweisen, Sprachausgabe f&uuml;r diesen Sensor zu benutzen und hierbei die
+    Sensornamen mitzusprechen. Beachten Sie, dass Mac OS X zurzeit nur englische
+    Sprachausgabe unterst&uuml;tzt. Sie m&uuml;ssen den Text daher in englischer Sprache
+    eingeben.</li>
+  <li><cite>Datenerfassung:</cite> erm&ouml;glicht es Ihnen, einen Sensor  aus
+    der Datenerfassung herauszunehmen. In diesem Fall werden keine Messwerte
+    mehr erfasst, der Sensor bleibt jedoch in allen Ausgabekan&auml;len erhalten,
+    f&uuml;r die
+    er konfiguriert ist. Diese Funktion ist n&uuml;tzlich, um erkannte, aber
+    aufgrund von Systemfehlern nicht korrekt funktionierende Sensoren auszublenden.</li>
+  <li><cite>Anzeigeformat:</cite> an dieser Stelle wird vorgegeben, mit wie vielen
+    Nachkommastellen die Messwerte angezeigt werden sollen. W&auml;hlen Sie zwischen
+    ####### (keine Nachkommastelle), ######,# (eine Nachkommastelle), #####,##
+    (zwei Nachkommastellen), ####,### (drei Nachkommastellen) oder ###,#### (vier
+    Nachkommastellen).</li>
+  <li><cite>Standardfarbe:</cite> In den Verlaufsgrafiken ist es n&ouml;tig, die einzelnen Messkurven durch unterschiedliche Farben voneinander abzugrenzen. Die Standardfarbe f&uuml;r jeden Sensor wird mit dieser Auswahl eingestellt. Diese Farben werden auf Wunsch auch an anderer Stelle, z.B. bei der Ausgabe der Messdaten in Fenstern, verwendet.</li>
+</ul>
+<p>Wenn das Programm entdeckt, dass ein Sensor auf einem bestimmten Computer
+  nicht mehr l&auml;nger verf&uuml;gbar ist, wird eine Warnung angezeigt, die
+  auf diesen Zustand hinweist. Dies kann beispielsweise passieren, wenn Sie eine
+  Grafikkarte oder eine Festplatte ersetzen, die mit Sensoren ausgestattet war.
+  Um die Einstellungen f&uuml;r einen nicht mehr angeschlossenen Sensor endg&uuml;ltig
+  zu entfernen, k&ouml;nnen
+  Sie den Knopf <cite>L&ouml;schen</cite> in der Mitte des Fenster bet&auml;tigen.
+  Wenn Sie einen Computernamen ausw&auml;hlen, k&ouml;nnen Sie au&szlig;erdem den vollst&auml;ndigen
+  Einstellungssatz eines fern&uuml;berwachten Computers l&ouml;schen solange das entsprechende
+  System gerade nicht mit dem lokalen System verbunden ist. </p>
+<p align="center"><img src="Images/PrefSensors.png" alt="Hardwaremonitor Einstellungen" width="620" height="539" /></p>
+<h2>Einstellungen f&uuml;r alle Sensoren gleichzeitig &auml;ndern </h2>
+<p>Falls Sie mehr als 20 oder gar mehr als 100 Sensoren im Zugriff haben, kann
+  es sehr l&auml;stig sein, bestimmte Vorgaben f&uuml;r sie einzustellen. Typische
+  F&auml;lle f&uuml;r das &Auml;ndern <strong>aller</strong> Sensoreinstellungen <strong>in
+  einem einzigen Schritt</strong>  k&ouml;nnen &uuml;ber zwei spezielle Funktionen
+  erledigt
+  werden:</p>
+<p>Haben Sie bisher keine Farben vorgegeben, so stehen alle Anzeigefarben
+    f&uuml;r
+    s&auml;mtliche Sensoren auf schwarz. Durch Ausw&auml;hlen des Men&uuml;punkts <cite>Monitor
+    &gt; Farben f&uuml;r alle Sensoren setzen</cite> werden
+    alle momentan eingestellten Farben durch eine bunte Farbpalette ersetzt,
+    die f&uuml;r
+    die meisten Anwendungszwecke gute Ergebnisse liefert. Beachten Sie, dass
+    hierdurch alle bisher eingestellten Farben f&uuml;r
+    alle Sensoren, die vom aktuellen Computer aus &uuml;berwacht werden, &uuml;berschrieben
+    werden.</p>
+<p>Verschiedene Aspekte der Sensordarstellung können über den Menüpunkt <cite>Monitor
+  &gt; Einstellungen für alle Sensoren zurücksetzen …</cite> zurückgestellt werden. Nach
+  Auswahl des Punktes können Sie bestimmen, welche Werte auf Werkseinstellung
+  zurückgesetzt werden sollen:</p>
+<ul>
+  <li><cite>Angepasste Namen zurückstellen:</cite> Sie k&ouml;nnen alle angepassten
+    Sensorbeschriftungen zur&uuml;cksetzen, so dass sie sich wieder in Werkseinstellung
+    befinden. Die Funktion ist insbesondere
+    dann hilfreich, wenn Sie eine veraltete Version des Monitorprogramms auf
+    einem neuen Computer eingesetzt haben. In dem Fall hat die alte Version m&ouml;glicherweise
+    noch nicht alle Sensoren des aktuellen Computers &quot;gekannt&quot;, so
+    dass sie gezwungen war, stattdessen auf &quot;rohe&quot;, interne Sensorbezeichnungen
+    auszuweichen, die in Ihre pers&ouml;nlichen Einstellungen gespeichert wurden.
+    Diese Bezeichnungen sind typischerweise nicht besonders benutzerfreundlich
+    und nicht in Ihre Landessprache &uuml;bersetzt.</li>
+  <li><cite>Kurznamen für Menüleiste zurückstellen:</cite> wie vor, betrifft
+    jedoch die kurzen Bezeichnungen, die zur Anzeige in der Menüleiste verwendet
+    werden.</li>
+  <li><cite>Angepasste Sprachausgabe zurückstellen:</cite> wie vor, betrifft
+    jedoch die gesprochenen Texte für die englische Sprachsynthese.</li>
+  <li><cite>Datenerfassung einschalten: </cite>Falls Sie einige Sensoren &uuml;ber
+    das H&auml;kchen bei <cite>Datenerfassung</cite> deaktiviert hatten, k&ouml;nnen
+    Sie alle gleichzeitig wieder einschalten.</li>
+  <li><cite>Anzeigeformat zurückstellen:</cite> Diese Auswahl stellt die Anzahl
+    der Nachkommastellen bei der Anzeige von Messwerten zurück.</li>
+  <li><cite>Darstellungsfarbe auf Schwarz setzen:</cite> Setzt alle Farben zur
+    Präsentation von Sensoren wieder auf Schwarz zurück.</li>
+</ul>
+<p>Sie können auch den Knopf <cite>Alle zurücksetzen …</cite> auf der Karte <cite>Sensoren</cite> des Einstellungsfensters
+  verwenden, um das Rückstellfenster aufzurufen.</p>
+<h2>Detailinformationen &uuml;ber Sensoren anzeigen</h2>
+<p>Das Monitorprogramm ist in der Lage, Detaildaten &uuml;ber die verwendeten
+  Sensoren anzuzeigen. Hierzu z&auml;hlen folgende Daten:</p>
+<ul>
+  <li>Ort des Sensors,</li>
+  <li>verwendeter Messgeber,</li>
+  <li>Art des Sensors, hierbei wird z.B. zwischen Hardware-Sensoren und virtuellen Software-Sensoren unterschieden,</li>
+  <li>physikalische Messgr&ouml;&szlig;e,</li>
+  <li>Pr&auml;zision, mit der der Sensor die Daten liefert,</li>
+  <li>zu erwartende Genauigkeit des Sensors (jeder Sensor macht konstruktionsbedingt Messfehler, so dass Abweichungen zum realen Wert bestehen k&ouml;nnen),</li>
+  <li>letzter erfasster Messwert</li>
+  <li>zul&auml;ssige Ober- und Untergrenzen f&uuml;r Sensorwerte an diesem Messpunkt,
+    wie von Apple vorgegeben. Falls hier keine Werte angegeben sind, ergeben
+    Grenzen entweder für diesen Sensor keinen Sinn, oder die Grenzwerte sind
+    Betriebsgeheimnis von Apple.</li>
+</ul>
+<p>Um diese Daten abzurufen, zeigen Sie zun&auml;chst die Sensor&uuml;bersicht
+  mit dem Men&uuml;punkt <cite>Fenster &gt; &Uuml;bersicht einblenden</cite> oder
+  der Tastenkombination <kbd>⌘</kbd>+<kbd>1</kbd> an. Klicken Sie dann eine
+  Sensorzeile in der Tabelle an. Die entsprechenden Detailinformationen werden
+  in einem zus&auml;tzlichen
+  Fenster angezeigt.</p>
+<p class="infocell">Die &Uuml;bersichtstabelle dient nur der schnellen Orientierung.
+  Reihenfolge und Anzeigeformat in dieser Tabelle k&ouml;nnen nicht beeinflusst werden.</p>
+<p align="center"><img src="Images/Overview.png" alt="Sensorübersichtsfenster" width="761" height="671" /></p>
+<h2>Ausgabe von Messwerten in einem Standardfenster</h2>
+<p>Um die aktuellen Messwerte der Sensoren in Fenstern anzeigen zu lassen, steht
+  entweder ein Standardfenster oder eine durchsichtige Anzeige (oder beides)
+  zur Verf&uuml;gung. Um
+  das Standardfenster zu &ouml;ffnen, w&auml;hlen Sie den Men&uuml;punkt <cite>Fenster &gt; Sensorfenster
+  einblenden </cite>oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>2</kbd>. Um es
+  zu schlie&szlig;en, bet&auml;tigen Sie den normalen Schlie&szlig;knopf des
+Fensters. </p>
+<p>Die Vorgaben f&uuml;r das Standardfenster werden in der Rubrik <cite>Fenster</cite> der <a href="prefs.html">Einstellungsfunktion</a> gesetzt.
+  Die Anordnung der Messwerte kann zwischen <cite>horizontalem und vertikalen
+  Layout</cite> variiert werden. Sie k&ouml;nnen f&uuml;r die Anzeige der Messwerte
+  entweder die vorgegebenen Farben der Sensoren oder eine einstellbare einheitliche
+  Farbe verwenden. Ebenso k&ouml;nnen Sie die <cite>Hintergrundfarbe</cite> des
+  Fensters beliebig einstellen. Schriftart und Schriftgr&ouml;&szlig;e k&ouml;nnen
+  durch Dr&uuml;cken der Schaltfl&auml;che <cite>Schriftart&hellip;</cite>  angepasst
+  werden. Beachten Sie, dass au&szlig;er Art und Gr&ouml;&szlig;e alle anderen
+  Anpassungen einer Schriftart ignoriert werden. Mit den drei Kn&ouml;pfen &uuml;ber
+  dem Beispielfeld k&ouml;nnen Sie au&szlig;erdem die Textausrichtung der Messwerte &auml;ndern.
+  Der kleine Schieberegler <cite>Verh&auml;ltnis Wert/Name</cite> legt fest,
+  in welcher Gr&ouml;&szlig;enproportion die Schrift f&uuml;r die Sensorbezeichnung im Verh&auml;ltnis
+  zum Sensorwert angezeigt werden soll. Im Normalfall sind die Namen 2,4-mal
+  kleiner als der Messwert. Sie k&ouml;nnen einen anderen Wert zwischen 1,0 und 2,5
+  einstellen oder den Knopf <cite>Std</cite> bet&auml;tigen,
+  um zum Standardgr&ouml;&szlig;enverh&auml;ltnis zur&uuml;ckzukehren. </p>
+<p align="center"><img src="Images/PrefWindow.png" alt="Fenster" width="620" height="538" /></p>
+<p>Welche Sensoren im Fenster anzuzeigen sind, kann &uuml;ber die Tabelle
+  in der unteren H&auml;lfte vorgegeben werden:</p>
+<ul>
+  <li>Durch Dr&uuml;cken des Knopfes <cite>+</cite> &ouml;ffnet sich ein Schubfach,
+    das alle Sensoren enth&auml;lt. Um einen Sensor neu in das Fenster einzuf&uuml;gen,
+    w&auml;hlen Sie ihn im Schubfach aus und ziehen Sie ihn mit gedr&uuml;ckter
+    Maustaste in die Tabelle. Sie k&ouml;nnen auf diese
+    Weise auch mehrere Sensoren gleichzeitig hinzuf&uuml;gen. Beachten Sie, dass
+    ein und derselbe Sensor nicht mehrmals aufgef&uuml;hrt werden darf.</li>
+  <li>Um einen oder mehrere Sensoren aus der &Uuml;bersicht zu entfernen, markieren Sie die jeweiligen Eintr&auml;ge in der Tabelle und bet&auml;tigen Sie den Knopf <cite>-</cite> links neben der Tabelle.</li>
+  <li>Um die Reihenfolge der Anzeige innerhalb des Fensters zu ver&auml;ndern, k&ouml;nnen Sie einen oder mehrere Sensoren mit der Maus an eine andere Position schieben.</li>
+</ul>
+<p>Alle &Auml;nderungen sind sofort wirksam und werden sp&auml;testens mit dem n&auml;chsten Messintervall sichtbar.</p>
+<h2>Ausgabe von Messwerten &uuml;ber die Bildschirmanzeige</h2>
+<p>Die Bildschirmanzeige ist ein spezielles Fenster, das keinerlei Bedienelemente
+  und auch keine Titelleiste hat. Es blendet die Messwerte entweder an eine bestimmte
+  Position &quot;&uuml;ber&quot; den
+  aktuellen Inhalt des Bildschirms ein, oder befindet sich &quot;unter&quot; allen
+  Fenstern direkt auf dem Hintergrund des Schreibtischs. Sie k&ouml;nnen
+  die Bildschirmanzeige verschieben, indem Sie den eingeblendeten Text mit der
+  Maus anfassen und bei gedr&uuml;ckt gehaltener Maustaste an eine andere Position
+  ziehen.</p>
+<p>Um die Bildschirmanzeige zu &ouml;ffnen, w&auml;hlen Sie den Men&uuml;punkt <cite>Fenster &gt; Bildschirmanzeige
+    einblenden</cite> oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>3</kbd>.
+    Mit dem Men&uuml;punkt <cite>Fenster &gt; Bildschirmanzeige ausblenden</cite> oder
+durch Wiederholung der Tastenkombination wird das Fenster wieder geschlossen.</p>
+<p align="center"><img src="Images/PrefFloating.png" alt="Schwebend" width="620" height="538" /></p>
+<p>Die Vorgaben f&uuml;r dieses Fenster werden in der Rubrik <cite>Bildschirm</cite> der <a href="prefs.html">Einstellungsfunktion</a> gesetzt.
+  Die
+  Anordnung der Messwerte kann zwischen <cite>horizontalem</cite> und <cite>vertikalen</cite> Layout
+  variiert werden. Ebenso k&ouml;nnen Sie die <cite>Transparenz</cite> der Anzeige
+  und die Einblendung eines <cite>Schattens</cite> einstellen. Sie k&ouml;nnen
+  f&uuml;r die Anzeige der Messwerte entweder die vorgegebenen Farben der Sensoren
+  oder eine einstellbare einheitliche Farbe verwenden. Die Anzeige kann entweder
+  als <cite>schwebend</cite> oder <cite>im Hintergrund</cite> definiert
+  werden. Schriftart und Schriftgr&ouml;&szlig;e k&ouml;nnen durch Dr&uuml;cken
+der Schaltfl&auml;che <cite>Schriftart&hellip;</cite> angepasst werden. Beachten
+Sie, dass au&szlig;er Art und Gr&ouml;&szlig;e alle anderen Anpassungen einer
+Schriftart ignoriert werden. Mit den drei Kn&ouml;pfen &uuml;ber dem Beispielfeld
+k&ouml;nnen Sie au&szlig;erdem die Textausrichtung der Messwerte &auml;ndern.
+Der kleine Schieberegler <cite>Verh&auml;ltnis Wert/Name</cite> legt fest, in
+welcher Gr&ouml;&szlig;enproportion die Schrift f&uuml;r die Sensorbezeichnung
+im Verh&auml;ltnis zum Sensorwert angezeigt werden soll. Im Normalfall sind die
+Namen 2,4-mal kleiner als der Messwert. Sie k&ouml;nnen einen anderen Wert zwischen
+1,0 und 2,5 einstellen oder den Knopf <cite>Std</cite> bet&auml;tigen, um zum
+Standardgr&ouml;&szlig;enverh&auml;ltnis zur&uuml;ckzukehren.</p>
+<p>Die Schaltfl&auml;che <cite>Auf Bildschirmmitte platzieren</cite> sorgt daf&uuml;r,
+  dass die Anzeige wieder zur&uuml;ck auf den Mittelpunkt des Hauptschirms positioniert
+  wird. Diese Funktion ist n&uuml;tzlich, falls Sie &Auml;nderungen an der Anzeige
+  vorgenommen haben, so dass sie au&szlig;erhalb des sichtbaren Bildschirmbereichs
+  geschoben wurde. Durch Ankreuzen der Auswahl <cite>Unverschiebbar machen</cite> wird
+  sichergestellt, dass Sie die Bildschirmanzeige nicht versehentlich verschieben
+  k&ouml;nnen, wenn Sie
+  sie beim Verschieben anderer Objekte auf dem Schreibtisch versehentlich mit
+  der Maus ber&uuml;hren. </p>
+<p>Um die
+  Sensoren auszuw&auml;hlen oder in der Reihenfolge zu verschieben, verwenden Sie
+  die Tabelle <cite>Anzuzeigende Sensoren</cite> auf die gleiche Art, die oben
+  bereits beschrieben wurde.</p>
+<h2>Ausgabe von Messwerten im Dock</h2>
+<p>Ein oder zwei Messwerte k&ouml;nnen auf Wunsch in der Dock-Kachel des Programms angezeigt werden. W&auml;hlen Sie zwischen folgenden Betriebsarten:</p>
+<ul>
+  <li>Anzeige eines Messwertes: W&auml;hlen Sie den Men&uuml;punkt <cite>Monitor &gt; Dock &gt; Einzelwert einblenden</cite> oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>D</kbd>.</li>
+  <li>Anzeige von zwei Messwerten: W&auml;hlen Sie den Men&uuml;punkt <cite>Monitor &gt; Dock &gt; Zwei Werte einblenden</cite>.</li>
+  <li>Auschalten der Dockanzeige: W&auml;hlen Sie den Men&uuml;punkt <cite>Monitor &gt; Dock &gt; Programmsymbol zeigen</cite>.</li>
+</ul>
+<p>Welche Sensoren in welcher Form angezeigt werden, wird &uuml;ber das <a href="prefs.html">Einstellungsfenster</a> vorgegeben. W&auml;hlen Sie dort die Rubrik <cite>Dock</cite>. Die Darstellung kann entweder in Art einer LCD-Anzeige oder &uuml;ber zwei Textzeilen erfolgen. F&uuml;r die Textzeilen k&ouml;nnen entweder eine einheitliche Farbe oder die eingestellten Sensorfarben verwendet werden. Um die Sensoren auszuw&auml;hlen oder in der Reihenfolge zu verschieben, verwenden Sie die Tabelle <cite>Anzuzeigende Sensoren</cite> auf die gleiche Art, die oben bereits beschrieben wurde.</p>
+<p align="center"><img src="Images/PrefDock.png" alt="Dock" width="620" height="538" /></p>
+<h2>Ausgabe von Messwerten in der Men&uuml;leiste</h2>
+<p>Die Ausgabe der Messwerte kann auf Wunsch auch in der Men&uuml;leiste von Mac OS X erfolgen. Die Ausgabe erfolgt rechts von den Men&uuml;punkten des gerade laufenden Programms und links von den systemeigenen Men&uuml;symbolen. Die folgende Abbildung zeigt ein Beispiel:</p>
+<p align="center"><img src="Images/MenuBar.png" alt="Menüleiste" width="304" height="22" /></p>
+<p>In der Leiste selbst k&ouml;nnen entweder kein, einer oder  bis zu 8 Messwerte
+  enthalten sein. Die verbleibenden Sensoren werden angezeigt, wenn die Men&uuml;leiste
+  im entsprechenden Bereich angeklickt wird. Sie k&ouml;nnen zwischen folgenden
+  Betriebsarten w&auml;hlen:</p>
+<ul>
+  <li>ein Wert: W&auml;hlen Sie den Men&uuml;punkt <cite>Monitor &gt; Men&uuml;leiste &gt; Einzelwert einblenden</cite>.</li>
+  <li>2 bis 8  Werte: W&auml;hlen Sie den Men&uuml;punkt <cite>Monitor &gt; Men&uuml;leiste &gt; x
+      Werte einblenden</cite>.</li>
+  <li>Abschalten dieser Funktion: W&auml;hlen Sie den Men&uuml;punkt<cite> Monitor &gt; Men&uuml;leiste &gt; Men&uuml;leistenanzeige ausblenden</cite>.</li>
+</ul>
+<p class="infocell">Sie sollten es vermeiden, zu viele Werte in der Men&uuml;leiste einzublenden. Falls
+  Ihr Bildschirm nicht breit genug ist, entfernt Mac OS X automatisch den gesamten
+  Men&uuml;abschnitt des Monitorprogramms, sobald ein anderes Programm den Platz braucht,
+  um sein Men&uuml; anzuzeigen. </p>
+<p>Um die Darstellung der Men&uuml;leiste weiter zu konfigurieren, verwenden
+  Sie die Rubrik <cite>Men&uuml;leiste</cite> im <a href="prefs.html">Einstellungsfenster</a>.
+  Durch Ankreuzen des Punktes <cite>Kurznamen den Werten voranstellen </cite> geben
+  Sie vor, ob nur der Wert oder auch der f&uuml;r den jeweiligen Sensor eingestellte
+  Kurzname in die Leiste eingeblendet werden soll. Die Auswahl <cite>Sensorfarben
+  verwenden</cite>  kann eingeschaltet werden, um die Messwerte in deren jeweils
+  definierten Sensorfarben und nicht im &uuml;blichen Schwarz anzeigen zu lassen. </p>
+<p>Die Tabelle im unteren Bereich
+  gibt die anzuzeigenden Sensoren vor. Um zu garantieren, dass ein Wert in der
+  Leiste selbst und nicht im daran h&auml;ngenden Men&uuml; erscheint, m&uuml;ssen
+  Sie den Sensor an die erste, bzw. zweite Position der Tabelle ziehen. Die Bedienung
+  der Tabelle erfolgt wie oben bereits beschrieben.</p>
+<p align="center"><img src="Images/PrefMenu.png" alt="Menüleiste" width="620" height="538" /></p>
+<p class="infocell">Diese Einstellungen werden automatisch auch f&uuml;r die <a href="lite.html">Light-Version</a> des
+  Programms g&uuml;ltig. Mit der Light-Version k&ouml;nnen Sie Messwerte in der
+  Men&uuml;leiste einblenden, ohne dass Platz im Dock oder anderen Teilen des
+  Bildschirms gebraucht wird.</p>
+<p>Sie k&ouml;nnen auf einfache Weise zwischen der Vollversion und der Light-Version
+  umschalten, indem Sie den Knopf <cite>Programm beenden und Light-Version starten</cite>  dr&uuml;cken. </p>
+<hr />
+<p><a href="index.html">Inhaltsverzeichnis</a></p>
+</body>
+</html>

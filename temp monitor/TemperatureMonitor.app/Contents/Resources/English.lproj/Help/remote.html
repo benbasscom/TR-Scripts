@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Monitoring remote computers</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="12" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Monitoring remote computers</h1></td>
+  </tr>
+</table>
+<p>Hardware Monitor and Temperature Monitor can also monitor remote computers.
+  This means it is possible to contact an arbitrary number of other computers
+  over the network, and access their sensors as well. The readings will 
+  be displayed in addition to the values of the local sensors.</p>
+<p>The only thing you need are additional copies of the application <cite>Hardware
+  Monitor Remote</cite> which have to be installed on each of the remote computers
+  that should be monitored. You also need a registration key (&quot;license to use&quot;)
+  for each computer that should be monitored at the same time. You can connect
+  to an unlimited number of computer simultaneously and monitor them all from
+  a single workstation. (In practice, the actual number may be limited by the
+  speed of your network.) Of course you can also use several monitoring stations
+  to receive data from an arbitrary number of other computers.</p>
+<p>In the following example, 4 computers are running Hardware Monitor Remote
+  while 2 are running Hardware Monitor. Note that one of the system is running
+  both applications at the same time. The arrows indicate in which direction
+  the sensor readouts are being transferred. </p>
+<p align="center"><img src="Images/HardwareMonitorRemote2.png" alt="Hardware Monitor License Model" width="501" height="330" /></p>
+<p>In the example above, 5 (not 6)
+  registration codes are needed (under the assumption, all 5 computers are running
+  at the same time).</p>
+<p>There is no gratis version of the remote monitoring tool (no &quot;Temperature
+  Monitor Remote&quot;). However, you can use Temperature Monitor to connect to a
+  Hardware Monitor Remote system. In this case the application  is limited
+  to displaying temperature sensors on the local monitoring computer, but it
+  will display all sensors of the monitored remote computer. </p>
+<h2>Connecting to a remote computer</h2>
+<p>To connect to a remote computer which is running a registered copy of Hardware
+  Monitor Remote, use the following instructions:</p>
+<ol>
+  <li>Select the menu item <cite>Monitor &gt; Connect to Remote Computer</cite> or
+    press the key combination <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>K</kbd>.</li>
+  <li>A list of computers which are running Hardware Monitor Remote in the local
+      network will be displayed. The list is automatically updated using Bonjour
+      technology. Computer names, serial numbers, IP addresses, DNS names, and
+    connection status are displayed. Select the computer you want to connect
+    to. If the computer is running in a different network, or can only be reached
+    via the Internet, it will not be part of the list. In this case, enter the
+    computer's IP address or DNS name to the field <cite>DNS name or IP address</cite> manually.
+    You can also specify the communication port number of the remote computer.
+    Under normal circumstances, the port is 37037. The administrator of the remote
+      computer might have changed this number. In this case, ask the administrator
+      of the remote computer for the correct port number.</li>
+  <li>Press the button <cite>Connect</cite>. You can also double-click a line
+    in the table to connect directly to the listed system.</li>
+</ol>
+<p>Hardware Monitor will try to contact the selected remote computer. If it could
+  not be reached, you will receive an error message after a few seconds. In this
+  case please check your network configuration and the operational state of the
+  remote computer. Computers already connected are marked with a blue icon in
+  the remote computer list.</p>
+<p class="infocell">If the remote computer had never been connected by the current computer before,
+  new preference settings for the remote sensors will be added automatically.
+  You should open the preferences window and verify if all preferences are set
+  as desired. </p>
+<p>Additional information can also be found in the reference
+  manual of Hardware Monitor Remote.</p>
+<h2>Connecting to a group of remote computers</h2>
+<p>You can define groups of computers in your network which should be connected
+  by a single mouse click. This is helpful when monitoring different classrooms,
+  for example. Use this feature by selecting the pull-down menu <cite>Connect
+  list </cite>in the lower right corner of the connect window. You can define
+  an unlimited number of computer groups which will be connected in one step
+  by selecting their respective items in this menu.</p>
+<p>To define such a list of computers, select the item <cite>Edit Computer Lists…</cite>.
+  A configuration sheet will appear. Press the button <cite>+</cite> below the
+  lower table to add a new computer group. The new entry will be shown in the
+  hierarchical overview <cite>Computer lists and members.</cite> After select
+  a list in this overview, pressing the button <cite>+</cite> again will add
+  a new member to that list. You can edit the list names, computer names and
+  port numbers as desired. Note that you have to use DNS names or IPv4 addresses
+  to refer to a computer. You cannot use the designations called &quot;computer names&quot;
+  of Mac OS X. Entries or whole lists can be removed by the <cite>-</cite> button.
+  The button <cite>Add selected computers to selected list</cite> can be used
+  to automatically refer to one or more computers running Hardware Monitor Remote
+  which are currently online in your network. Select a list in the lower overview,
+  select one or more computers in the upper table to use this.</p>
+<p>After pressing <cite>OK</cite>, the sheet will close and you can use the defined
+  computer lists in the <cite>Connect list</cite> pull-down menu.</p>
+<h2>Displaying connection status and disconnecting from a remote computer</h2>
+<p>You can display a list of all computers which have an active connection
+  to your current computer. This list can also be used to release a connection.</p>
+<p>Select the menu item <cite>Window &gt; Show Remote Connections</cite> or press
+  the key combination
+  <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>K</kbd>. The window <cite>Connected Computers</cite>  will
+  appear. It shows the computer names, model types, serial numbers, IP addresses,
+  DNS names, and the number of sensors found.</p>
+<p>To disconnect from one of the computers, select it in the table and press
+  the button <cite>Disconnect</cite>. Note that you cannot disconnect from your
+  own computer. </p>
+<h2>Sleep mode</h2>
+<p>If a remote computer enters sleep mode, all its sensors will be powered down,
+  so it is no longer possible to receive current readouts or other information
+  from it. The application handles this automatically and will release the connection
+  to the remote computer. The monitoring computer will display a warning message
+  when this happens. If you don't like to be informed in this case you can switch
+  off the warning message using the <a href="prefs.html">General pane of the
+  preferences window</a>.</p>
+<p>If your own computer enters sleep mode, the situation is a bit different:
+  The current computer can no longer receive readings but the remote computers
+  are still acquiring data. In this case the local application will automatically
+  try to reconnect to all remote computers as soon as it is waking up.</p>
+<p class="infocell">It will take several seconds until all remote computers have been reconnected.
+  Mac OS X needs some time to reactivate all network features after it has been
+  awoken from sleep mode. </p>
+<h2>Working with remote sensors</h2>
+<p>The application won't make any difference between local and remote sensors.
+  You can add sensors to the desired output channels, remove or reorder them.
+  Just open the preferences window and readjust the settings accordingly <a href="output.html">as
+  discussed earlier</a>. The fourth column in the sensor tables shows the name
+  of the computer each sensor belongs to.</p>
+<p>Preference settings for remote sensors will still be stored if you disconnect
+  from the computer hosting the sensors. The application will automatically remember
+  the settings when you reconnect. Currently disconnected remote sensors
+  just disappear from all output channels and will reappear later.</p>
+<p>Some status windows automatically open a new copy of the window for each computer
+  which is currently connected. This includes the following displays:</p>
+<ul>
+  <li>Sensor Overview Window (<kbd>⌘</kbd>+<kbd>1</kbd>) </li>
+  <li>System Info Window (<kbd>⌘</kbd>+<kbd>4</kbd>) </li>
+  <li>Battery Info Window (<kbd>⌘</kbd>+<kbd>5</kbd>), Hardware Monitor only</li>
+  <li>Xserve Disk Info Window (<kbd>⌘</kbd>+<kbd>7</kbd>)</li>
+  <li>Drive Overview Window (<kbd>⌘</kbd>+<kbd>8</kbd>)</li>
+  <li>Display Info Window (<kbd>⌘</kbd>+<kbd>9</kbd>), Hardware Monitor only</li>
+</ul>
+<p>For example,  if you have 5 computers currently connected in addition to the
+  local computer, and you select the menu item <cite>Window &gt; Show Overview</cite>, the application
+  will open 6 copies of the Sensor Overview Window, one for each computer. </p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+</body>
+</html>

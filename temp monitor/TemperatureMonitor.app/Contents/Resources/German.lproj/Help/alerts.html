@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html
+  xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Alarme definieren</title>
+    <meta content="8" name="AppleOrder" />
+    <link type="text/css" rel="stylesheet" href="mbshelp.css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" alt="Hardwaremonitor" src="Images/HWIcon48.png" /><img
+              width="48" height="48" alt="Temperaturmonitor" src="Images/TMIcon48.png" /></td>
+          <td>
+            <h1>Alarme definieren</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Das Monitorprogramm kann auf Wunsch die Werte von Sensoren überwachen und
+      Sie beim Über- oder Unterschreiten gewisser Schwellwerte mit einer
+      Alarmmeldung benachrichtigen. Die hierzu nötigen Einstellungen befinden
+      sich in der Rubrik <cite>Alarme</cite> des <a href="prefs.html">Einstellungsfensters</a>.</p>
+    <p align="center"><img width="620" height="538" alt="Alarme" src="Images/PrefAlert.png" /></p>
+    <p>Die Tabelle in der oberen Hälfte des Fensters legt fest, welche Sensoren
+      überhaupt überwacht werden sollen. Sie können Sensoren in die Tabelle
+      einfügen, wie <a href="output.html">bereits oben beschrieben</a>.</p>
+    <p>Ist ein Sensor in der Tabelle ausgewählt, können Sie im unteren Bereich
+      des Fensters das Auslösen eines Alarms festlegen. Sie können wahlweise
+      eine obere oder eine untere Grenze für den Messwert angeben, oder auch
+      beides. Temperaturmesswerte werden gemäß der gerade eingestellten Einheit
+      definiert.</p>
+    <p class="infocell">Die ursprünglichen Auslösewerte, die nach dem Hinzufügen
+      eines neuen zu überwachenden Sensors angezeigt werden, sind nur vernünftige
+      Standardvorschläge ohne konkrete Bedeutung. S<strong>ie stellen keine
+        Empfehlung durch das Programm dar und haben nichts mit den technischen
+        Spezifikationen an der Messposition zu tun.</strong> Als Benutzer sind
+      Sie selbst dafür verantwortlich, gute Grenzwerte einzusetzen. Falls die
+      Grenzen kein Betriebsgeheimnis von Apple sind, sind die Werte möglicherweise
+      in der dritten und vierten Spalte des <a href="output.html">Fensters
+        Sensorübersicht</a> zu finden. </p>
+    <p>Über- oder unterschreitet ein überwachter Messwert die eingegebenen
+      Grenzen, so wird ein Alarm ausgelöst. Sie können eine oder mehrere der
+      folgenden Aktionen bewirken:</p>
+    <ul>
+      <li>Das Programm soll ein Warnfenster öffnen. (*) </li>
+      <li>Das Programm soll den Systemwarnton ausgeben. (*) </li>
+      <li>Das Programm soll per Sprachausgabe (auf Englisch) eine Alarmmeldung
+        machen.</li>
+      <li>Das Programm soll eine Growl-Benachrichtigung senden. Diese Funktion
+        ist nur einschaltbar, falls Growl auf Ihrem System installiert und aktiv
+        ist. </li>
+      <li>Das Programm soll ein Dokument oder ein Programm öffnen. Verwenden Sie
+        die Schaltfläche <cite>Auswählen</cite>, um das Programm oder Dokument
+        anzugeben. (*) </li>
+    </ul>
+    <p>In jedem Fall - sogar wenn Sie überhaupt keine Alarmaktionen definiert
+      haben - zeigt das Programm Messwerte für Sensoren, die sich in einem
+      Alarmzustand befinden, mit umgekehrten Farben an (z.B. weiß auf schwarz
+      statt schwarz auf weiß). Diese Alarmmarkierungen werden im Sensorfenster,
+      auf der Bildschirmanzeige und in der Menüleiste sichtbar. Die mit (*)
+      markierten Optionen werden auch in der <a href="lite.html">"Light"-Menüleistenversion</a>
+      des Programms wirksam. </p>
+    <p>Der Systemwarnton wird mit dem Punkt <cite>Ton &gt; Toneffekte</cite> in
+      Systemeinstellungen konfiguriert. Eine gesprochene Alarmmeldung erfolgt
+      nur, wenn die <a href="speech.html">Sprachausgabe auch eingeschaltet ist</a>.</p>
+    <p class="infocell">Growl ist eine Technologie eines Drittanbieters, die es
+      erlaubt, "unaufdringliche" Benachrichtigungsmeldungen auf der
+      Benutzeroberfläche von Mac OS X anzuzeigen. Sie unterstützt auch
+      fortgeschrittene Techniken wie Nachrichtenweiterleitung im Netzwerk oder
+      das Senden von Alarmen per E-Mail. Um mehr über Growl zu erfahren,
+      verwenden Sie bitte <a href="http://www.growl.info/about.php">deren
+        Internetseiten</a>.</p>
+    <ul>
+      <li>Growl 1.1.6 ist die empfohlene Version für Mac OS X 10.4.</li>
+      <li>Growl 1.2.2 ist die empfohlene Version für Mac OS X 10.5 oder 10.6.</li>
+      <li>Growl 2 oder höher ist die empfohlene Version für Mac OS X 10.7 oder
+        höher.</li>
+    </ul>
+    <h2>Automatische Abschaltung </h2>
+    <p class="infocell">Beachten Sie, dass es weder möglich, noch nötig ist,
+      "kritische" Alarme zu definieren, d.h. bei der Überschreitung von Werten,
+      die der Hardware des Computers schaden könnten. Alle Macintosh-Computer,
+      die mit Sensoren ausgestattet sind, überwachen diese bereits selbständig.
+      Der Computer wird von Mac OS X automatisch ausgeschaltet oder in den
+      Ruhezustand gebracht, sobald ein Messwert in einem Wertebereich liegt, der
+      gefährlich ist.</p>
+    <p>Wenn Sie allerdings Ihre eigenen Richtlinien für den Fall definieren
+      möchten, dass das System sich bei einem Alarmzustand in den Ruhezustand
+      schalten soll, ist dies wie folgt möglich:</p>
+    <ol>
+      <li>Öffnen Sie den AppleScript Editor und erzeugen Sie ein neues Skript,
+        das den folgenden Befehl enthält: <code>tell application "Finder" to
+          sleep</code></li>
+      <li>Speichern Sie dieses Skript in eine Datei.</li>
+      <li>Definieren Sie Überwachungsalarme für die Sensoren, die als kritisch
+        behandelt werden sollen.</li>
+      <li>Schalten Sie die Alarmaktion <cite>Objekt öffnen oder Programm
+          starten</cite> ein und wählen Sie das Skript aus, das Sie in Punkt (2)
+        angelegt haben.</li>
+    </ol>
+    <p>Dies kann insbesondere dann nützlich sein, wenn Sie selbst die Hardware
+      angepasst haben, z.B. durch den Einbau einer zusätzlichen Festplatte, die
+      das Wärmeprofil des Systems ändert und die eventuell einen eigenen Sensor
+      enthält.</p>
+    <h2>Hinweise an Entwickler externer Programme </h2>
+    <p>Wenn Sie die Alarmoption <cite>Objekt öffnen oder Programm starten</cite>
+      aktivieren, werden die Startdienste von Mac OS X automatisch das Dokument
+      oder Programm aufrufen, das Sie für den Alarmfall eingestellt haben. Falls
+      Sie ein eigenes Skript oder eine Anwendung für diesen Fall entwickeln
+      möchten, ist es möglicherweise erforderlich, dass Ihr Programm erfährt,
+      welcher der konfigurierten Sensoren den Alarm ausgelöst hat. Das
+      Monitorprogramm stellt diese Information über eine Textdatei bereit, die
+      für jeden neuen Alarm (d.h. auch für jeden neuen Aufruf Ihres externen
+      Programms) überschrieben wird.</p>
+    <p>Die Statusdatei wird an der festen Position</p>
+    <p><code>/tmp/HardwareMonitor-CurrentAlert.txt</code></p>
+    <p>im Mac OS X-Ordner für temporäre Dateien angelegt. Sie enthält einen
+      internen Bezeichner, der auf den jeweiligen Sensor verweist, der den
+      aktuellen Alarm ausgelöst hat. Falls es sich um einen Fernzugriffssensor
+      handelt, beginnt der Bezeichner mit dem Präfix</p>
+    <p><code>remote.seriennummer</code></p>
+    <p>wobei <code>seriennummer</code> mit der tatsächlichen Seriennummer des
+      fernen Computers ersetzt wird.</p>
+    <p>Um eine vollständige Referenzliste für alle Sensorbezeichner zu erhalten,
+      die in Ihrer gegenwärtigen Konfiguration generiert werden können, wählen
+      Sie den Menüpunkt <cite>Ablage &gt; Sensornamen für Alarmskripting</cite>
+      sichern aus. Das Monitorprogramm legt eine Textdatei mit einem Bericht an,
+      der alle verbundenen Sensoren in der Form</p>
+    <p><code>Bezeichner: angepasster Klartextname dieses Sensors gemäß Ihrer
+        Einstellungen (Computer)</code></p>
+    <p>auflistet.</p>
+    <hr />
+    <p><a href="index.html">Inhaltsverzeichnis</a></p>
+    <p> </p>
+  </body>
+</html>

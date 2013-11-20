@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Defining alerts</title>
+    <meta content="8" name="AppleOrder" />
+    <link type="text/css" rel="stylesheet" href="mbshelp.css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" alt="Hardwaremonitor" src="Images/HWIcon48.png" /><img
+              width="48" height="48" alt="Temperaturmonitor" src="Images/TMIcon48.png" /></td>
+          <td>
+            <h1>Defining alerts</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The application can optionally monitor readings of sensors and inform you
+      if values exceed or fall below certain threshold limits. The settings for
+      this feature can be found in the pane <cite>Alerts</cite> of the<a href="prefs.html">
+        preference window</a>.</p>
+    <p align="center"><img width="620" height="538" alt="Alerts" src="Images/PrefAlert.png" /></p>
+    <p>The table in the upper half of the window defines what sensors should be
+      monitored in general. You can add sensors to the table <a href="output.html">as
+        discussed earlier</a>.</p>
+    <p>After selecting a sensor in the table, you can define in the lower
+      portion of the window when an alarm should be triggered. An upper or a
+      lower limit for the monitored reading can be set, or both. Temperature
+      readings are specified by the currently active unit.</p>
+    <p class="infocell">The initial trigger values displayed after adding a new
+      sensor to monitor are just reasonable default values without a concrete
+      meaning. <strong>The don't reflect a recommendation by the program and
+        have nothing to do with the technical specifications for this sensor
+        location.</strong> You are responsible for setting good limits yourself.
+      If the limits are not a trade secret of Apple, they may be given in the
+      third and fourth columns of the <a href="output.html">Sensor Overview
+        window</a>. </p>
+    <p>If a monitored reading exceeds or falls below the entered limits, an
+      alarm will be triggered. It can result in one or several of the following
+      actions:</p>
+    <ul>
+      <li>The application should open a warning panel. (*) </li>
+      <li>The application should play the system's alert sound. (*) </li>
+      <li>The application should use speech output to announce the alert
+        condition.</li>
+      <li>The application should send a Growl notification. This feature is only
+        enabled if a compatible version of Growl has been installed on your
+        system and is active.</li>
+      <li>The application should open a document or another application. Use the
+        <cite>Select</cite> button to specify the application or document. (*) </li>
+    </ul>
+    <p>In any case - even if you have defined no alarm actions at all - the
+      application will display readings for sensors in alert state with inverted
+      colors (for example white on black instead of black on white). These alarm
+      markers are visible in the sensor window, in the screen display and in the
+      menu-bar. The actions marked by (*) also become effective for the menu-bar
+      <a href="lite.html">"Lite" version</a> of the application.</p>
+    <p>The system alert sound can be configured with the setting <cite>Sound
+        &gt; Sound Effects</cite> in System Preferences. A spoken alert will be
+      announced only if <a href="speech.html">speech output is enabled</a>.</p>
+    <p class="infocell">Growl is a third-party technology that allows to display
+      "non-intrusive" notification messages on the user interface of Mac OS X.
+      It also supports advanced features like notification-forwarding in a
+      network, or sending alerts by e-mail. To learn more about Growl, please
+      see their <a href="http://www.growl.info/about.php">Internet web pages</a>.</p>
+    <ul>
+      <li>Growl 1.1.6 is the recommended version for Mac OS X 10.4.</li>
+      <li>Growl 1.2.2 is the recommended version for Mac OS X 10.5 or 10.6.</li>
+      <li>Growl 2 or later is the recommended version for Mac OS X 10.7 or
+        later.</li>
+    </ul>
+    <h2>Automatic shutdown</h2>
+    <p class="infocell">Note that it's neither possible, nor necessary to define
+      "critical" alerts, i.e. triggering an alarm when limits are crossed which
+      could cause damage to your computer. All Macintosh computers equipped with
+      sensors already monitor the readings. The computer will be automatically
+      shut down or put into sleep mode by Mac OS X if a reading enters a range
+      affecting system health.</p>
+    <p>However, if you want to define your own policy of shutting down the
+      system to sleep mode in case of an alert situation, this is possible as
+      follows:</p>
+    <ol>
+      <li>Open the AppleScript editor and create a new script which contains the
+        following command: <code>tell application "Finder" to sleep</code></li>
+      <li>Save this script to a file.</li>
+      <li>Define monitor alerts for the sensors you want to handle as being
+        critical.</li>
+      <li>Set the alert action <cite>Open object or start application</cite>
+        and select the script you had created in step (2).</li>
+    </ol>
+    <p>This can be particularly useful if you have added customized hardware,
+      e.g. an additional hard drive which changes the thermal profile of the
+      system and might contain its own sensor.</p>
+    <h2>Notes to developers of external programs </h2>
+    <p>If you enable the alert option <cite>Open object or start application</cite>,
+      the Launch Services of Mac OS X will automatically activate the document
+      or program you have specified when an alert is triggered. If you want to
+      develop a customized script or application for this case, your program
+      might need to know which of the configured sensors has raised the alert.
+      The monitor application provides this information via a text file which is
+      overwritten for each new alert (which means for each new call of your
+      external program).</p>
+    <p>The status file is created at the fixed position</p>
+    <p><code>/tmp/HardwareMonitor-CurrentAlert.txt</code></p>
+    <p>in Mac OS X's folder for temporary files. It contains an internal
+      identifier referring to the sensor which has raised the current alert. If
+      that sensor is a remote sensor, the identifier will have the prefix</p>
+    <p><code>remote.serialnumber.</code></p>
+    <p>where <code>serialnumber</code> is replaced by the actual serial number
+      of the remote computer.</p>
+    <p>To get a complete cross-reference list for all sensor identifiers which
+      can be generated in your current configuration, select the menu item <cite>File
+        &gt; Save Sensor IDs for Alert Scripting</cite>. The monitor application
+      will create a report text file, listing each connected sensor in the form</p>
+    <p><code>identifier: customized clear-text name of this sensor according to
+        your preferences (computer). </code></p>
+    <hr />
+    <p><a href="index.html">Table of contents</a></p>
+  </body>
+</html>

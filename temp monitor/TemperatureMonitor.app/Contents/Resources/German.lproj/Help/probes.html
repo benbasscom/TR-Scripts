@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Definieren k&uuml;nstlicher Betriebssystemsensoren</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="9" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /></td>
+    <td><h1>Definieren k&uuml;nstlicher Betriebssystemsensoren</h1></td>
+  </tr>
+</table>
+<h2>Einführung</h2>
+<p>Neben &quot;echten&quot; Sensoren, die Apple in Ihrem Mac eingebaut hat, kann Hardwaremonitor
+  auch weitere Betriebswerte Ihres Computers &uuml;berwachen. Dies ist durch das Anlegen
+  k&uuml;nstlicher Softwaresensoren m&ouml;glich, die wir im Folgenden <cite>Sonden</cite> nennen.
+  Diese Funktion steht nur in Hardwaremonitor zur Verf&uuml;gung.</p>
+<p>Sie k&ouml;nnen eine unbegrenzte Anzahl von Sonden definieren, die folgende Aspekte
+  des Betriebssystems &uuml;berwachen:</p>
+<ul>
+  <li>die aktuelle <strong>Last auf jedem Prozessorkern</strong>. Last ist definiert als Prozentwert
+      der Zeit, in der der Prozessor tats&auml;chlich etwas &quot;tut&quot;, im Gegensatz zur
+    Zeit, in der er sich im Leerlauf befindet.</li>
+  <li>die aktuelle <strong>Durchschnittslast f&uuml;r alle Prozessorkerne</strong>. Wenn Ihr Computer
+    mehrere Verarbeitungseinheiten enth&auml;lt, wird der Auslastungszustand zu einem
+    einzigen Wert zusammengefasst.</li>
+  <li>die aktuelle <strong>Anzahl der Prozesse</strong>, die vom Betriebssystem
+    verwaltet werden. </li>
+  <li><strong>Plattennutzung</strong> auf jedem Volume. Die Nutzung ist definiert als Prozentwert
+      des belegten Speicherplatzes im Verh&auml;ltnis zum gesamten Speicherplatz.</li>
+  <li><strong>freier Plattenplatz</strong> auf jedem Volume, gemessen in Bytes.</li>
+  <li><strong>genutzter Plattenplatz</strong> auf jedem Volume, gemessen in Bytes.</li>
+  <li><strong>freier Speicher</strong>, gemessen in Bytes des physischen RAM-Speichers.</li>
+  <li><strong>genutzter aktiver Speicher</strong>, gemessen in Bytes des physischen RAM-Speichers.
+      Dies ist Speicher, der von laufenden Programmen und dem Betriebssystem
+    verwendet wird und auf den in den letzten paar Millisekunden zugegriffen
+    wurde.</li>
+  <li><strong>genutzter inaktiver Speicher</strong>, gemessen in Bytes des physischen
+    RAM-Speichers. Dies ist Speicher, der von laufenden Programmen und dem Betriebssystem
+    verwendet wird, aber auf den in den letzten paar Millisekunden nicht zugegriffen
+    wurde. Obwohl dieser Speicher reserviert und in Benutzung ist, sind diese
+    Bl&ouml;cke Kandidaten, um in Auslagerungsdateien auf der Festplatte verschoben
+    zu werden, falls andere Programme physisches RAM in einer aktiveren Weise
+    ben&ouml;tigen.</li>
+  <li><strong>genutzter nicht auslagerbarer Speicher</strong>, gemessen in Bytes des physischen
+    RAM-Speichers. Dies ist Speicher, der von laufenden Programmen und dem Betriebssystem
+    verwendet wird, aber nicht in Auslagerungsdateien auf der Festplatte verschoben
+    werden darf.</li>
+  <li><strong>Anzahl von Einlagerungen</strong>. Dies ist die Zahl der 4-KB-Bl&ouml;cke, die im Moment
+      von der Festplatte in den Hauptspeicher &uuml;bertragen werden. Dies schlie&szlig;t
+    sowohl Umlagerungsvorg&auml;nge ein (Bl&ouml;cke, die vorher in Auslagerungsdateien
+    &uuml;bertragen wurden und nun zur&uuml;ck geladen werden), beinhaltet aber auch normale
+    Ladevorg&auml;nge, wenn Programme optimierte Techniken verwenden, um Dateien zu
+    lesen.</li>
+  <li><strong>Anzahl von Auslagerungen</strong>. Dies ist die Zahl der 4-KB-Bl&ouml;cke,
+    die im Moment vom Hauptspeicher auf die Festplatte &uuml;bertragen werden. Dies
+    schlie&szlig;t sowohl Umlagerungsvorg&auml;nge ein (Bl&ouml;cke, die auf die Platte ausgelagert
+    werden), beinhaltet aber auch normale Sicherungsvorg&auml;nge, wenn Programme
+    optimierte Techniken verwenden, um Dateien zu schreiben.</li>
+  <li><strong>reservierter Auslagerungsspeicher</strong>, gemessen in Bytes an
+    Speicherplatz. Dies ist die  Anzahl von Bytes, die im Moment
+    auf der Festplatte vorreserviert sind, um f&uuml;r Auslagerungsvorg&auml;nge
+    genutzt werden zu k&ouml;nnen.</li>
+  <li><cite>Auslagerungsspeicher in Benutzung,</cite> gemessen in Bytes an Speicherplatz.
+    Dies ist der tatsächliche Betrag von virtuellem Speicher, der im Moment auf
+    Platte ausgelagert ist.</li>
+  <li>Beachten Sie, dass dies nicht mit der gerade
+    ausgelagerten Gr&ouml;&szlig;e des virtuellen
+    Speichers &uuml;bereinstimmt.</li>
+  <li><strong>Netzanschluss ausgehende Pakete</strong>: Die Anzahl der Datenpakete, die aktuell
+    vom Computer auf einem ausgew&auml;hlten Anschluss ins Netz &uuml;bertragen werden.
+    Hardwaremonitor behandelt dies als einheitenlosen Z&auml;hler, aber da die Netzanschl&uuml;sse
+    mit einer Rate von einem Beobachtungsvorgang pro Sekunde &uuml;berwacht werden,
+    ist dieser Messwert der &Uuml;bertragungsgeschwindigkeit in Paketen pro Sekunde
+    &auml;quivalent.</li>
+  <li><strong>Netzanschluss eingehende Pakete</strong>: wie vor, jedoch f&uuml;r eingehende Datenpakete.</li>
+  <li><strong>Netzanschluss ausgehende Bytes</strong>: Die Anzahl der Bytes (angezeigt als Kilobyte),
+    die aktuell vom Computer auf einem ausgew&auml;hlten Anschluss ins Netz &uuml;bertragen
+    werden. Hardwaremonitor behandelt dies als Speichergr&ouml;&szlig;e, aber da die Netzanschl&uuml;sse
+    mit einer Rate von einem Beobachtungsvorgang pro Sekunde &uuml;berwacht werden,
+    ist dieser Messwert der &Uuml;bertragungsgeschwindigkeit in Kilobyte pro Sekunde
+    &auml;quivalent.</li>
+  <li><strong>Netzanschluss ausgehende Bytes (gesamt)</strong>: Die Gesamtanzahl von Bytes (angezeigt
+    als Megabyte), die auf einem ausgew&auml;hlten Netzanschluss ins Netz &uuml;bertragen
+    wurden seitdem das Betriebssystem gestartet wurde.</li>
+  <li><strong>Netzanschluss eingehende Bytes</strong>: analog zur Zahl ausgehender Bytes &uuml;berwacht
+    diese Sonde die eingehenden Bytes.</li>
+  <li><strong>Netzanschluss eingehende Bytes (gesamt)</strong>: analog zur Gesamtzahl ausgehender
+    Bytes &uuml;berwacht diese Sonde die Gesamtzahl eingehender Bytes.</li>
+  <li><strong>Netzanschluss Ausgangsfehler</strong>: die aktuelle Anzahl von Netzwerkfehlern wenn
+    der ausgew&auml;hlte Netzanschluss versucht, Daten ins Netz zu senden. Hardwaremonitor
+    behandelt dies als einheitenlosen Z&auml;hler, aber da die Netzanschl&uuml;sse
+    mit einer Rate von einem Beobachtungsvorgang pro Sekunde &uuml;berwacht werden,
+    ist dieser Messwert der Fehlerzahl pro Sekunde &auml;quivalent.</li>
+  <li><strong>Netzanschluss Eingangsfehler</strong>: die aktuelle Anzahl von Netzwerkfehlern wenn
+    der ausgew&auml;hlte Netzanschluss Daten vom Netz empf&auml;ngt. Hardwaremonitor
+    behandelt dies als einheitenlosen Z&auml;hler, aber da die Netzanschl&uuml;sse
+    mit einer Rate von einem Beobachtungsvorgang pro Sekunde &uuml;berwacht werden,
+  ist dieser Messwert der Fehlerzahl pro Sekunde &auml;quivalent.</li>
+  <li><strong>Netzanschluss Kollisionen</strong>: die aktuelle Anzahl von Netzkollisionen,
+    die vom ausgew&auml;hlten Anschluss erfasst wird. Hardwaremonitor
+    behandelt dies als einheitenlosen Z&auml;hler, aber da die Netzanschl&uuml;sse
+    mit einer Rate von einem Beobachtungsvorgang pro Sekunde &uuml;berwacht werden,
+    ist dieser Messwert der Kollisionszahl pro Sekunde &auml;quivalent. Beachten
+    Sie, dass Kollisionen nur bei bestimmten Netztechniken auftreten k&ouml;nnen,
+    z.B. bei gesharetem 10Base-5 Ethernet. </li>
+  <li><strong>S.M.A.R.T.-Plattenstatus</strong>, f&uuml;r jedes angeschlossene Laufwerk,
+    das online ist und Selbst&uuml;berwachung nach dem S.M.A.R.T.-Industriestandard
+    unterst&uuml;tzt. Der Wert ist 1, falls der Diagnoseprozessor des Laufwerks absch&auml;tzt,
+    dass das Laufwerk die n&auml;here Zukunft ohne Ausfall &uuml;berlebt. Der Statuswert
+    ist 0, wenn das Laufwerk absch&auml;tzt, dass sich seine Lebensdauer dem Ende
+    n&auml;hert. F&uuml;r n&auml;here Informationen &uuml;ber die S.M.A.R.T.-Technik verwenden Sie
+    bitte auch den Abschnitt <a href="sysinfo.html">Platten&uuml;berwachungsdaten
+      anzeigen</a>.</li>
+  <li><strong>RAID-Betriebszustand</strong>, f&uuml;r jedes Software-RAID-System,
+    das &uuml;ber Mac OS X angelegt wurde. Der Wert ist 1, wenn das RAID-System in
+    Ordnung und in voller Betriebsbereitschaft ist. Der Statuswert ist 0, wenn
+    der Betriebszustand eingeschr&auml;nkt ist, z.B. wenn eine Platte des RAID-Systems
+    ausgefallen ist. Nur RAID-Systeme auf Basis der Mac OS X-eigenen Software
+    werden unterst&uuml;tzt. Sie k&ouml;nnen keine Sonden f&uuml;r RAID-Systeme von Drittanbietern
+    anlegen, da es keinen allgemeinen Standard gibt, um dies unterst&uuml;tzen zu
+    k&ouml;nnen.</li>
+  <li><strong>elektrische Leistung</strong>, f&uuml;r jedes Paar aus einem physisch vorhandenen Spannungs-
+      und Stromsensor, das Sie definieren. Falls Ihr Computer einen Spannungs-
+    und einen Stromsensor enth&auml;lt, die beide das gleiche Objekt &uuml;berwachen, z.B.
+    einen Akku oder eine Prozessorkarte, k&ouml;nnen Sie einen virtuellen Leistungssensor
+      definieren, der die elektrische Leistung dieses Objekts berechnet. <strong>Hinweis:</strong> Sie
+      sind selbst daf&uuml;r verantwortlich, ein Sensorpaar auszuw&auml;hlen, bei dem die
+      Definition der Leistung einen Sinn ergibt. Hardwaremonitor l&auml;sst auch zu,
+      dass Sie zwei Sensoren kombinieren, die unterschiedliche Ger&auml;te &uuml;berwachen,
+      z.B. den Spannungssensor einer Batterie zusammen mit dem Ampere-Sensor
+      einer CPU-Karte, aber der resultierende Leistungswert w&uuml;rde in diesem Fall
+      keinerlei Sinn ergeben.</li>
+  <li><strong>Verbleibende Akkukapazit&auml;t</strong>, definiert als Prozentwert
+    der aktuellen Akkukapazit&auml;t
+      im Verh&auml;ltnis zur Gesamtkapazit&auml;t. Dies ist ein virtueller Sensor,
+      den Sie f&uuml;r jede Akkueinheit anlegen k&ouml;nnen.</li>
+</ul>
+<p class="infocell">Hinweis: Falls Sie interne &quot;Hot-Swap&quot;-Laufwerke oder externe eSATA-Laufwerke
+  verwenden, meldet eine Sonde des Typs <cite>S.M.A.R.T.-Plattenstatus</cite> auch dann
+  einen Plattenfehler, wenn Sie das Laufwerk abschalten oder entfernen.</p>
+<p align="center"><img src="Images/PrefProbes.png" alt="Hardware Monitor Preferences: Probes" width="620" height="538" /></p>
+<h2 align="left">Anlegen und Ändern von Sonden</h2>
+<p align="left">Das Anlegen einer neuen Sonde ist im Abschnitt <cite>Sonden</cite> des
+  Einstellungsfensters von Hardwaremonitor m&ouml;glich. W&auml;hlen Sie den
+  gew&uuml;nschten Typ der Sonde und bet&auml;tigen
+  Sie dann die Schaltfl&auml;che <cite>+</cite> unter der linken unteren Ecke
+  der Sondentabelle. Falls n&ouml;tig fragt Hardwaremonitor
+  noch nach Zusatzdaten zum Anlegen der Sonde, z.B. nach der Prozessornummer
+  f&uuml;r einen Prozessorlastsensor, oder nach der Festplatte beim Anlegen eines
+  virtuellen S.M.A.R.T.-Sensors. Die Sonde wird sofort hinzugef&uuml;gt.</p>
+<p align="left">Sonden verhalten sich genauso wie &quot;echte&quot; Sensoren. Sie k&ouml;nnen
+  sie ohne Einschr&auml;nkungen verwenden, zum Beispiel um Alarme zu definieren, Verlaufsdaten
+  aufzuzeichnen, Messwerte in Ausgabefenstern anzuzeigen, usw.</p>
+<p align="left">Um eine Sonde zu l&ouml;schen, w&auml;hlen Sie deren Eintrag in der Tabelle
+  und dr&uuml;cken Sie den unteren Knopf <cite>-</cite>. Verlaufsdaten der gel&ouml;schten
+  Sonde werden ebenso mitgel&ouml;scht. Es ist nicht m&ouml;glich, die Verlaufsdaten einer
+  gel&ouml;schten Sonde wiederzugewinnen, auch wenn Sie versuchen, die gleiche Sonde
+  noch einmal anzulegen. </p>
+<p align="left" class="infocell">Es ist nicht m&ouml;glich, zwei identische Sonden
+  anzulegen, d.h. Sonden des gleichen Typs, die dasselbe Objekt &uuml;berwachen.<br />
+  Hardwaremonitor kann Sonden nur auf dem lokalen Computer anlegen. Es ist zwar
+  auch m&ouml;glich, Sonden entfernt stehender Computer zu &uuml;berwachen, aber
+  in diesem Fall m&uuml;ssen Sie diese erst mit einem Exemplar von Hardwaremonitor
+  anlegen, das auf dem fernen Computer l&auml;uft.</p>
+<h2 align="left">Importieren und Exportieren von Sondendefinitionen</h2>
+<p align="left">Falls Sie eine aufwändige Einrichtung von künstlichen Sensoren
+  angelegt haben, möchten Sie vielleicht diese Definition auf anderen Computern
+  der gleichen Baureihe wiederverwenden. Dies ist auch dann möglich, wenn Sie
+  kein Mac OS X-Netzwerk mit roamenden Benutzer-Accounts verwenden: Sie können
+  die Sondendefinitionen über Dateien exportieren und importieren.</p>
+<p align="left">Um die aktuelle Liste von Sondendefinitionen zu exportieren,
+  wählen Sie den Menüpunkt <cite>Sonden exportieren …</cite> aus dem Klappmenü <cite>Import/Export</cite>  in der oberen rechten Ecke der Einstellungskarte <cite>Sonden</cite>. Nach Angabe eines
+  Dateinamens werden die Definitionen abgespeichert.</p>
+<p align="left">Um eine Datei mit Sondendefinitionen zu importieren, wählen Sie
+  den Menüpunkt <cite>Sonden importieren …</cite> aus dem Klappmenü <cite>Import/Export</cite>. Nach Auswahl
+  einer Datei werden die Definitionen geladen, wobei alle Ihre aktuellen Sonden
+  <em>ersetzt</em> werden.</p>
+<p align="left" class="infocell">Es wird empfohlen, diese Funktion nur innerhalb Computern der
+  gleichen Baureihe zu verwenden. Falls Sie versuchen, eine Sondendefinition
+  zu importieren, die sich auf ein Gerät bezieht, das in der aktuellen Hardware
+  unbekannt ist (wie ein Netzwerkanschluss oder ein elektrischer Sensor, der
+  auf diesem System nicht vorhanden ist), wird Hardwaremonitor diese Sonde je
+  nach Einzelfall entweder automatisch verwerfen oder eine nicht funktionierende
+  Sonde anlegen, die immer den Messwert &quot;---&quot; liefert. Nach dem Importieren von
+  künstlichen Sensoren einer unterschiedlichen Baureihe ist  zu empfehlen,
+  die Liste der Sonden danach zu überprüfen.</p>
+<hr />
+<p><a href="index.html">Inhaltsverzeichnis</a></p>
+</body>
+</html>

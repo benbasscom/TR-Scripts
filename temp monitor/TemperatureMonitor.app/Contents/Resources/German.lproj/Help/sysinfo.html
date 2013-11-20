@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Systemdaten anzeigen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="3" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+     <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Systemdaten anzeigen</h1></td>
+  </tr>
+</table>
+<h2>Das Systemdatenfenster</h2>
+<p>Sie k&ouml;nnen mit dem Monitorprogramm detaillierte technische Informationen &uuml;ber
+  Ihren Computer anzeigen lassen. Rufen Sie hierzu den Men&uuml;punkt <cite>Fenster &gt; Systemdaten
+  einblenden</cite> auf oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>4</kbd>.
+  Zu den angezeigten Daten geh&ouml;rt:</p>
+<ul>
+  <li>Apple Modellinformation und Name des Computertyps</li>
+  <li>Seriennummer des Ger&auml;ts</li>
+  <li>Eindeutige Identifikation des Geräts. Dieser Code ist ähnlich einer Seriennummer
+    und wird von Mac OS X verwendet, um Computer zu identifizieren.</li>
+  <li>Fertigungsdatum und Produktionsort (falls ermittelbar)</li>
+  <li>Typ und Anzahl der Prozessoren</li>
+  <li>64-Bit-Fähigkeit der Prozessoren</li>
+  <li>nominale, maximale, minimale und aktuelle Taktfrequenzen von Prozessor
+    und Speicherbus</li>
+  <li>Ausstattung mit Hauptspeicher und Cache-Speicher</li>
+  <li>Betriebssystem- und Systemkernversion</li>
+  <li>Information darüber, ob der Systemkern im 32- oder 64-Bit-Modus läuft</li>
+  <li>Start-ROM-Version</li>
+</ul>
+<p>Ist Ihr Computer mit selbst&auml;ndigen Mikroprozessoreinheiten (MPUs) ausgestattet
+  - dies ist bei den Spitzenmodellen der Power Mac G5-Baureihe der Fall - oder
+  verwenden Sie ein Intel-basiertes Macintosh-System, k&ouml;nnen Sie ein herausgleitendes
+  Detailfenster &ouml;ffnen, das weitere Daten anzeigt. Um das zus&auml;tzliche Infofenster
+  zu &ouml;ffnen,
+  bet&auml;tigen
+  Sie die Schaltfl&auml;che <cite>Mehr Info&hellip;</cite>. Falls Ihr Computer
+  eine eingebaute Systemmanagementdatenbank besitzt, die mit den Industriestandards
+  kompatibel ist, &ouml;ffnet die Bet&auml;tigung des Knopfes <cite>Management-Info&hellip;</cite> ein
+  weiteres Detailfenster mit anderen Angaben (siehe unten). </p>
+<p align="center"><img src="Images/SysInfo.png" alt="Systemdaten" width="460" height="598" /></p>
+<h2>Das MPU-Informationsfenster (nur bei Systemen mit MPU-Karten) </h2>
+<p>Das Detailfenster bei Systemen mit MPU-Karten beinhaltet die folgenden Informationen:</p>
+<ul>
+  <li>Steckplatznummer</li>
+  <li>Anzahl Prozessoren pro Einheit</li>
+  <li>Chargen- und Teilenummern der Prozessoren</li>
+  <li>Seriennummern der Einheit und der zugeh&ouml;rigen Hauptplatine</li>
+  <li>K&uuml;hlungsparameter f&uuml;r diese Einheit</li>
+</ul>
+<p align="center"><img src="Images/MPUInfo.png" alt="Mikroprozessoreinheitenfenster" width="410" height="262" /></p>
+<p align="left">Bei Computern mit mehreren MPU-Karten kann jede einzelne Karte &uuml;ber
+  die Navigationstasten rechts oben im Fenster ausgew&auml;hlt werden.</p>
+<h2 align="left">Das Informationsfenster f&uuml;r x86-Prozessoren</h2>
+<p align="left">Falls Ihr Computer einen Prozessor der x86-Architektur besitzt
+  (Intel-basierte Macintosh-Systeme) gibt Ihnen die Schaltfl&auml;che <cite>Mehr
+  Info</cite> die
+  folgenden Daten aus:</p>
+<ul>
+  <li>die Bezeichnung des Prozessors, die typischerweise verwendet
+      wird, um den Namen an Endkunden zu kommunizieren (Marketingname)</li>
+  <li>die echte interne Identifikation des Prozessors</li>
+  <li>Familien-, Modell- und Stepping-Nummern</li>
+  <li>die Anzahl der Prozessorkerne pro Prozessoreinheit. Dies kann virtuelle
+    Kerne mit einschließen.</li>
+  <li>Informationen über Intel® Turbo Boost: Wenn einige Kerne innerhalb eines
+    Mehrkernprozessors abgeschaltet sind, weil es im Moment nicht genug zu tun
+    gibt, um alle Kerne beschäftigt zu halten, machen moderne Prozessoren von
+    einer Funktion Gebrauch, die verbleibenden Kerne zu beschleunigen. Da in
+    diesem Fall nicht alle Teile des CPU-Chips aktiv sind, verbleibt genügend
+    Spielraum, um mehr Leistung aufzunehmen und mehr Abwärme zu erzeugen als
+    normal, wodurch sicheres Übertakten möglich wird. Die maximalen Taktfrequenzen
+    in Abhängigkeit von der Anzahl aktiver Kerne (bzw. Hardware-Threads) werden
+    in der Tabelle wiedergegeben. Falls Sie einen Prozessor ohne diese Beschleunigungsfunktion
+    verwenden, wird nur die Zeile <cite>alle</cite> mit der Nenntaktfrequenz
+    angezeigt.</li>
+</ul>
+<p align="center"><img src="Images/x86Details.png" alt="x86 Detaildatenanzeige" width="508" height="301" /></p>
+<p align="left">Bei Computern mit mehreren Prozessoreinheiten kann jede einzelne
+  Einheit &uuml;ber
+die Navigationstasten rechts oben im Fenster ausgew&auml;hlt werden.</p>
+<h2 align="left">Das Fenster mit Systemmanagementdaten (nur bei Computern mit
+  Intel-basierter Architektur)</h2>
+<p align="left">Das Detailfenster &uuml;ber Computer, die eine Systemmanagementtabelle
+  enthalten, stellt die folgenden Daten zur Verf&uuml;gung:</p>
+<ul>
+  <li>Daten &uuml;ber die Systemeinheit</li>
+  <li>Detailinformationen &uuml;ber jeden Prozessor</li>
+  <li>Detailinformationen &uuml;ber jede Cache-Einheit</li>
+  <li>Detailinformationen &uuml;ber jeden Speichersteckplatz oder Speicherger&auml;t</li>
+  <li>Daten &uuml;ber die Firmware des Systems</li>
+  <li>Managementdaten bez&uuml;glich der Hauptplatine</li>
+  <li>Managementdaten bez&uuml;glich des Systemgeh&auml;uses</li>
+  <li>Detailinformationen &uuml;ber jeden Anschluss auf der Hauptplatine
+      und/oder des Systemgeh&auml;uses</li>
+  <li>Detailinformationen &uuml;ber jeden Erweiterungssteckplatz</li>
+  <li>Liste der eingebauten Systemger&auml;te</li>
+  <li>Liste der Steckbr&uuml;cken und Schalter auf der Hauptplatine</li>
+</ul>
+<p align="center"><img src="Images/SMInfo.png" alt="Systemmanagementdaten" width="861" height="375" /> </p>
+<h2 align="left">Akkudaten anzeigen</h2>
+<p align="left">Bei Verwendung einer Vollversion von Hardwaremonitor sind auch
+  Detailinformationen zu den eingesetzten Akkus abrufbar. W&auml;hlen Sie hierzu
+  den Men&uuml;punkt <cite>Fenster &gt; Akkudaten einblenden</cite> oder dr&uuml;cken
+  Sie <kbd>⌘</kbd>+<kbd>5</kbd>. Hardwaremonitor verwendet unterschiedliche Anzeigefenster,
+  je nach dem, ob Sie moderne Akkutypen verwenden oder nicht. In jedem Fall sind
+  mindestens die folgenden Daten verf&uuml;gbar:</p>
+<ul>
+  <li>aktuelle Spannung</li>
+  <li>aktueller Strom</li>
+  <li>Gesamtkapazit&auml;t, d.h. der Maximalbetrag, den der Akku mit seinem derzeitigen
+    Alter erreichen kann, wenn er voll aufgeladen wird</li>
+  <li>aktuelle Kapazit&auml;t, also die momentane Ladung</li>
+  <li>maximale Kapazit&auml;t, die von diesem Akku ursprünglich unterstützt wurde,
+    so wie ab Werk vorgesehen</li>
+</ul>
+<p>Die nachfolgenden beiden Punkte sind nur f&uuml;r gewisse Akkupakete verf&uuml;gbar
+  und lassen sich nur mit bestimmten Betriebssystemversionen anzeigen: </p>
+<ul>
+  <li>Anzahl der Lade-/Entladezyklen  </li>
+  <li>aktuelle Betriebsart und Zustand</li>
+</ul>
+<p align="left">Bei Computern mit mehreren Akku-Steckpl&auml;tzen sind die Daten
+  f&uuml;r
+  jeden Akkumulator einzeln abrufbar. Verwenden Sie hierzu die Navigationstasten
+  rechts oben im Fenster. Falls Ihre Akkueinheit kompatibel mit dem Industriestandard
+  f&uuml;r
+  &quot;Smart Batteries&quot; ist, k&ouml;nnen Sie den Knopf <cite>Details&hellip;</cite> bet&auml;tigen,
+  um zus&auml;tzliche
+  Herstellungsdaten wie Anbieter, Seriennummer oder Produktionsdatum anzeigen
+zu lassen. Das nachfolgende Beispiel zeigt die Daten für den Akkupack eines älteren
+  PowerBooks:</p>
+<p align="center"><img src="Images/Battery.png" alt="Akkudaten" width="450" height="372" /></p>
+<p>Falls die Akkueinheit konform zum Smart-Battery-Industriestandard ist und
+  Sie ein Intel-basiertes System mit Mac OS X 10.4.9 oder einer späteren Version
+  einsetzen, verwendet Hardwaremonitor die folgende Darstellung für die Akkubetriebsdaten:</p>
+<p align="center"><img src="Images/SmartBattery.png" alt="Beispielanzeige Smart Battery" width="600" height="435" /></p>
+<p>Dieses Fenster zeigt zusätzlich die aktuelle Temperatur des Akkus und die
+  Spannungen der einzelnen Zellen an, falls die Einheit diese Daten preisgibt.
+  Der aktuelle Ladezustand wird durch eine Balkengrafik angezeigt, ebenso der
+  Vergleich zwischen der aktuellen Maximalkapazität und der ursprünglichen Kapazität,
+  der charakteristisch für den Gesundheitszustand des Akkus ist. Es ist normal,
+  dass der Akku sich bei Benutzung im Laufe der Zeit abnutzt, so dass die maximale
+  Kapazität im Verhältnis zur Kapazität &quot;ab Werk&quot;, als der Akku neu war, kleiner
+  wird.</p>
+<p>Der Akkupack funktioniert möglicherweise nicht mehr richtig, wenn eine der
+  Akkuzellen eine Spannung aufweist, die sich von den Spannungen der verbleibenden
+  Zellen stark unterscheidet. Dies ist ein gutes Indiz dafür, dass der Akku seine
+  Lebensdauer erreicht hat und ausgetauscht werden sollte.</p>
+<h2>Platten&uuml;berwachungsdaten anzeigen</h2>
+<p>Abh&auml;ngig von Ihrem Computer und der Version von Mac OS X, die auf ihm
+  l&auml;uft, &uuml;berwacht das Betriebssystem m&ouml;glicherweise die korrekte
+  Funktion aller angeschlossenen Festplatten, um vorherzusagen, ob ein Laufwerk
+  ausfallen k&ouml;nnte. Diese Funktion basiert auf einer Technik, die sich S.M.A.R.T.
+nennt.</p>
+<p>S.M.A.R.T. ist die Abk&uuml;rzung f&uuml;r <em>Self Monitoring, Analysis,
+    and Reporting Technology (Technik zur Selbst&uuml;berwachung, Analyse und
+    Bericht)</em>. Es handelt sich um einen Industriestandard, der 1992 eingef&uuml;hrt
+    wurde, um auf den Verschlei&szlig; von Festplatten fr&uuml;hzeitiger reagieren
+    zu k&ouml;nnen. Festplatten, die sich an den S.M.A.R.T.-Standard halten, &uuml;berwachen
+    sich mit einem eigenen Mikroprozessor selbst und erlauben, dass das Betriebssystem
+    Messwerte anfordert, die anzeigen, ob sich Betriebswerte so ver&auml;ndert
+    haben, dass die Platte in n&auml;herer Zukunft ausfallen k&ouml;nnte. In
+    diesem Fall kann die Festplatte ausgetauscht werden, bevor Daten verloren
+    gehen.</p>
+<p>S.M.A.R.T. ist f&uuml;r alle aktuellen Festplattenlaufwerke verf&uuml;gbar, die &uuml;ber
+  einen ATA- oder SATA-Anschluss mit dem Computer verbunden sind. Um den aktuellen
+  Status Ihrer Laufwerke anzuzeigen, w&auml;hlen Sie den Men&uuml;punkt <cite>Fenster
+  &gt; Laufwerks&uuml;bersicht einblenden</cite> oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>8</kbd>.</p>
+<p align="center"><img src="Images/DriveOverview.png" alt="Fenster Laufwerksübersicht" width="697" height="206" /></p>
+<p>Die Spalten in der Tabelle haben die folgende Bedeutung:</p>
+<ul>
+  <li><cite>Laufwerk:</cite> Der Name der Platteneinheit, so wie er vom Laufwerk
+    angegeben wird. Beachten Sie, dass die Hersteller- und Laufwerksnamen abgek&uuml;rzt
+    sein k&ouml;nnen, da die Identifikationstexte aus technischen Gr&uuml;nden in ihrer
+    L&auml;nge beschr&auml;nkt sind. Zum Beispiel kann sich ein Laufwerk als &quot;MATSHITA&quot; identifizieren,
+    obwohl der korrekte Herstellername &quot;Matsushita
+    Kotobuki Electronics (Panasonic)&quot; lautet. </li>
+  <li><cite>Seriennummer:</cite> Die Seriennummer des Laufwerks. Das Programm
+    zeigt Seriennummern nur f&uuml;r Laufwerke mit S.M.A.R.T.-Unterst&uuml;tzung an.</li>
+  <li><cite>Protokoll:</cite> Das Busprotokoll, das verwendet wird, um mit der
+    Laufwerkseinheit zu kommunizieren.</li>
+  <li><cite>S.M.A.R.T.:</cite> zeigt an, ob das Laufwerk im Moment in der Lage
+    ist, den Standard <em>Self
+    Monitoring, Analysis, and Reporting Technology </em>zu unterst&uuml;tzen.
+    Beachten Sie, dass einige Protokolle nicht in der Lage sind, S.M.A.R.T.-Daten
+    zu &uuml;bertragen, so dass ein Laufwerk, das S.M.A.R.T.-kompatibel ist, es in
+    seiner aktuellen Situation trotzdem nicht unterst&uuml;tzen kann, weil es &uuml;ber
+    ein unvertr&auml;gliches Protokoll angesprochen wird.</li>
+  <li><cite>Status:</cite> zeigt den Diagnosestatus des Plattenlaufwerks. <cite>Gepr&uuml;ft</cite> bedeutet,
+    dass der Diagnoseprozessor der Laufwerkseinheit das Laufwerk mit dem Ergebnis
+    getestet hat, dass alle Betriebswerte innerhalb der zul&auml;ssigen Grenzen
+    liegen, womit das Laufwerks als betriebsbereit eingestuft wird. <cite>Ausfall</cite> hei&szlig;t,
+    dass der Diagnoseprozessor ein Versagen des Laufwerks in der n&auml;heren
+    Zukunft voraussagt. In diesem Fall sollten Sie das Laufwerk so schnell wie
+    m&ouml;glich austauschen.
+    Nicht verf&uuml;gbar bedeutet, dass keine Diagnosedaten zur Verf&uuml;gung
+    stehen, da das Laufwerk kein S.M.A.R.T. unterst&uuml;tzt.</li>
+  <li><cite>LED</cite>: Wenn Sie sich nicht sicher sind, welches Laufwerk in
+    Ihrem System welchen Modellcode und Seriennummer tr&auml;gt, aber die Laufwerke
+    mit Aktivit&auml;tslampen
+    (LEDs) ausger&uuml;stet sind, kann Ihnen das Monitorprogramm helfen, die
+    Laufwerke zu identifizieren: Wenn Sie den Knopf <cite>Test</cite> bet&auml;tigen,
+    wird das Laufwerk in der jeweiligen Zeile seine Aktivit&auml;tsanzeige f&uuml;r
+    eine Sekunde aufleuchten lassen. Der <cite>Test</cite>-Knopf kann nur f&uuml;r
+    Laufwerke gedr&uuml;ckt werden, in denen sich gerade lesbare Medien befinden.</li>
+</ul>
+<p class="infocell">Die Tabelle aktualisiert sich nicht automatisch, da eine
+  kontinuierliche &Uuml;berwachung alle Laufwerke verlangsamen w&uuml;rde. Falls Sie sicherstellen
+  m&ouml;chten, dass die Tabelle aktuell ist, schlie&szlig;en Sie das Fenster und &ouml;ffnen
+  Sie es dann wieder.</p>
+<h2>Festplatten&uuml;berwachungsdaten f&uuml;r Xserve-Computer anzeigen </h2>
+<p>Der im letzten Abschnitt erl&auml;uterte S.M.A.R.T.-&Uuml;berpr&uuml;fungsstatus erlaubt
+  Ihnen einzusch&auml;tzen, ob die Plattenlaufwerke in Ordnung sind. Der Status basiert
+  auf Daten, die vom Diagnoseprozessor der Plattensteuereinheit gesammelt wurden.
+  In einigen F&auml;llen k&ouml;nnen auch diese Detaildaten, auf denen der &Uuml;berpr&uuml;fungsstatus
+beruht, &uuml;berwacht werden. Mac OS X &uuml;bernimmt dies automatisch auf Apple Xserve-Computern.</p>
+<p>W&auml;hlen Sie den Men&uuml;punkt <cite>Fenster &gt; Xserve-Plattendaten
+  einblenden </cite> oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>7</kbd>. Ein
+  Fenster &auml;hnlich wie das Folgende wird erscheinen: </p>
+<p align="center"><img src="Images/Xserve.png" alt="Hard Disk Monitoring Information" width="550" height="336" /></p>
+<p align="left">Im Normalfall ist dieses Funktionsmerkmal nur dann verf&uuml;gbar,
+  wenn alle der folgenden Bedingungen erf&uuml;llt sind:</p>
+<ul>
+  <li>Sie verwenden einen Apple Xserve-Computer.</li>
+  <li>Sie verwenden Originallaufwerke von Apple, die f&uuml;r den Xserve hergestellt
+    wurden.</li>
+  <li>Auf dem Computer l&auml;uft  Mac OS X Server.</li>
+</ul>
+<p>Auf Computern, die mit mehreren &uuml;berwachten Laufwerken ausger&uuml;stet sind, k&ouml;nnen
+  die Daten f&uuml;r jede Einheit einzeln abgerufen werden. Verwenden Sie hierzu die
+  Navigationstasten rechts oben im Fenster.</p>
+<p>Die Tabelle zeigt die folgenden Informationen an: </p>
+<ul>
+  <li><cite>S.M.A.R.T.-Attribut</cite>: Der Name des Attributs, das vom Prozessor
+    des Laufwerks &uuml;berwacht wird. Der Name wird vom Plattenhersteller vorgegeben
+    und wird von Mac OS X oder Hardwaremonitor nicht weiter interpretiert. Aus
+    diesem Grund muss er immer auf Englisch angezeigt werden.</li>
+  <li><cite>Aktuell</cite>: Der aktuelle Wert des Attributs, wie er vom Laufwerk
+    gemessen wurde. Die Bedeutung des Wertes wird vom Plattenhersteller bestimmt.
+    H&ouml;here Werte bedeuten bessere Leistung oder Zuverl&auml;ssigkeit.</li>
+  <li><cite>Tiefstwert</cite>: Der schlechteste Wert, der w&auml;hrend der Lebensdauer
+    des Laufwerks aufgezeichnet wurde.</li>
+  <li><cite>Grenze</cite>: Der Grenzwert f&uuml;r das Attribut, wie er vom Plattenhersteller
+    definiert ist. Wenn der gemessene Wert gleich oder kleiner als der Grenzwert
+    ist, zeigt dies ein Problem mit dem Laufwerk an.</li>
+  <li><cite>Status</cite>: Die Deutung des aktuellen Attributwertes.</li>
+</ul>
+<p>Es gibt drei verschiedene F&auml;lle:</p>
+<ul>
+  <li><cite>OK</cite>: das &uuml;berwachte Attribut ist innerhalb seiner normalen
+    technischen Betriebsdaten. </li>
+  <li><cite>Ausfall bevorstehend</cite>: das Plattenlaufwerk hat ein Problem
+    erkannt, denn der aktuell gemessene Wert liegt nicht innerhalb des zul&auml;ssigen
+    Bereichs. Ein Ausfall des Laufwerks k&ouml;nnte bevorstehen. Das Laufwerk sollte
+    so schnell wie m&ouml;glich ersetzt werden.</li>
+  <li><cite>Lebensdauer &uuml;berschritten</cite>: der aktuell gemessene Wert
+    zeigt an, dass das Laufwerk die Lebensdauer &uuml;berschritten hat, f&uuml;r die es
+    konstruiert wurde. Es wird empfohlen das Laufwerk auszutauschen.</li>
+</ul>
+<h2>Einblenden von Daten über angeschlossene Bildschirme</h2>
+<p>Diese Funktion ist nur in Hardwaremonitor, nicht in Temperaturmonitor verfügbar.
+  Das Programm kann versuchen, alle Bildschirme zu identifizieren, die gegenwärtig
+  am System angeschlossen sind. Wählen Sie den Menüpunkt <cite>Fenster &gt; Bildschirmdaten
+  einblenden</cite> aus oder dr&uuml;cken Sie <kbd>⌘</kbd>+<kbd>9</kbd>. Die
+  folgenden Daten über jede Anzeigeeinheit sollten zugreifbar werden:</p>
+<ul>
+  <li>der Identifikationscode des Herstellers</li>
+  <li>der Plug-and-Play-Identifikationscode des Bildschirmmodells</li>
+  <li>der lesbare Produktname</li>
+  <li>zusätzliche Daten über das Produkt (falls vom Hersteller bereitgestellt)</li>
+  <li>das Herstellungsdatum oder das Modelljahr des Produkts (falls bereitgestellt)</li>
+  <li>die Seriennummer des Bildschirms (wird möglicherweise nicht bereitgestellt
+    oder kann sich bei einigen Herstellern von der gedruckten Seriennummer unterscheiden)</li>
+</ul>
+<p class="infocell">Der Informationsumfang kann sich zwischen verschiedenen Bildschirmanbietern
+  unterscheiden. Diese Funktion wird nicht von Monitoren unterstützt, die
+  vor 1995 gebaut wurden. Falls Sie ein Bildschirmkabel verwenden, das sich nicht
+  an die VESA-Normen hält oder das Signal über einen Umschalter oder ein ähnliches
+  Gerät geführt wird, kann es sein, dass weder Mac OS X noch Hardwaremonitor
+  den Bildschirm identifizieren können.</p>
+<p align="center"><img src="Images/DisplayInfo.png" alt="Bildschirmdatenanzeige" width="448" height="228" /></p>
+<p class="infocell">Bildschirmeinheiten, die in tragbare Apple-Computer eingebaut sind, identifizieren
+  sich üblicherweise als &quot;Color LCDs&quot;, die von 'APP' (Apple Inc.) gebaut wurden.
+  Trotzdem wird in vielen Fällen auch die echte Teilenummer des Originalherstellers
+  in der Zeile <cite>Zusatzdaten</cite> preisgegeben. Wenn Sie nach dieser Teilenummer im
+  Internet suchen, können Sie den wahren Hersteller der Bildschirmeinheit herausfinden.
+  Im obigen Beispiel wäre dies <cite>LTN154BT</cite>, ein Anzeigepaneel, das
+  von SAMSUNG hergestellt wird.</p>
+<hr />
+<p><a href="index.html">Inhaltsverzeichnis</a></p>
+</body>
+</html>

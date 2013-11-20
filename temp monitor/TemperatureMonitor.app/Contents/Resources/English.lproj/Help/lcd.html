@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Controlling external alphanumeric displays</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="9" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /></td>
+    <td><h1>Controlling external alphanumeric displays</h1></td>
+  </tr>
+</table>
+<p>There can be situations where it's not sufficient to monitor your system via
+  an attached screen or remotely via the network. It can make sense to have
+  monitoring capabilities directly at the computer's enclosure, especially if
+  the system is not equipped with a screen. Servers running in a &quot;headless&quot; configuration,
+  e.g. Xserve units which usually don't even have a graphics card, are a good
+  example.</p>
+<p>For this type of configuration, Hardware Monitor can send readings to an external
+  alphanumeric liquid crystal display (LCD) which can be connected to the computer
+  via USB interface. An example is shown in the following photo:</p>
+<p align="center"><img src="Images/LCDisplay.jpg" alt="LCD output example" width="200" height="72" /> </p>
+<p>In addition to acquired readings from sensors and probes, Hardware Monitor
+  allows you to specify additional data for output as well, for example the current
+  time, or the IP address of a certain network interface. The example
+  above shows date and time, four temperature values, a CPU load bar-graph, three
+  S.M.A.R.T. status values, one RAID status value, and a selected IP address.
+  The contents of the display is updated at the same rate as all other output
+  channels of Hardware Monitor. The mentioned features are not available in Temperature
+  Monitor. </p>
+<p>Hardware Monitor supports the following hardware equipment <em>only</em>:</p>
+<ul>
+  <li>Alphanumeric liquid crystal display modules, following the original <strong>Hitachi
+      HD44780</strong> industry
+      standard. The LCD <em>must</em> be connected via an USB controller of the
+      type <strong>&quot;IO-Warrior 24&quot;</strong>,
+    a product developed by <strong>Code Mercenaries Hard- und Software
+    GmbH</strong>.</li>
+  <li>Alphanumeric liquid crystal display modules with USB interfaces, manufactured
+    by <strong>Crystalfontz America Inc</strong>. Modules of the series <strong>CF-632</strong> (16
+    x 2 characters) and <strong>CF-634</strong> (20 x 4 characters) are
+    supported.</li>
+  <li>Graphical liquid crystal displays as part of products made by <cite>Logitech</cite>,
+    for example
+    <cite>G15</cite> or <cite>G19 G-series keyboards</cite>, or <cite>Z-series
+    speakers</cite>.</li>
+</ul>
+<p>The Crystalfontz displays are in fact serial (RS-232) modules which come with
+  an on-board USB-to-serial converter. You will need an additional device driver
+  for your version of Mac OS X to allow the operating system to connect to this
+  converter. The converter is made by <strong>Future Technology Devices International
+  Limited (FTDI). </strong>Free drivers
+  from FTDI are available at this web page: <a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a>.
+  No additional software is required for the IO-Warrior solution. </p>
+<p class="infocell"><strong>We cannot answer any questions about
+    these hardware devices or their distribution. </strong>We do not promote
+    or sell these products. Regarding any questions about building or configuring
+    your own LCD output unit, please see the following web sites for
+    documentation and contact information:<br />
+    <br />
+    <a href="http://www.codemercs.com/">http://www.codemercs.com/</a><br />
+  <a href="http://www.crystalfontz.com/">http://www.crystalfontz.com/</a><br />
+    <a href="http://www.logitech.com/">http://www.logitech.com/</a><br />
+    <br />
+  Information
+about products not manufactured by us or about third-party websites is provided
+for reference purposes only, and does not constitute our recommendation or
+endorsement. Please contact the respective vendors for additional information.
+We provide this only as a convenience to our users. We have not tested the
+information found on these sites and make no representations regarding its
+accuracy or reliability. There are risks inherent in the use of any information
+or products found on the Internet, and we assume no responsibility in this
+regard. Please understand that a third-party site is independent from us and
+that we have no control over the content on that website.</p>
+<h2>Preparing a Crystalfontz module</h2>
+<p>In order to use a Crystalfontz USB module, you'll have to execute the following
+  steps first:</p>
+<ol>
+  <li>Download the necessary Virtual COM port driver for your version of Mac OS
+    X from <a href="http://www.ftdichip.com/Drivers/VCP.htm">FTDI</a>. Unpack
+    and install the driver.</li>
+  <li>Connect the display module to a USB port.</li>
+  <li>Make sure the USB-to-serial converter is detected by Mac OS X. Open <cite>System
+      Preferences</cite> and go to <cite>Network</cite>. You should receive a
+      message that a new serial device has been detected. Verify if the settings
+      are correct. You should not enable networking features on the communication
+      line to the module.</li>
+</ol>
+<p class="infocell"><strong>WARNING:</strong> We have no influence on the quality
+  of third-party drivers. The FTDI driver may cause Kernel Panics in Mac OS X,
+  especially on systems with more than 2 GB of main memory. Kernel Panics
+  will crash the operating system, causing data loss. If you have problems with
+  the driver, please make sure you are using the latest available version, or
+  contact the manufacturers for assistance.</p>
+<p class="infocell"><strong>WARNING:</strong> Neither the FTDI USB converter,
+  nor the Crystalfontz module provide a valid serial number for the LCD unit
+  to Mac OS X. For this reason, neither Mac OS X, nor Hardware Monitor can correctly
+  track the module if you disconnect and then reconnect it to your system. Mac
+  OS X may mistakenly identify a re-attached module as a <strong>new</strong> device
+  which must be configured once more. This means all preference settings for
+  the LCD module in System Preferences and in Hardware Monitor have to be set
+  again.</p>
+<h2>Preparing a Logitech LCD product</h2>
+<p>Logitech does not allow that Hardware Monitor can control the LC display on
+  their products directly. This is necessary, because the display can be used
+  by several applications of different vendors simultaneously, so access to the
+  display must be coordinated. The software <cite>Logitech LCD Manager version
+  3</cite> must be installed before Hardware Monitor can detect and work with
+  displays on Logitech products. This software is either shipped with the product,
+  or can be downloaded for free from the website of Logitech. Please see the
+  documentation that comes with the product for further information.</p>
+<p>Hardware Monitor is supporting Logitech LCD products with either monochrome
+  or color displays. If multiple devices are connected at the same time, Hardware
+  Monitor will show the same display contents on all Logitech displays. You can
+  use the <cite>LCD Manager</cite> pane in System Preferences to deselect particular displays
+  from being used by Hardware Monitor. When using a color display, the output
+  of Hardware Monitor will use the color white only. Only the display itself
+  is supported, additional buttons which might be available on certain devices
+  are ignored by the application.</p>
+<p>Logitech does not support that applications can track different LCD products
+  individually. For this reason, Hardware Monitor will only show one single entry
+  named <cite>Logitech LCD Manager</cite> in its list of detected USB devices, even if multiple
+  Logitech LCD products are connected. The serial number displayed by Hardware
+  Monitor is always <cite>00000000</cite>.</p>
+<ul>
+  <li>It is recommended to select the display type   <cite>3 x 25 characters</cite> if
+    you are using a monochrome Logitech display.</li>
+  <li>It is recommended to select the display type <cite>17 x 52 characters</cite> if
+    you are using a Logitech display supporting color.</li>
+</ul>
+<p>Changing the font or font size is currently not supported.</p>
+<h2>Configuring  display units</h2>
+<p>Configuration of an external LCD unit is very easy and can be done by simple
+drag-and-drop operations.</p>
+<ol>
+  <li>Connect one or more external LCD units to the USB interface of your computer.</li>
+  <li>Launch Hardware Monitor, open the <cite>Preferences</cite> window and go to the section
+      <cite>LCD Module</cite>.</li>
+  <li>All detected USB units will be displayed in the small table at the top
+    of the window. To select which type of LC display is connected to each USB
+    unit, click on a line in the table, then use the pop-up menu <cite>Configure
+    selected USB device for display type</cite> to choose how many lines and
+    columns are available on the display. The button <cite>Run Test&hellip;</cite> can
+    be used to send a test pattern to the selected LCD.</li>
+</ol>
+<p>The LC Display will light up as soon as you switch the type menu from <cite>No
+  display </cite>to one of the possible display types. The following test patterns are
+  available:</p>
+<ul>
+  <li>text output which identifies chip type and serial number of the USB unit.
+      This makes it easier to see which module is which when you are working
+    with more than one device.</li>
+  <li>text output with line and column numbers. This test allows you to verify
+    if the display type setting is correct.</li>
+  <li>a table of Latin characters.</li>
+  <li> a table of Japanese Katakana characters.</li>
+</ul>
+<p>If the selected LCD module is capable of controlling additional settings via
+  software, the button <cite>LCD Settings</cite> will become active. After pressing it, a
+  dialog sheet will open and you can set operating parameters as backlight brightness
+  or display contrast.</p>
+<p>You can additionally activate a &quot;backlight saver&quot; for each of your LCD modules
+  which makes sure that the display will be switched off after your computer
+  has not been in use for a specified time. Just select the desired time (or
+  the value <cite>never</cite>) with the slider at <cite>Start backlight saver</cite>.
+  It's a good idea to select the same time interval you have set for your screen
+  saver in System Preferences but this is not necessarily required.</p>
+<p class="infocell">The IO-Warrior USB controller does not need any drivers to
+  be accessible by Mac OS X. To make this technically possible, it has to act
+  like a Human Interface Device (HID), similar to a mouse or keyboard. For this
+  reason, Mac OS X will interpret certain signals of the IO-Warrior device as
+  &quot;user interaction&quot;, causing your system to no longer enter any sleep modes
+  when the module is active.
+  <strong>If you want to use automatic sleep mode for your screen
+  or your computer, you'll have to enable the backlight saver for the IO-Warrior
+  module.</strong> In this case,
+  communication to the LCD module will stop after the selected time interval.
+  At that moment, Mac OS X will no longer misinterpret the module as active user,
+  and the standard sleep intervals will begin as expected. Note that the total
+  sleep timeout interval will be the sum of the LCD backlight saver time and
+  the sleep time you have configured in the Energy Saver pane of System Preferences.</p>
+<p align="center"><img src="Images/PrefLCD.png" alt="Hardware Monitor Preferences: LCD Module" width="620" height="538" /> </p>
+<p align="left">After the display type has been configured, you can use the lower
+  part of the window to select which output elements should be sent to the display.
+  The left table shows you all output elements which are available on the local
+  computer. The right table shows you the active elements which are currently
+  being sent to the display. At the beginning, the right-hand table is empty.
+  You can use the mouse, dragging elements from the left to the right table to
+  configure the desired output step by step.</p>
+<p align="left">The selected output elements will appear immediately on the display,
+  showing the current values. The display follows the update time interval you
+  have set in the <cite>General</cite> pane
+  of the preferences window. The output will appear
+  additionally in the simulated <cite>Preview</cite> area in the lower left corner
+  of the window.</p>
+<p align="left">The output elements are sent to the display in top to bottom
+  order. You can rearrange the elements by dragging them in the right-hand table
+  into any order you like. The following elements are available for output on
+  the external display: </p>
+<ul>
+  <li><cite>Text</cite>: free-form text of a fixed length. You can enter any
+    text you like into the area <cite>Options for selected element</cite> after
+    you have dragged a text element from the left to the right and the element
+    is still selected. Note that Hardware Monitor accepts any valid characters
+    for input, but most LC displays only support a limited character set. A character
+    which cannot be displayed is automatically replaced by a filled block character.</li>
+  <li><cite>New Line</cite>: causes the LC display to begin a new line at the
+    position where this element is inserted. To avoid empty lines, Hardware Monitor
+    automatically suppresses a &quot;new line&quot; command whenever the display
+    would have automatically begun a new line, because the previous line was
+    full.</li>
+  <li><cite>Date</cite>: the current date. Hardware Monitor will automatically select
+      an output format which follows your personal user preferences
+      for the short display of date designations. To change this format, use
+    the <cite>Formats</cite> section in the <cite>International</cite> pane of <cite>System Preferences</cite> and
+    restart the application.</li>
+  <li><cite>Time</cite>: the current time. Hardware Monitor will automatically select
+      an output format
+      which follows your personal user preferences for the short display
+      of time designations including seconds. To change this format, use the <cite>Formats</cite> section
+      in the <cite>International</cite> pane of <cite>System
+      Preferences</cite> and restart the application.</li>
+  <li><cite>Computer Name</cite>: the name of the local computer. This is the name
+      configured via System Preferences, not a DNS name.</li>
+  <li><cite>Kernel Version</cite>: the version designation of the kernel of the
+      operating system.</li>
+  <li><cite>OS Version</cite>: the version designation of Mac OS X.</li>
+  <li><cite>OS Build</cite>: the build number of the running version of Mac OS X.</li>
+  <li><cite>IPv4 address</cite>: the IP version 4 address of each physical
+    network interface. The lefthand table will offer an entry for each detected
+    network interface available. If the interface is not configured or loses
+    its address, the value &quot;---.---.---.---&quot; will be displayed. </li>
+  <li><cite>Sensor Value</cite>: the sensor reading for each currently active
+    hardware sensor or artificial probe. Details for the way the display will
+    represent the value can be configured in the area <cite>Options for selected
+    element</cite>.
+      See the paragraph below for more information.</li>
+  <li><cite>Sensor Bar Graph</cite>: the sensor reading for each currently active
+      hardware sensor or artificial probe which is representing a percentage
+    value, e.g. CPU load or disk usage. The bar graph will grow from left to
+    right, consuming 10 characters. The bar is represented by filled rectangular
+    block characters. </li>
+</ul>
+<p align="left">If you have selected a sensor or probe value for output, you
+  can enter additional parameters at <cite>Options for selected element</cite>:</p>
+<ul>
+  <li><cite>Maximum field length</cite>: the number of characters which should
+    be used on the LCD to display this sensor value, including decimal delimiter
+      and unit. In order to avoid values to be shifted around the
+      display, Hardware Monitor will always attempt to hold the length constant,
+      even if the number of digits to display the value is changing. This also
+      means a value will be cut off if the length you have selected is too small.
+      The value &quot;12.34V&quot; consumes
+      6 characters for example. If you select a field length of 4, only the part &quot;12.3&quot; will
+      become visible on the display.</li>
+  <li><cite>Digits after decimal delimiter</cite>: The number of digits which should
+      be displayed after the decimal delimiter. Hardware Monitor will automatically
+      round the values appropriately.</li>
+  <li><cite>Show unit or &quot;OK/FAIL&quot; messages</cite>: The meaning of
+    this switch is different depending on whether you have selected a physical
+    sensor value, or a probe with a logical &quot;0/1&quot; value, for example a RAID status
+    probe. For a physical sensor, a unit character will be displayed if this
+    option is switched on. It will be omitted if the checkmark is removed. (Note
+    that temperature values use a simple degree symbol as unit designation.)
+    For a logical probe, setting this checkmark will enable a feature that automatically
+    translates the value &quot;1&quot; to the output &quot;OK&quot; and the value of &quot;0&quot; to the output
+    &quot;!!&quot;. If this option is switched off, logical values will not be translated
+    into text.</li>
+</ul>
+<p>There are no restrictions in the output elements you select. You can use several
+  different text elements for example, or display the same sensor value twice,
+  at two different locations on the LCD. Hardware Monitor won't warn you if
+  you are creating more output than fits on the display.</p>
+<h2>Using LCD units on an unattended computer </h2>
+<p>It is necessary to have Hardware Monitor running in order to send values to
+  the external LCD unit. However, if you log out, Mac OS X will automatically
+  quit your running applications. This means Hardware Monitor will be shut down
+  and the display will be switched off. This is not helpful if you want to
+  monitor a server, which is usually running in unattended mode with no user
+  being logged in at the main screen.</p>
+<p>You can solve this problem as follows:</p>
+<ol>
+  <li>Download a copy of Hardware Monitor Remote. If running on the same computer
+    for the same user, only one registration key is necessary to use both applications.
+    (<a href="http://www.bresink.com/osx/HardwareMonitorRemote.html">http://www.bresink.com/osx/HardwareMonitorRemote.html</a>)</li>
+  <li>Attach the LCD unit and use Hardware Monitor to configure the display.
+    When the output works as desired, quit Hardware Monitor.</li>
+  <li>Launch Hardware Monitor Remote on the same computer and user account, and
+    use its import feature to import the current LCD configuration (together
+    with the current probe configuration if necessary) from Hardware Monitor.
+    See the reference manual of Hardware Monitor Remote for details.</li>
+  <li>Start the background service of Hardware Monitor Remote. The background
+    application will control the LCD unit, and the display will remain active
+    even if you log out.</li>
+</ol>
+<p>You can also configure Hardware Monitor Remote to start the background service
+  automatically during startup of Mac OS X. In this case, the display will automatically
+  be switched on when the operating system is started. It is not necessary that
+  a user logs in.</p>
+<p class="infocell">This feature cannot be supported for Logitech LCD products.
+  These products require the Logitech LCD Manager software to run which is designed
+  to work in a graphical user session only.</p>
+<h2>Connecting and disconnecting running display units</h2>
+<p>Hardware Monitor and Hardware Monitor Remote allow that you connect and disconnect
+external LCD units while they are in use. The applications can identify each
+  unit and will automatically stop or restart sending data to each unit, if the
+  displays are disconnected or reconnected to the computer, respectively.</p>
+<p class="infocell"><strong>Warning:</strong> Despite this feature, some versions
+  of Mac OS X might not support this hot-swapping of devices! In the worst case,
+  Mac OS X might crash with a kernel panic when you disconnect an LCD device
+  in the middle of a running data transfer. This is a problem in the USB drivers
+  of Mac OS X which cannot be prevented by Hardware Monitor. <strong>For this
+  reason, it is recommended to disconnect LCD units only after you have quit
+  the application which is controlling it. </strong></p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+</body>
+</html>

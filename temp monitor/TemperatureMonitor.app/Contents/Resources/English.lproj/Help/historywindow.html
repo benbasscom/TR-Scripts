@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Displaying history data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="6" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+     <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Displaying history data</h1></td>
+  </tr>
+</table>
+<p>The monitor application contains a powerful history feature that allows to track the development of readings for an extended period of time and to visualize the data graphically. History data can be displayed in two different modes of operation:</p>
+<ul>
+  <li><cite>Short-term history:</cite> the previous 380 readings per sensor are displayed. The affected time period depends on the currently defined <a href="prefs.html">update interval</a>. Short-term values are lost when  the application is quit.</li>
+  <li><cite>Long-term history</cite>: a period of one week maximum per sensor is displayed. One reading is stored each minute while the application is running. The values are kept persistently and are not lost if the application is quit. In a network with &quot;roaming&quot; users, storage is organized per user, per computer. Readings can be visualized graphically, selecting a variable time range between 1 hour and 7 days.</li>
+</ul>
+<p>The readings can be displayed in one or an unlimited number of windows as in the following example.</p>
+<p align="center"><img src="Images/History.png" alt="History Example" width="480" height="502" /></p>
+<p align="left" class="infocell">A curve is displayed with an interruption if
+  no values have been recorded in the affected time range. The monitor
+  program was not running or the computer was switched off. </p>
+<p align="left">Using the buttons in the lower left corner, you can choose between
+  the two history modes. If the long-term history is selected, you can set the
+  desired time interval with the slider. Time is visualized from left to right
+  with the current readings display at the right border.</p>
+<p align="left">When the selected time interval is so large that it can no longer
+  be displayed with full resolution in the current window width, the application
+  allows you to scroll horizontally over the entire set of values. A magnifying
+  glass with a <cite>-</cite> symbol will appear in this case (see below). If
+  you click on this icon, the history will zoom out the time axis so that it
+  fits completely into the window, and the symbol will turn into a <cite>+</cite> sign.
+  Note that isolated areas of the scaled down curves (in case of major gaps in
+  the history data) may become so small that they are no longer visible. To
+  return to full resolution again, press the <cite>+</cite> symbol. </p>
+<p align="center"><img src="Images/HistoryZoom.png" alt="Zooming the time axis" width="416" height="47" /> </p>
+<p align="left">When the checkmark <cite>Colors/Extreme Values</cite> is set,
+   a drawer opens at the side of the window, displaying a legend which sensor
+  is marked by which color. The table in the drawer also displays the extreme
+  values of the sensors for the selected time interval, which is explained
+  in detail <a href="extreme.html">in a different section</a> of the reference
+  manual.  Color
+  settings can be modified right here, by clicking onto one of the colors in
+  the table, or via the <a href="output.html">preferences
+  window</a>.</p>
+<p align="left">Setting the checkmark <cite> Rulers</cite> will bring up two
+    rulers that act as a crosshair. It can be used to determine the exact values
+    of each curve point. The values for time and reading are shown next to the
+    crosshair center.</p>
+<p align="left">The switch <cite>Curve Labels</cite> allows to show a small identification
+  label next to each curve. The labels will use the short sensor names you have
+  defined in the <a href="output.html">preferences window</a>. </p>
+<p align="left">To open all configured history windows select the menu item <cite>Window &gt; Show
+    History Windows</cite> or press <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>H</kbd>.
+    You can also use this item if you have closed several (but not necessarily
+    all) history windows and want to make sure that all are reopened. To close
+    all history windows at the same time, select <cite>Window &gt; Hide History
+    Windows</cite> or press <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>W</kbd>.</p>
+<p align="left">You can define an arbitrary number of history windows. The number is only limited by the memory size of your computer. History windows and the individual sensors that should be displayed in them can be configured with the <cite>History</cite> pane in the preferences window.</p>
+<p align="center"><img src="Images/PrefHistory.png" alt="History" width="620" height="538" /></p>
+<p align="left">To create a new history window, press the button <cite>+</cite> left to the upper table. A new table entry will be displayed, and after clicking it you can change the title of the new window as desired. To delete one or multiple windows, select the respective entries in the table and press the button labeled <cite>-</cite>.</p>
+<p align="left">If a window is selected, you can add or remove sensors in the
+  lower half of the window in the same way <a href="output.html">discussed earlier</a>.
+  Note that a single history window can only contain sensors of the same quantity
+  type. Otherwise, it would not be possible to label the vertical axis in a clean
+  way. This means it is not possible to have a temperature sensor and a battery
+  capacity sensor in the same history window. The background color for each window
+  can be set with the small color well above the sensor table. </p>
+<p align="left" class="infocell">It is no problem to display a single sensor
+  in multiple history windows simultaneously. However, you should avoid creating
+  too many history windows on systems without enough computing power. The continuous
+  updates necessary for all graphs may waste computation time which will no longer
+  be available to other applications.</p>
+<h2 align="left">Combining history windows</h2>
+<p align="left">A single history window can only contain sensors of the same
+  quantity type, for example temperature sensors only. This is necessary to make
+  sure the graphs are showing consistent scales and units on their vertical axes.
+  In some cases however, you might want to observe how sensors of different types
+  interacted at a certain point in time. For example, a high processor load causing
+  higher CPU temperatures and higher amperage, causing higher fan speeds.</p>
+<p align="left">To monitor a  time interval, putting sensors with
+  different quantities into direct relation with each other, you can combine
+  several  windows, overlaying their history graphs:</p>
+<ol>
+  <li>Open the history windows which should become part of the combined
+      window.</li>
+  <li>Select the menu item <cite>Window &gt; Combine History Windows&hellip;</cite>.
+      An inspector panel will open. </li>
+  <li>Click on the history window which should become the main window
+      of the combination. The combined history window will have the currently
+    selected time interval, scale and unit of that main window.</li>
+  <li>In the inspector panel, set checkmarks in the column <cite>Overlay</cite> for
+      each history window which should be combined with the selected main window.</li>
+</ol>
+<p align="left">You can remove all overlays from the selected main window by
+  pressing the button <cite>Deactive Overlays</cite> in the inspector panel.
+  Note that the following restrictions apply to combined history windows:</p>
+<ul>
+  <li>The sensors of overlaid windows will not appear in the color
+      overview or extreme value drawers of the main window.</li>
+  <li>You cannot combine windows which are already part of another
+      combination.</li>
+  <li>The labels of the y-axes of all overlaid graphs will disappear.
+      The main window will display a warning that the display shows curves with
+    different units and scales. </li>
+</ul>
+<h2 align="left">Saving history values</h2>
+<p align="left">The history values are automatically saved by the application
+  each time it is quit. However, if your computer is defective and you are using
+  the application to verify if the defect is caused by an over-temperature condition,
+  the history readouts may be lost when the computer crashes before the data
+  could be saved. For this reason you can enable the option to automatically
+  save the data in regular intervals. Set a checkmark at <cite>Automatically
+  save history data every x minutes</cite> and enter a value between 1 and 1440
+  minutes (one day). The setting is effective for this computer only, not for
+  remotely monitored computers. </p>
+<h2 align="left">Erasing history values</h2>
+<p align="left">You can clear all values for the short-term history of all sensors by selecting the menu item <cite>Monitor &gt; Clear Short-Term History</cite> or pressing <kbd>⌘</kbd>+<kbd>K</kbd>. </p>
+<p align="left">If it happens to be necessary to delete stored values of the long-term history, drag the folder</p>
+<p align="left"><code>~/Library/Application Support/Hardware Monitor</code>, or</p>
+<p align="left"><code>~/Library/Application Support/Temperature Monitor </code>respectively,</p>
+<p align="left">from your private folder to the trash. Note that this will erase all readings for all computers you have used in the past!</p>
+<p align="left" class="infocell">The short-time history is cleared automatically when the update interval for readings is changed.</p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Frequently Asked Questions</title>
+    <meta content="18" name="AppleOrder" />
+    <link type="text/css" rel="stylesheet" href="mbshelp.css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" alt="Hardwaremonitor" src="Images/HWIcon48.png" /><img
+              width="48" height="48" alt="Temperaturmonitor" src="Images/TMIcon48.png" /></td>
+          <td>
+            <h1>Frequently Asked Questions</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="sectionalheader">What is a S.M.A.R.T. hard disk sensor?</p>
+    <p>S.M.A.R.T. is the abbreviation of <em>Self Monitoring, Analysis, and
+        Reporting Technology .</em> It is an industry standard introduced in
+      1992 to react earlier on hard disk failures. A hard disk supporting the
+      S.M.A.R.T. standard monitors itself with its own micro processor and
+      allows the operating system to request readouts that indicate whether
+      operational parameters have changed in such a way that the hard disk might
+      become defective in the near future. In this case the hard disk can be
+      replaced before any data is lost.</p>
+    <p>Some hard disk manufacturers allow the computer to request additional
+      detail information, e.g. the current operating temperature of the disk.
+      However, this feature is not an official part of the S.M.A.R.T. standards.
+      Not every disk supporting S.M.A.R.T. is capable of providing temperature
+      readings. Either the data is not measured at all, or the hard disk
+      manufacturer did not publish how the data can be read out from the disk
+      controller.</p>
+    <p>Temperature Monitor and Hardware Monitor analyze all hard disks connected
+      to your computer if they include accessible temperature sensors. Each disk
+      is tested for compliance with the S.M.A.R.T. standard. If the disk is
+      supporting S.M.A.R.T. and the procedure for reading the temperature value
+      of this particular model is known, the readings are automatically acquired
+      by the software.</p>
+    <p class="sectionalheader">Why is no temperature displayed for my external
+      FireWire or USB hard disk?</p>
+    <p>Nearly all FireWire or USB hard disks are in fact ATA hard disks accessed
+      via a "FireWire/USB to ATA bridge device". Those bridge chips only
+      translate a subset of the ATA commands between the FireWire/USB and the
+      ATA protocol standards. In particular, commands to transfer S.M.A.R.T.
+      diagnostic data (which are needed to access the temperature sensors inside
+      the drives) are usually not supported. For this reason it is technically
+      impossible to transport temperature data across a bridge. There will be a
+      future industry standard called "Smart Command Transfer (SCT)" which will
+      address this issue. But it will take some time before Apple and the hard
+      disk vendors can fully support this.</p>
+    <p>Use the menu item <cite>Window &gt; Show Drive Overview</cite> or Press
+      <kbd>⌘</kbd>+<kbd>8</kbd> to
+      display the transport protocols of all disk drives and their S.M.A.R.T.
+      capabilities.</p>
+    <p class="sectionalheader">Why is no temperature displayed for my solid
+      state drive (SSD)?</p>
+    <p>Not all drives compliant with the S.M.A.R.T. standard are providing
+      temperature values. Different from conventional hard disks, the ambient
+      temperature is not an important factor to estimate the remaining lifetime
+      of an SSD. For this reason, many SSDs don't have any temperature sensors.</p>
+    <p class="sectionalheader">My computer can display the CPU temperature using
+      a program running on Mac OS 9, or using a special software for an upgrade
+      CPU card with Mac OS X, but the monitor application does not find any
+      sensors. It this an error?</p>
+    <p>This can only happen for computer models that either are using very old
+      processor models which estimated their internal temperature via an
+      inaccurate Thermal Assist Unit (TAU) but not a real temperatur sensor, or
+      for computer models having a processor card of a third-party manufacturer
+      which uses its own drivers.</p>
+    <p>If you are using a third-party processor card and temperature values can
+      be displayed by special software, the manufacturer of this card has to
+      publish a driver which is compatible with Mac OS X and makes temperature
+      readings publicly available. After that, the sensor will be automatically
+      detected by the application and values can be displayed. Card
+      manufacturers can contact us for receiving more technical information.</p>
+    <p>Note that we cannot support upgrade processor cards from manufacturers
+      that do not disclose technical detail information about their products.
+      Some companies want to sell their own temperature monitor software and
+      make sure their sensors cannot be accessed openly.</p>
+    <p class="sectionalheader">I am running the program on an x86-based computer
+      which has not been manufactured by Apple. Only sensors for hard drives,
+      batteries, and Intel CPU monitoring are displayed, but no other values.
+      Can you add support for the other sensors of my mainboard?</p>
+    <p>This is only possible if the manufacturer of your system or your
+      mainboard develops a driver for the sensors that is compatible with Mac OS
+      X. Manufacturers can contact us for receiving more technical information</p>
+    <p class="sectionalheader">The sensor X shows the reading Y. Is this normal?</p>
+    <p>If you want to find out whether a sensor value is within normal limits,
+      please select the menu item <cite>Window &gt; Show Overview </cite>(or
+      press <kbd>⌘</kbd>+<kbd>1</kbd>) and look for the limits in the third and
+      fourth columns of the sensor table. They contain the known official limits
+      Apple has specified for readings acquired at the given sensor locations.
+      If no limit is given in the table, this either means that it does not make
+      sense to specify a limit for this particular sensor (e.g. the battery
+      capacity should not have limits), or Apple hasn't published any
+      specifications for this sensor. </p>
+    <p>Note that all up-to-date Macintosh models automatically shut down or
+      enter sleep mode if one of the readings exceeds a critical limit. For this
+      reason it is impossible that your computer can be damaged in an
+      overtemperature condition.</p>
+    <p>For old computers without temperature managment, no limits have been
+      specified by Apple. In this case use the following limits as orientation:
+    </p>
+    <ul>
+      <li>Most older G3 or G4 processors are designed for a maximum operating
+        temperature of 105 degrees Celsius (221 degrees Fahrenheit), measured at
+        the chip die of the CPU. </li>
+      <li>G4 processors of type 7455 or later (typically used in Macintosh
+        systems with 867 MHz and above) are designed for a maximum operating
+        temperature of 65 degrees Celsius (149 degrees Fahrenheit), also
+        measured at the chip die of the CPU.</li>
+      <li>Most desktop hard drives are specified for a maximum operating
+        temperature of 55 degrees Celsius (131 degrees Fahrenheit). For exact
+        information, use the <cite>Drive Overview</cite> window (<kbd>⌘</kbd>+<kbd>8</kbd>)
+        to get the manufacturer and model code of your hard drive, and then
+        direct your web browser to the manufacturer's web site to download the
+        official data sheet for this drive. The temperature limits are always
+        specified. </li>
+    </ul>
+    <p class="sectionalheader">Why is my hard disk not put into sleep mode if
+      the application is running?</p>
+    <p>If one or more hard disks are equipped with temperature sensors, the
+      values will be read out in regular intervals. Mac OS X is interpreting
+      this as access to the hard disk which causes the disk not to be put into
+      sleep mode.</p>
+    <p>You can change this behavior by enabling the disk saver feature of the
+      application: When you are inactive and the computer is not really in use
+      for some period of time, the program can automatically stop all sensor
+      communication with your hard drive(s). This allows the standard sleep
+      feature of the hard drives to become active. Just open the preferences
+      window, go to the <cite>General</cite> pane and set the pop-up menu of
+      the option <cite>Disk Saver</cite> to the desired time-interval for user
+      inactivity. </p>
+    <p class="sectionalheader">Why is only one temperature value displayed for
+      my dual G4 computer? It has two CPUs.</p>
+    <p>The temperature value is not measured by the processor
+      itself but by an external sensor. For the "Power Mac G4 (Mirrored
+      Drive-Doors)" this
+      sensor is located at the center of the processor board. Only one sensor is
+      available
+      even if there are two processors on the card.</p>
+    <p class="sectionalheader">Why are two hard drive temperature sensors
+      displayed for my iMac G5? It has only one hard drive!</p>
+    <p>The iMac G5 may have two temperature sensors for the hard drive
+      (depending on the drive model) although it contains one hard disk only.
+      The sensor labeled as <cite>S.M.A.R.T. hard disk sensor</cite> is the
+      internal temperature sensor provided by the hard drive vendor. The sensor
+      labeled <cite>Hard Drive</cite> is the sensor provided by Apple. Apple's
+      sensor is mounted at the outer metal frame of the drive carrier unit and
+      measures the temperature of the air flow produced by the drive cooling
+      fan. The S.M.A.R.T. sensor is located inside the drive unit, so its
+      temperature is usually some degrees higher.</p>
+    <p class="sectionalheader">Why do the power sensors of the Power Mac G5
+      slots not carry a unit?</p>
+    <p>At this time we don't have enough data about these sensors. For this
+      reason it is unknown in which unit the readings have to be interpreted.
+      The readings could, for example, be interpreted as milliwatts. The sensors
+      <cite>Slot 12V, Slot 3.3V</cite> and <cite>Slot 5V</cite> show the power
+      load drawn by PCI cards for the respective voltages. The sensor <cite>Slot
+        combined</cite> also includes the current power load by the SATA hard
+      disks.</p>
+    <p class="sectionalheader">Why do the readings for the temperature sensors
+      "Processor Card x Ambient" found in some PowerMac G5 systems never change?</p>
+    <p>Mac OS X does not seem to refresh these sensors on a regular basis. The
+      system also ignores explicit commands to get new readings from these
+      sensors. It is necessary to restart the computer or to put it to sleep
+      mode temporarily to get up-to-date values.</p>
+    <p class="sectionalheader">The application displays a warning that I am
+      using an Intel CPU with out-of-date microcode and that the per-core
+      temperature sensors may stop working after the system is waking from sleep
+      mode. What should I do?</p>
+    <p>This problem is caused by an internal design flaw affecting the first
+      generation of Intel Core processors. The Digital Thermal Sensors may stop
+      working when the processor returns from a C3/C4 power saving state. Intel
+      has corrected
+      this hardware bug in later versions of the CPU.</p>
+    <p>As a workaround, you should install Apple's firmware updates for your
+      particular Intel-based Macintosh model. <strong>This will fix the problem
+        in most, but not all cases.</strong> It is recommended to install the
+      firmware update for the Boot-ROM, as well as the firmware update for the
+      System Management Controller (SMC). To download the firmware updates from
+      Apple, please see the following table:</p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <th>Macintosh Model </th>
+          <th>
+            <div align="center">Firmware Update </div>
+          </th>
+          <th>
+            <div align="center">SMC Firmware </div>
+          </th>
+        </tr>
+        <tr>
+          <td>iMac (early 2006) </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/imacefifirmwareupdate11.html">Version
+                1.1</a></div>
+          </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/imacearly2006smcfirmwareupdate.html">Update</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Mac mini (early 2006) </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macminiefifirmwareupdate11.html">Version
+                1.1</a></div>
+          </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macminiearly2006smcfirmwareupdate.html">Update</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td>MacBook Pro 15" (early 2006)</td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macbookproefifirmwareupdate12.html">Version
+                1.2</a></div>
+          </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macbookpro15inchsmcfirmwareupdate.html">Update</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td>MacBook Pro 17" (early 2006)</td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macbookproefifirmwareupdate12.html">Version
+                1.2</a></div>
+          </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macbookpro17inchsmcfirmwareupdate.html">Update</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td>MacBook (early 2006) </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macbookefifirmwareupdate10.html">Version
+                1.0</a> </div>
+          </td>
+          <td>
+            <div align="center"><a href="http://www.apple.com/support/downloads/macbooksmcfirmwareupdate11.html">Update</a></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>NOTE: </strong>Macintosh systems built after September 2006 are
+      no longer affected by the aforementioned problem. </p>
+    <p>Intel refers to this hardware problem as <strong>Erratum AE18</strong>.
+      For detailed information, please see <a href="http://www.intel.com/design/mobile/specupdt/309222.htm">Intel
+        document 30922204.</a></p>
+    <p class="sectionalheader">What does it mean if the reading for an internal
+      temperature sensor of an Intel processor is being displayed as "---"?</p>
+    <p>This indicates that the application has no longer received up-to-date
+      values from this sensor for a certain amount of time. This is normal if
+      you have switched off the respective CPU core. Under specific
+      circumstances, this can also happen if the system is under very low or
+      very high CPU load. Note that Intel recommends a default access interval
+      of 82 seconds to read out and use data of thermal processor sensors, so
+      continuous monitoring of these sensors is not really critical.</p>
+    <p class="sectionalheader">When using an up-to-date Intel Core i series
+      processor, many of the internal core sensors of the processor show "---"
+      readings only. Is this normal?</p>
+    <p>Yes, this is the correct and intended behavior of Core i series
+      processors, depending on current system load. Mac OS X fully supports the
+      energy saver technologies offered by these CPUs. If your computer is not
+      under full load, all unused processor cores will be powered off, so their
+      internal sensors are shut down, too. The cores will automatically wake up
+      again when more jobs have to be executed. If you have a system with 2
+      processor packages, with 8-cores and 16 logical processors in total (see
+      the section on Intel Hyperthreading further below), you will see the
+      following behavior, for example:</p>
+    <table width="100%" border="0">
+      <tbody>
+        <tr class="datatableheader">
+          <td>
+            <div align="center">Full Load</div>
+          </td>
+          <td>
+            <div align="center">Medium Load</div>
+          </td>
+          <td>
+            <div align="center">Low Load</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">
+              <table width="80%" border="1">
+                <tbody>
+                  <tr>
+                    <td>CPU Core 1 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 2 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 3 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 4 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 5 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 6 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 7 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 8 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 9 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 10 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 11 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 12 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 13 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 14 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 15 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 16 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>All cores are operating. You are receiving values (here denoted
+                by x) from all core sensors.</p>
+            </div>
+          </td>
+          <td>
+            <div align="center">
+              <table width="80%" border="1">
+                <tbody>
+                  <tr>
+                    <td>CPU Core 1 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 2 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 3 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 4 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 5 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 6 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 7 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 8 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 9 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 10 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 11 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 12 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 13 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 14 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 15 (on CPU B)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 16 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>All physical cores (odd numbers) are operating, the virtual
+                Hyperthreading cores (even numbers) are shut down.</p>
+            </div>
+          </td>
+          <td>
+            <div align="center">
+              <table width="80%" border="1">
+                <tbody>
+                  <tr>
+                    <td>CPU Core 1 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 2 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 3 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 4 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 5 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 6 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>CPU Core 7 (on CPU A)</td>
+                    <td>x</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 8 (on CPU A)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 9 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 10 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 11 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 12 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 13 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 14 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 15 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                  <tr class="markedtablerow">
+                    <td>CPU Core 16 (on CPU B)</td>
+                    <td>---</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>An entire processor package (in this case B) is powered down.</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="sectionalheader">Some other monitoring applications always show
+      temperature values for all available cores on my Core i processor. Isn't
+      this a better behavior?</p>
+    <p>No, this is in fact a serious design flaw in those programs. They either
+      don't track correctly which cores are sleeping, or -even worse- they force
+      all cores to keep awake in order to get updated readings continuously. The
+      latter will significantly change the normal behavior of the CPU, creating
+      very different readings for temperature, voltages, currents, and power.
+      Influencing the monitored object is the worst thing a monitor program can
+      do.</p>
+    <p class="sectionalheader">When running certain applications on my Core i
+      processor, I sometimes see a sudden increase of temperature, amperage and
+      power values. The readings remain at a high level until I shut such an
+      application down. Is there something wrong with my system?</p>
+    <p>No, what you see is an intended feature of certain Core i processors
+      which is called "Intel Turbo Boost Technology". If the processor detects
+      that most of its cores are sleeping because total load on the system is
+      low, but there is one continuously working program which is not
+      multi-threaded, so it mainly works on one core only, the processor will
+      automatically accelerate itself by increasing its clock frequency, a
+      procedure known as "overclocking".</p>
+    <p>Overclocking means that the CPU will run at a "higher than normal" clock
+      frequency. For example, if you have a system with a nominal clockspeed of
+      2.66 GHz, the processor may accelerate to clockspeeds of up to 3.06 GHz.
+      Acceleration is done by the processor itself. The operating system can
+      neither influence nor control this, it only needs to enable the standard
+      energy saver features of the processor. Operating the processor beyond its
+      normal clock specifications is possible in this particular situation,
+      because only one core is active while the others are powered down, so
+      there is a large remaining safety headroom which can be exploited by the
+      single core. For example, when only one core in a 4-core processor is
+      active, it can safely consume more power and generate more heat than
+      normal because the single core can "steal" the safety headroom normally
+      reserved for operating the other 3 cores.</p>
+    <p>Turbo Boost ensures that the processor can assess its own headroom. The
+      processor monitors its own temperature, the drawn current, and its power
+      consumption. Increasing the clock frequency stops automatically as soon as
+      either the temperature is some degrees below the allowed maximum limit,
+      electrical specifications are some percentage below their permitted
+      maxima, or the highest possible overclock frequency has been reached. Of
+      course, Turbo Boost will also stop as soon as the other cores are waking
+      from sleep state, i.e. when total system load becomes higher. This can
+      result in the unusual consequence that the temperature of the processor
+      may decrease when total CPU load increases.</p>
+    <p>It is not uncommon for the core temperature to rise by more than 30
+      centigrades, or the drawn current to rise by more than 8 Amperes within a
+      few seconds, as soon as Turbo Boost becomes active. The actual effects and
+      the applications triggering Turbo Boost may vary between operating system
+      versions, because Apple is silently optimizing the energy saver and
+      scheduling features during certain OS updates. Due to the nature of Turbo
+      Boost, process scheduling and energy saver policies have an indirect
+      effect on the times when the processor can safely exploit Turbo Boost.</p>
+    <p>To learn more about Turbo Boost, please consult Intel's official web page
+      at <a href="http://www.intel.com/technology/turboboost/">http://www.intel.com/technology/turboboost/</a>.</p>
+    <p class="sectionalheader">Why are the temperature values for some of my
+      FB-DIM modules in the Mac Pro or Xserve missing while others are displayed
+      fine?</p>
+    <p>This indicates that you are using FB-DIMMs which are not fully compatible
+      with Macintosh systems. In most cases this is caused by errors in the
+      firmware of the AMB chip (Advanced Memory Buffer) controlling the module.
+      <strong>You should replace these incompatible modules: If your system is
+        not receiving valid temperature readings from the FB-DIMMs, the cooling
+        control for the RAM temperature zone won't work correctly.</strong></p>
+    <p class="sectionalheader">I get readings of more than 90°C (194°F) for the
+      FB-DIM modules in my Mac Pro. Isn't this a bit high?</p>
+    <p>No, temperatures in that range are normal for FB-DIMMs and are no cause
+      for concern. Each FB-DIMM contains its own controller, called "Advanced
+      Memory Buffer (AMB)". An AMB also contains an internal sensor which
+      measures temperature directly inside the chip. The specified maximum
+      temperature<br />
+      range of an FB-DIMM, measured by the AMB, usually lies in the interval
+      between 95°C and 125°C (203°F .. 257°F). It will vary from manufacturer to
+      manufacturer, a typical value is 110°C (230°F). If you like to know the
+      exact specifications for your FB-DIM modules, note the part number and
+      manufacturer of the respective modules (printed on the label of each
+      module), and download the data sheets for those parts from the
+      manufacturer. Nearly all chip manufacturers and RAM vendors publish the
+      specifications at their web sites.</p>
+    <p class="sectionalheader">I am using an Intel-based system of a model
+      series which was announced after January 2008. Temperature Monitor can
+      display the external CPU temperature but not the temperature values per
+      core, even if I install the driver for extended x86 sensor support.
+      Hardware Monitor displays "Core Hot" status sensors in that case. Does
+      this indicate a problem?</p>
+    <p>No, this is the correct and intended behavior for some specific Intel
+      processors. When Intel introduced the third generation of Core and
+      Core-based Xeon processors, manufactured in 45 nm technology ("Penryn"
+      series), they also changed specific aspects how the Digital Thermal
+      Sensors (DTS) on the chip cores are working. To check if your system is
+      using a third generation Core processor, open the <cite>System Info</cite>
+      window in the application and press the button <cite>More info…</cite>
+      inside the window. A processor of this series will be identified as <cite>x86
+        Family: 6</cite>, <cite>x86 Model: 23</cite>.</p>
+    <p>If a processor of this series additionally identifies as being <cite>Xeon(R)</cite>,
+      it won't be possible to get an accurate per-core temperature reading.
+      Those processors are equipped with Digital Thermal Sensors which do not
+      work linear enough under normal operating conditions. They will only show
+      accurate readings near the maximum allowed temperature limit. For this
+      reason, Temperature Monitor won't display core temperature readings in
+      that case, Hardware Monitor will display a "Hot" status information only.</p>
+    <p>If a processor of this series identifies as being a <cite>Core(TM) 2 Duo</cite>,
+      it will depend on the exact CPU model. For the processor types in use by
+      Apple, the applications should be capable of displaying core temperature
+      readings. If you are using a CPU usually not found in Apple computers, the
+      applications might not always be capable of displaying core readings.</p>
+    <p class="sectionalheader">When using an Intel Core 2 Duo processor of
+      family 6 model 23 (see previous question) the temperature readings from
+      the core sensors sometimes appear to be lower than the outer CPU
+      temperature. Isn't this wrong?</p>
+    <p>This is the way the Digital Thermal Sensors and the temperature diode
+      sensors are designed. The effect is caused by different policies used for
+      the calibration of the sensors. The two types of sensors have different
+      accuracies and are factory-calibrated to different maximum points. For
+      this reason, the DTS reading cannot be used to predict the CPU case
+      reading.</p>
+    <p class="sectionalheader">How should I interpret the output of the sensors
+      named "CPU Core x Hot"?</p>
+    <p>On low core temperatures, the sensors will give a reading of 0. When the
+      core temperature exceeds a value of 10 Kelvins below the maximum allowed
+      temperature limit, the value will switch to 1, indicating that the core is
+      hot. This tries to match the behavior of Apple's cooling system which
+      usually attempts to hold the temperature of Intel CPUs in the range
+      between 20 and 10 Kelvins below the maximum point when the processor is
+      stressed under full operating load. This means, a hot status does <strong>not</strong>
+      indicate that the CPU has reached an overtemperature condition yet, it may
+      still be 10 Kelvins below it. In fact, many users consider this
+      temperature range to be the "best" operating condition, because it
+      indicates that the CPU has reached its maximum Thermal Design Power and is
+      operating with full performance.</p>
+    <p class="sectionalheader">The application displays readings for twice as
+      much processor cores as should actually be in my Mac. Is this correct?</p>
+    <p>Yes, this behavior is correct for processors with Intel® Core™ i
+      technology. By default, Mac OS X will enable a hardware feature called
+      "Simultaneous Multi-Threading" when detecting these CPUs. Intel calls this
+      "Hyperthreading Technology". Simultaneous Multi-Threading means that a
+      single processor can dispatch two independent streams of instructions at
+      the same time, so one physical processor can act as two processors. Mac OS
+      X and all applications will behave as if twice as much processors are
+      built into the computer. To display the true number of physical and
+      virtual processors, select the menu item <cite>Window &gt; Show System
+        Info</cite>, or press <kbd>⌘</kbd>+<kbd>4</kbd>. The line <cite>Number
+        of processors</cite> will display how many physical and how many logical
+      processors are available, and how many processors are currently actively
+      in use by Mac OS X. The number of processor chips can be displayed by
+      pressing the button <cite>More info…</cite> next to this line. By using
+      the navigation buttons in the upper right corner of the processor details
+      sheet, you can browse through all chips available. The program will
+      display each chip with the title <cite>Unit x</cite>, where <cite>x</cite>
+      is the current number of the chip package. Example: 8 processor cores, 16
+      logical processors, 16 actively in use, in 2 chips.</p>
+    <p class="sectionalheader">The System Information window shows a bus speed
+      of only 100 MHz. Isn't this wrong for my new Mac with Intel Core i
+      processor?</p>
+    <p>No. The value of 100 MHz is a symbolic fallback value Mac OS X uses for
+      specific Macintosh models which no longer have a conventional system bus
+      or front side bus. The memory controller has become part of the processor
+      and no longer needs an external bus. The link to I/O devices is now
+      handled by the <em>Direct Media Interface (DMI)</em>.</p>
+    <p class="sectionalheader">I am using a third-party tool to enable the SLFM
+      feature of my Intel processor. However, the frequency change is not
+      reflected by the frequency sensor display of Hardware Monitor. Does this
+      indicate a problem?</p>
+    <p>No. Hardware Monitor currently doesn't support monitoring the SLFM status
+      (Super Low Frequency Mode) of Intel processors. This would require
+      accessing undocumented parts of the processor. For safety reasons, it is
+      the application's policy not to use such techniques. If you have modified
+      your system to use SLFM within Mac OS X, the frequency reading shown by
+      Hardware Monitor can sometimes be off by a factor of 2.</p>
+    <p class="sectionalheader">Why do some PowerMac G5 systems with 4 CPU cores
+      sometimes not display values for their second cooling pump? </p>
+    <p>Apple distributes two different versions of the "quad" PowerMac G5
+      computers: Some of them are equipped with two pumps for the liquid cooling
+      system, while others contain a revised version of the cooling system with
+      only one pump. Hardware Monitor correctly reflects the situation for each
+      version. If the sensor for the second pump is missing (label "CPU B
+      Radiator Pump"), your computer uses a liquid cooling system with one pump
+      only.</p>
+    <p class="sectionalheader">I have disconnected a fan cable or completely
+      removed a fan in my Mac. Hardware Monitor still displays changing sensor
+      values for this fan however. How is this possible?</p>
+    <p>Depending on the hardware model you are using and on the version of Mac
+      OS X currently running, the operating system may not allow than an
+      application program (like Hardware Monitor) gets access to the <em>input</em>
+      values sent by the fan sensors. To get a reading nevertheless, Hardware
+      Monitor then tries to get the <em>output</em> values the cooling control
+      system sends to the fans.</p>
+    <p>Under normal circumstances, there is no difference between the input and
+      the output values: If a fan is present, it will automatically follow the
+      output value within a few milliseconds. However, when you remove the fan
+      or the sensor, you are getting a "ghost" reading.</p>
+    <p class="sectionalheader">I am using a portable Mac of a model series
+      announced after October 2008. Sometimes, the set of displayed GPU sensors
+      appears to be changing. Many of the sensors for the graphics chips are,
+      for example, displayed as being "disconnected" when I display their
+      preferences in the Sensor section of the Preferences window. How is this
+      possible?</p>
+    <p>In this case, you must be using a Mac capable of switching between two
+      alternative graphics solutions, for example a pair of an <strong>Nvidia
+        GeForce 9400M</strong> and a <strong>GeForce 9600M GT</strong>, or <strong>Intel
+        HD Graphics</strong> paired with an <strong>Nvidia GeForce GT 330M</strong>.
+      It is the correct and expected behavior to only show the sensors which are
+      currently online. The sensors of the GPU which is currently offline are
+      powered down and even cannot be detected. If you find an option for <cite>Graphics</cite>
+      in the <cite>Energy Saver</cite> section of <cite>System Preferences</cite>,
+      your Mac will support this kind of switching.</p>
+    <p>In some cases, your Mac might be in an aggressive power saving mode when
+      starting the application, with the effect that the application <strong>may
+        see both GPUs as being inactive</strong>. In this situation, the
+      readings of all graphics processor sensors -with exception of the outer
+      chip and heat sink sensors- will be suppressed.</p>
+    <p>If you have upgraded to Mac OS X 10.7 Lion, you may also see the
+      "disconnected" state. Apple has removed support for GPU load measuring
+      from many of the graphics drivers of Lion. You should erase the display
+      preferences for the GPU load sensor in this case.</p>
+    <p class="sectionalheader">How can I check if Hardware Monitor would detect
+      more sensors for my computer than Temperature Monitor?</p>
+    <p>Simply start the Hardware Monitor application. The sensors detected
+      additionally will be listed in the window <cite>Running in Demo Mode</cite>.</p>
+    <p class="sectionalheader">How many registration keys do I have to purchase
+      when monitoring several computers with the remote access feature of
+      Hardware Monitor?</p>
+    <p>There is one simple rule: <strong>You need one registration key for each
+        computer that is monitored at the same time.</strong></p>
+    <p>Registration keys for Hardware Monitor and Hardware Monitor Remote are
+      interchangeable. So if you are running Hardware Monitor and Hardware
+      Monitor Remote on one computer you'll need only one key for this system.
+      If another copy of Hardware Monitor connects to this system, it will need
+      a second key because then we'll have a network of two monitored computers
+      which are in use at the same time. </p>
+    <p>Another example: You have 2 computers that should be capable of
+      monitoring each other. In this case you install the applications 4 times
+      (a copy of Hardware Monitor and a copy of Hardware Monitor Remote on both
+      systems), but you only need to buy 2 registration keys.</p>
+    <p class="sectionalheader">How can I configure Hardware Monitor to
+      automatically warn me when a disk in a RAID set is failing, or a drive is
+      no longer passing its S.M.A.R.T. self test?</p>
+    <p>This can be done in two simple steps:</p>
+    <ol>
+      <li>Open the pane <cite>Probes</cite> in the <cite>Preferences</cite>
+        window of Hardware Monitor and create a RAID or SMART probe for the
+        drive in question.</li>
+      <li>Go to the pane <cite>Alerts</cite>, use the <cite>+</cite> button
+        next to the table of sensors to be monitored and drag the newly created
+        probe entry from the drawer into the table. Make sure the entry is still
+        selected, remove the checkmark at <cite>Trigger alarm: When value
+          exceeds threshold of</cite>, and set a checkmark at <cite>Trigger
+          alarm: When value falls below</cite>, entering a value of <cite>1</cite>.</li>
+    </ol>
+    <p>You can then select which of the possible alert actions should be taken.
+      If you want to continuously monitor the drive, it is recommended to add
+      Hardware Monitor to your list of login items.</p>
+    <p class="sectionalheader">I have removed the application from an
+      Intel-based system but have forgotten to use its function to deinstall the
+      driver for access to the internal processor sensors beforehand. Can I
+      remove this driver manually?</p>
+    <p>Yes, this is possible. Make sure you are working as user with
+      administrative permission and remove the folder</p>
+    <p><code>/Library/StartupItems/BRESINKx86Monitoring</code></p>
+    <p>at the highest level of your system volume. The driver will become
+      inactive the next time you start the operating system. </p>
+    <p></p>
+    <hr />
+    <p><a href="index.html">Table of contents</a></p>
+  </body>
+</html>

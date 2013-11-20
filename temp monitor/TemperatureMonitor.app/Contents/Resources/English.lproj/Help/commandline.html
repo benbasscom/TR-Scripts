@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Using the command-line version</title>
+    <meta content="15" name="AppleOrder" />
+    <link type="text/css" rel="stylesheet" href="mbshelp.css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="100"><img width="48" height="48" alt="Hardwaremonitor" src="Images/HWIcon48.png" /><img
+              width="48" height="48" alt="Temperaturmonitor" src="Images/TMIcon48.png" /></td>
+          <td>
+            <h1>Using the command-line version</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>If you have experience with the BSD command line, or would like to use
+      readings in your own scripts, this is possible. You can use a version of
+      the monitor application that comes without a graphical user interface. The
+      executable binary can be found in the application bundle. To launch it,
+      use the following relative paths:</p>
+    <p><code>Hardware Monitor.app/Contents/MacOS/hwmonitor</code> , or
+      respectively,</p>
+    <p><code>Temperature Monitor.app/Contents/MacOS/tempmonitor</code></p>
+    <h2>Parameters of hwmonitor</h2>
+    <p>The synopsis is as follows:</p>
+    <p><code>hwmonitor [-c | -f | -k] [-ds] [-q] [-th | -tv]</code></p>
+    <p>The program will display the current readings of all available sensors
+      using a line</p>
+    <p><code>sensor-name: value unit</code></p>
+    <p>for each sensor. Sensor names are the internal location identifiers
+      defined by Apple which are stored in the firmware of each computer model.
+      If you specify the <code>-c, -f</code> or <code>-k</code> options,
+      you'll force the program to return the value in degrees Celsius,
+      Fahrenheit or Kelvin, respectively.</p>
+    <p class="infocell">Sensors which have been detected but are offline, for
+      example because they are part of a device currently in sleep mode, or
+      because they currently experience a technical problem, are being displayed
+      with a value of "<code>-</code>" (a single minus sign).</p>
+    <p>If you add the option <code>-ds</code>, access to S.M.A.R.T. hard drive
+      sensors will be disabled. This can be useful when using the program
+      periodically in a continuously running script, making sure disk drives are
+      not kept busy, allowing them to enter sleep mode.</p>
+    <p>When adding the option <code>-q</code>, quantity descriptions will be
+      appended at the end of each sensor location label. This helps to
+      differentiate between sensors on specific hardware models where multiple
+      quantities (e.g. voltage, current, and power) are being measured at the
+      same location. The quantity is specified between square brackets. This is
+      an example:</p>
+    <pre>SMC MEMORY VRM SUPPLY A [VOLTAGE]: 1.52344 V
+SMC MEMORY VRM SUPPLY A [CURRENT]: 1.23828 A
+SMC MEMORY VRM SUPPLY A [POWER]: 1.89062 W
+</pre>
+    <p>The command-line program uses the following identifiers for the different
+      quantities:</p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <th>Identifier</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>TEMPERATURE</td>
+          <td>temperature</td>
+        </tr>
+        <tr>
+          <td>VOLTAGE</td>
+          <td>voltage</td>
+        </tr>
+        <tr>
+          <td>CURRENT</td>
+          <td>current (amperage)</td>
+        </tr>
+        <tr>
+          <td>POWER</td>
+          <td>power</td>
+        </tr>
+        <tr>
+          <td>CAPACITY</td>
+          <td>capacity</td>
+        </tr>
+        <tr>
+          <td>RPMS</td>
+          <td>revolutions per minute</td>
+        </tr>
+        <tr>
+          <td>PULSE WIDTH</td>
+          <td>duty cycle of pulse-width modulation in percent</td>
+        </tr>
+        <tr>
+          <td>LIGHT</td>
+          <td>photometric value for incoming light</td>
+        </tr>
+        <tr>
+          <td>LOAD</td>
+          <td>load in percent</td>
+        </tr>
+        <tr>
+          <td>MEMORY SIZE</td>
+          <td>memory size</td>
+        </tr>
+        <tr>
+          <td>STATUS</td>
+          <td>logical status (0= no / 1 = yes)</td>
+        </tr>
+        <tr>
+          <td>COUNTER</td>
+          <td>counter value</td>
+        </tr>
+        <tr>
+          <td>FREQUENCY</td>
+          <td>frequency</td>
+        </tr>
+        <tr>
+          <td>DISCONNECTED</td>
+          <td>sensor is currently offline</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The options with the first letter "t" can be used to generate a table in
+      CSV format (Comma-Separated Values). CSV is an industry standard which
+      allows you to import data into nearly any database and spreadsheet
+      applications.</p>
+    <p>The option <code>-th</code> generates a table header line which lists
+      all sensor names. The option <code>-tv</code> generates a value line for
+      the table, listing all current readouts as specified by the header line,
+      omitting units. The first column of the table contains date and time
+      formatted in compliance with international ISO standards.</p>
+    <p class="infocell">Similar to the main application, hwmonitor needs a
+      license key to run in unrestricted mode, showing all sensors, not only
+      temperature readings. The command-line version automatically uses the key
+      of the main application after it has been entered. It is recommended to <a
+        href="unlock.html">unlock the application</a> with the option <cite>Valid
+        for all users of this computer</cite>.</p>
+    <h2>Parameters of tempmonitor</h2>
+    <p>The synopsis is as follows:</p>
+    <p><code>tempmonitor [-c | -f | -k] [-ds] [[-a] [-l] | [-th | -tv]]</code></p>
+    <p>The program will display the current reading (value and unit) of the
+      first temperature sensor located in the vicinity of the first processor.
+      If you specify the <code>-c, -f</code> or <code>-k</code> options,
+      you'll force the program to return the value in degrees Celsius,
+      Fahrenheit or Kelvin, respectively.</p>
+    <p class="infocell">Sensors which have been detected but are offline, for
+      example because they are part of a device currently in sleep mode, or
+      because they currently experience a technical problem, are being displayed
+      with a value of "<code>-</code>" (a single minus sign).</p>
+    <p>If you add the option <code>-ds</code>, access to S.M.A.R.T. hard drive
+      sensors will be disabled. This can be useful when using the program
+      periodically in a continuously running script, making sure disk drives are
+      not kept busy, allowing them to enter sleep mode.</p>
+    <p>When using the option <code>-a</code>, all readings of all available
+      temperature sensors will be displayed, one line for each sensor. When
+      using the option <code>-l</code> each value will be prefixed by a sensor
+      name according to the pattern</p>
+    <p><code>sensor-name: value unit</code></p>
+    <p>Sensor names are the internal location identifiers defined by Apple which
+      are stored in the firmware of each computer model.</p>
+    <p>The options with the first letter "t" can be used to generate a table in
+      CSV format (Comma-Separated Values). CSV is an industry standard which
+      allows you to import data into nearly any database and spreadsheet
+      applications.</p>
+    <p>The option <code>-th</code> generates a table header line which lists
+      all sensor names. The option <code>-tv</code> generates a value line for
+      the table, listing all current readouts as specified by the header line,
+      omitting units. The first column of the table contains date and time
+      formatted in compliance with international ISO standards.</p>
+    <p class="infocell">The program <cite>tempmonitor</cite> is compatible with
+      the program <cite>tempSensor</cite> which was distributed with earlier
+      versions of Temperature Monitor. It tries to behave similarly. The option
+      <code>-i</code> which was available in <cite>tempSensor</cite> to display
+      sensor information is no longer supported, however.</p>
+    <h2>Accessing S.M.A.R.T. hard drive sensors on computers with PPC processors</h2>
+    <p>The display of S.M.A.R.T. hard disk sensors is only possible if the
+      command-line program is kept within the bundle of the "big" application,
+      and a <cite>chdir (cd)</cite> has been executed to make the <cite>Resources</cite>
+      folder the current directory. If these requirements are not met, the
+      program will quietly ignore all hard disk sensors. They are omitted from
+      the output. This only affects computers with processors based on PowerPC
+      technology. On Intel-based Macs, S.M.A.R.T. drive sensors can be accessed
+      without this requirement.</p>
+    <h2>Error messages and return codes</h2>
+    <p>In case of problems, the commands will send error messages to the
+      standard error channel. Upon return, the programs use the following exit
+      codes:<br />
+      0 - the command was executed successfully, 1 - there was an error in the
+      command line arguments, 2 - the command cannot be used with this computer
+      because no supported sensor was found.</p>
+    <h2>Simple Example: Creating an "endless" history in a CSV file</h2>
+    <p>The following script shows a very simple example how to use the command
+      line version of Hardware Monitor to record all values of all sensors with
+      a time resolution of one minute in a CSV database file. With this
+      technique, you can overcome Hardware Monitor's limit for long-time
+      histories of one week, creating an "unlimited" history file. Note that
+      this solution is very simplistic, and is shown only to outline the basic
+      principles. The script must be customized to your specific needs, and
+      should be more elegant in practice. For example, it should not just erase
+      the whole history file when the script is stopped and then restarted.</p>
+    <pre>#!/bin/sh
+cd /ExamplePath/HardwareMonitor.app/Contents/MacOS/<br />./hwmonitor -th &gt; /Some/Document/Path/HistoryData.csv<br />while true<br />do<br />    ./hwmonitor -tv &gt;&gt; /Some/Document/Path/HistoryData.csv<br />    /bin/sleep 60<br />done</pre>
+    <hr />
+    <p><a href="index.html">Table of contents</a></p>
+  </body>
+</html>

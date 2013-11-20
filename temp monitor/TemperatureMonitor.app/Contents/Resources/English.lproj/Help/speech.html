@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Working with speech output</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="5" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Working with speech output</h1></td>
+  </tr>
+</table>
+<p>The monitor application can optionally use acoustical speech output to announce readings. You can select between two different modes of operation:</p>
+<ul>
+  <li>The application will speak readings each time when any of the sensors activated
+    for speech output changes its value in regard to the last update interval.
+    You can optionally specify a threshold value that defines which difference
+    in readouts should be interpreted as a change. </li>
+  <li>Speech output announces the readings in regular intervals. The time between each announcement can be defined as a multiple of the general update interval.</li>
+</ul>
+<p>In both cases spech output will read out all sensor values that have been
+  activated in the table below. Selecting the desired sensors is done by the <cite>Speech
+  mode</cite> buttons in the pane <cite>Speech </cite> of the <a href="prefs.html">preferences
+  window</a>. By checking the field <cite>Speak sensor names</cite>, not only
+  the readings but also the sensor locations will be announced, as you have defined
+  them in the <a href="output.html">Sensors pane</a>. </p>
+<p align="center"><img src="Images/PrefSpeech.png" alt="Speech" width="620" height="538" /></p>
+<p class="infocell">Values will be read out without any units. Voice and other characteristics of speech output can be set with the pane <cite>Speech</cite> in <cite>System Preferences.</cite></p>
+<p>To define which are the talking sensors, use the table in the lower half of the window. The table can be used the same way <a href="output.html">as discussed earlier.</a></p>
+<p class="infocell">You should avoid to set the time interval for speech output too short or the number of talking sensors too high. In these cases, the next announcement might begin while the current speech output is not finished yet. Speech output will continuously interrupt itself and you won't be able to understand anything.</p>
+<h2>Disabling or enabling speech output completely</h2>
+<p>If desired, speech output can be completely disabled or enabled without having to change individual speech settings. When launching the monitor application for the first time, speech output will be disabled by default. You can change this using the  <cite>Monitor</cite> menu:</p>
+<ul>
+  <li><cite>Monitor &gt; Spoken Output &gt; Speak Sensor Values:</cite> speech output for readings and for alert messages will be fully enabled.</li>
+  <li><cite>Monitor &gt; Spoken Output &gt; Speak Alerts Only:</cite> disables speech output of readings, but allows that alerts can be announced by speech.</li>
+  <li><cite>Monitor &gt; Spoken Output &gt; Disable Voice:</cite> completely disables speech output</li>
+</ul>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+</body>
+</html>

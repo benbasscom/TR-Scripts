@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Ferne Computer &uuml;berwachen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="12" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Ferne Computer &uuml;berwachen</h1></td>
+  </tr>
+</table>
+<p>Hardwaremonitor und Temperaturemonitor k&ouml;nnen auch entfernt stehende Computer
+  &uuml;berwachen. Das hei&szlig;t es ist m&ouml;glich, eine beliebige Zahl von anderen Computern
+  &uuml;ber ein Netzwerk hinweg zu kontaktieren um auch auf deren Sensoren zuzugreifen.
+  Die Messwerte werden zus&auml;tzlich zu den Werten der lokalen Sensoren angezeigt.</p>
+<p>Das einzige was Sie hierzu ben&ouml;tigen, sind zus&auml;tzliche Exemplare des Programms
+  Hardwaremonitor Remote, die auf jedem Computer installiert werden m&uuml;ssen, der
+  &uuml;berwacht werden soll. Sie brauchen au&szlig;erdem einen Registrierungsschl&uuml;ssel
+  (&quot;Nutzungserlaubnis&quot;) f&uuml;r jeden Computer der gleichzeitig &uuml;berwacht werden
+  soll. Sie k&ouml;nnen sich mit einer unbegrenzten Anzahl von Computern gleichzeitig
+  verbinden und diese von einem einzigen Arbeitsplatz aus &uuml;berwachen. (In
+  der Praxis kann die tats&auml;chliche Anzahl durch der Geschwindigkeit Ihres
+  Netzes begrenzt sein.) Nat&uuml;rlich k&ouml;nnen Sie auch mehrere &Uuml;berwachungsstationen
+  verwenden, um die Daten von einer beliebigen Anzahl anderer Computer zu empfangen.</p>
+<p>Im folgenden Beispiel l&auml;uft Hardwaremonitor Remote auf 4 Computern, w&auml;hrend
+  2 mit Hardwaremonitor ausgestattet sind. Beachten Sie, dass ein System beide
+  Programme zur gleichen Zeit laufen l&auml;sst. Die Pfeile geben an, in welche
+  Richtung die Sensormesswerte &uuml;bertragen werden. </p>
+<p align="center"><img src="Images/HardwareMonitorRemote2.png" alt="Hardwaremonitor Lizenzmodell" width="501" height="330" /></p>
+<p>Im Beispiel
+  oben werden 5 Registrierungscodes (nicht 6) ben&ouml;tigt (unter der Annahme,
+  dass alle 5 Computer zur gleichen Zeit in Betrieb sind).</p>
+<p>Es gibt keine kostenlose Version des Fern&uuml;berwachungshilfsprogramms (kein
+  &quot;Temperaturmonitor Remote&quot;). Sie k&ouml;nnen jedoch Temperaturmonitor verwenden,
+  um sich mit einem System mit Hardwaremonitor Remote zu verbinden. In diesem
+  Fall ist das Programm auf dem lokal &uuml;berwachten Computer darauf beschr&auml;nkt,
+  Temperatursensoren anzuzeigen, kann jedoch alle Sensoren auf dem fern&uuml;berwachten
+  Computer darstellen.</p>
+<h2>Verbinden mit einem fernen Computer </h2>
+<p>Um die Verbindung zu einem fernen Computer herzustellen, auf dem ein registriertes
+  Exemplar von Hardwaremonitor Remote l&auml;uft, verwenden Sie die folgende Anleitung:</p>
+<ol>
+  <li>W&auml;hlen Sie den Men&uuml;punkt <cite>Monitor &gt; Mit fernem Computer
+      verbinden </cite> aus oder bet&auml;tigen Sie die Tastenkombination <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>K</kbd>.</li>
+  <li>Eine Liste der Computer, die Hardwaremonitor Remote im lokalen Netz laufen
+    haben, wird angezeigt. Die Liste wird automatisch &uuml;ber die Bonjour-Technik
+    auf dem neuesten Stand gehalten. Computernamen, Seriennummern, IP-Adressen,
+    DNS-Namen und der Verbindungsstatus werden angezeigt. W&auml;hlen Sie den
+    Computer aus, mit dem eine Verbindung hergestellt werden soll. Falls sich
+    der Computer in einem anderen Netzwerk befindet, oder nur &uuml;ber das Internet
+    erreicht werden kann, wird er in der Liste nicht enthalten sein. Geben Sie
+    in diesem Fall die IP-Adresse oder den DNS-Namen in das Feld <cite>DNS-Name
+    oder IP-Adresse</cite> ein.
+    Sie k&ouml;nnen auch den Kommunikationsport des fernen Computers angeben.
+    Unter normalen Umst&auml;nden lautet der Port 37037. Der Verwalter des fernen
+    Computers k&ouml;nnte diese Nummer ge&auml;ndert haben. Fragen Sie in diesem
+    Fall den Verwalter des fernen Computers nach der richtigen Portnummer.</li>
+  <li>Dr&uuml;cken Sie den Knopf <cite>Verbinden</cite>. Sie k&ouml;nnen auch
+    eine Zeile in der Tabelle doppelklicken, um direkt eine Verbindung zum aufgelisteten
+    System herzustellen.</li>
+</ol>
+<p>Hardwaremonitor wird versuchen, den ausgew&auml;hlten Ferncomputer zu kontaktieren.
+  Wenn er nicht erreicht werden konnte, erhalten Sie nach ein paar Sekunden eine
+  Fehlermeldung. &Uuml;berpr&uuml;fen Sie in diesem Fall Ihre Netzkonfiguration. Computer,
+  die bereits in Verbindung stehen, werden in der Computerliste mit einem blauen
+  Symbol angezeigt. </p>
+<p class="infocell">Falls der ferne Computer von diesem Computer aus noch nie
+  kontaktiert wurde, werden automatisch neue Benutzereinstellungen f&uuml;r die fernen
+  Sensoren angelegt. Sie sollten das Einstellungsfenster &ouml;ffnen um zu pr&uuml;fen,
+  ob alle Vorgaben wie gew&uuml;nscht eingestellt sind. </p>
+<p>Zus&auml;tzliche Hinweise k&ouml;nnen Sie au&szlig;erdem dem Handbuch von Hardwaremonitor
+  Remote entnehmen.</p>
+<h2>Mit einer Gruppe von fernen Computern verbinden</h2>
+<p>Sie können Gruppen von Computern in Ihrem Netz definieren, die über einen
+  einzigen Mausklick verbunden werden sollen. Dies ist nützlich, wenn Sie zum
+  Beispiel verschiedene Klassenräume überwachen. Verwenden Sie diese Funktion
+  über die Auswahl des Klappmenüs <cite>Liste verbinden</cite> in der unteren
+  rechten Ecke des Verbindungsfensters. Sie können eine unbegrenzte Zahl von
+  Computergruppen definieren, die in einem Schritt über die Auswahl des entsprechenden
+  Punktes im Menü verbunden werden können.</p>
+<p>Um solche Computerlisten zu definieren, wählen Sie den Punkt <cite>Computerlisten
+  ändern …</cite>. Ein herausgleitendes Konfigurationsfenster erscheint. Drücken
+  Sie den Knopf <cite>+</cite> unter der unteren Tabelle, um eine neue Computergruppe
+  hinzuzufügen. Der neue Eintrag wird in dem hierarchischen Überblick <cite>Computerlisten
+  / Mitglieder</cite>  angezeigt. Nachdem eine Liste in diesem Überblick ausgewählt
+  wurde, fügt ein erneutes Betätigen des Knopfes <cite>+</cite> ein neues Mitglied
+  in die Liste ein. Sie könnn die Listennamen, Computernamen und Port-Nummern
+  wie gewünscht verändern. Beachten Sie, dass Sie DNS-Namen oder IPv4-Adressen
+  verwenden müssen, um einen Computer anzugeben. Sie können nicht die Bezeichnungen
+  verwenden, die innerhalb von Mac OS X &quot;Gerätenamen&quot; genannt werden. Einträge
+  oder ganze Listen können über den Knopf <cite>-</cite> entfernt werden. Der
+  Knopf <cite>Gewählte Computer zu gewählter Liste hinzufügen</cite> kann dazu verwendet werden,
+  um sich automatisch auf einen oder mehrere Computer zu beziehen, die Hardwaremonitor
+  Remote betreiben und gerade in Ihrem Netzwerk online sind. Wählen Sie eine
+  Liste im unteren Überblick und einen oder mehrere Computer in der oberen Tabelle,
+  um dies zu nutzen.</p>
+<h2>Anzeige des Verbindungsstatus und Trennen einer Fernverbindung</h2>
+<p>Sie k&ouml;nnen eine Liste aller Computer anzeigen, die sich im Moment in einer
+  aktiven Verbindung mit dem aktuellen Computer befinden. Diese Liste kann au&szlig;erdem
+  dazu benutzt werden, eine Verbindung aufzuheben.</p>
+<p>W&auml;hlen Sie den Men&uuml;punkt <cite>Fenster &gt; Fernverbindungen einblenden</cite> aus
+  oder bet&auml;tigen Sie die Tastenkombination <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>K</kbd>.
+  Das Fenster <cite>Verbundene Computer</cite> wird angezeigt. Es enth&auml;lt die
+  Computernamen, Modelltypen, Seriennummern, IP-Adressen, DNS-Namen und die Anzahl
+  der vorgefundenen Sensoren.</p>
+<p>Um die Verbindung mit einem Computer zu trennen, w&auml;hlen Sie ihn in der Tabelle
+  aus und bet&auml;tigen die Schaltfl&auml;che <cite>Trennen</cite>. Beachten Sie, dass die Verbindung
+  mit Ihrem eigenen Computer nicht getrennt werden kann. </p>
+<h2>Ruhezustand</h2>
+<p>Wenn ein ferner Computer in den Ruhezustand geht, werden alle seine Sensoren
+  abgeschaltet, so dass es nicht mehr m&ouml;glich ist, Messwerte oder andere Daten
+  von ihm zu empfangen. Das Programm behandelt diesen Fall automatisch und wird
+  die Verbindung zum Ferncomputer l&ouml;sen. Der &uuml;berwachende Computer zeigt eine
+  Warnmeldung an, wenn dies geschieht. Falls Sie in dieser Situation nicht informiert
+  werden m&ouml;chten, k&ouml;nnen Sie die Warnmeldung <a href="prefs.html">im
+  Abschnitt Allgemein des Einstellungsfensters</a>  ausschalten.</p>
+<p>Falls Ihr eigener Computer in den Ruhezustand geht, ist die Lage etwas anders:
+  Der aktuelle Computer kann keine Messwerte mehr empfangen, aber die fernen
+  Computer sammeln immer noch Daten. In diesem Fall wird das lokale Programm
+  automatisch versuchen, sich wieder mit allen fern&uuml;berwachten Computern zu verbinden,
+  sobald es wieder aufwacht. </p>
+<p class="infocell">Es vergehen einige Sekunden bis alle fern&uuml;berwachten
+  Computer wieder verbunden sind. Mac OS X braucht einige Zeit um alle Netzwerkfunktionen
+  wieder zu reaktivieren wenn es aus dem Ruhezustand erwacht.</p>
+<h2>Mit fernen Sensoren arbeiten </h2>
+<p>Das Programm macht keine Unterscheidung zwischen lokalen und fernen Sensoren.
+  &Ouml;ffnen Sie einfach das Einstellungsfenster und passen Sie die Sensoreinstellungen
+  an, wie es <a href="output.html">weiter oben bereits erl&auml;utert wurde</a>.
+  Die vierte Spalte in den Sensortabellen zeigt den Namen des Computers an, zu
+  dem jeder Sensor geh&ouml;rt. </p>
+<p>Vorgabewerte f&uuml;r ferne Sensoren bleiben immer noch gespeichert, auch wenn
+  Sie die Verbindung zu dem Computer, der diese Sensoren beherbergt, trennen.
+  Das Programm wird sich automatisch an die Einstellungen erinnern, wenn Sie
+  sp&auml;ter die Verbindung wieder herstellen. Zur Zeit getrennte Fernsensoren verschwinden
+  einfach aus den Ausgabekan&auml;len und erscheinen sp&auml;ter wieder.</p>
+<p>Einige Statusfenster &ouml;ffnen automatisch ein neues Exemplar des Fensters f&uuml;r
+  jeden Computer, der momentan verbunden ist. Dies bezieht sich auf die folgenden
+  Anzeigen: </p>
+<ul>
+  <li>Sensor&uuml;bersichtsfenster (<kbd>⌘</kbd>+<kbd>1</kbd>) </li>
+  <li>Systemdatenfenster (<kbd>⌘</kbd>+<kbd>4</kbd>) </li>
+  <li>Akkudatenfenster (<kbd>⌘</kbd>+<kbd>5</kbd>), nur Hardwaremonitor </li>
+  <li>Xserve-Festplattendatenfenster (<kbd>⌘</kbd>+<kbd>7</kbd>)</li>
+  <li>Laufwerksübersichtsfenster (<kbd>⌘</kbd>+<kbd>8</kbd>)</li>
+  <li>Bildschirmdatenfenster (<kbd>⌘</kbd>+<kbd>9</kbd>), nur Hardwaremonitor</li>
+</ul>
+<p>Wenn Sie zurzeit zum Beispiel 5 Computer  zus&auml;tzlich zum lokalen Computer
+  &uuml;berwachen und den Men&uuml;punkt <cite>Fenster &gt; &Uuml;bersicht einblenden</cite> ausw&auml;hlen, wird
+  das Programm insgesamt 6 Exemplare des Sensor&uuml;bersichtsfensters &ouml;ffnen, eins
+  f&uuml;r jeden Computer.</p>
+<hr />
+<p><a href="index.html">Inhaltsverzeichnis</a></p>
+</body>
+</html>

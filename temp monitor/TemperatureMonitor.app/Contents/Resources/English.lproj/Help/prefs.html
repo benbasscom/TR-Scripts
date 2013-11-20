@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Setting general preferences</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="2" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Setting general preferences</h1></td>
+  </tr>
+</table>
+<h2>General settings</h2>
+<p>To customize the program to your specific needs, you can set a great variety
+  of defaults and preferences. You can access these settings via the main menu
+  and its item <cite>Preferences&#8230;</cite> or by pressing the key combination <kbd>⌘</kbd>+<kbd>,</kbd>.
+  The settings are subdivided into eight areas which will be discussed in detail
+  later. The basic preferences which are independent of the computer model you
+  are using, are displayed in the <cite>General</cite>  pane.</p>
+<p>The  pop-up menu at <cite>Temperature Unit</cite> selects which unit the application
+  shall use to display temperature data. You can select between:</p>
+<ul>
+  <li>degrees Celsius</li>
+  <li>degrees Fahrenheit</li>
+  <li>Kelvin</li>
+  <li>combination of Celsius and Fahrenheit</li>
+  <li>combination of Fahrenheit and Celsius</li>
+</ul>
+<p class="infocell"><strong>Note:</strong> A combination of multiple units is not supported in the graphical history display and when exporting history data. In these cases, the first unit of the combination will be used.</p>
+<p>When launching the application, it has to analyze the sensor equipment of
+  your computer, which can be a lengthy task depending on the hardware devices
+  you are using and the number of additional remote systems you are monitoring.
+  The program displays a wait message in a small window while the necessary preparations
+  take place. As soon as the window disappears, the application will be fully
+  operational. If you don't like such windows, you can disable it using the
+  check mark at <cite>Splash Window: Suppress wait message when starting the
+  application.</cite></p>
+<p>The setting <cite>Graph display</cite> selects how the scales of the vertical
+  axes in history graphs will be computed. The item <cite>Use natural scale</cite> will
+  display each axis beginning at zero. The selection <cite>Zoom into current
+  value range</cite> will  display the graph in such a way that the value range
+  visible in the selected history interval covers 90 percent of the graph's height.
+  Small details can be detected much better, but the displayed curve may tend
+  to display small changes and measurement errors in an exaggerated fashion.</p>
+<p>By default, time values shown on the horizontal axes of the history graphs
+  are labeled using time designations relative to the present time, e.g. &quot;42
+  minutes ago&quot;. You can alternatively display absolute time readings like &quot;8:42:15
+  am&quot; by setting the option <cite>Use absolute time designations</cite>. </p>
+<p>Three options are available in the area <cite>Remote monitoring :</cite></p>
+<ul><li>The option <cite>Reconnect to previously connected remote computers at
+      startup</cite> controls
+      whether the application should automatically contact the same set of remote
+      computers that had been connected the last time you used
+      the application. Without further manual
+      intervention being necessary, the same computers that had been in use before
+      will be connected again. Note that the remote computers must be switched
+      on and cannot be in sleep mode for the reconnect attempt to be successful.
+      You won't receive a warning if the attempt fails.</li>
+  <li>Set a checkmark at <cite>Don't notify when remote computers enter sleep mode</cite> if
+      you don't want to receive a warning when the application is losing contact
+      to a remote computer because that computer entered sleep mode. </li>
+</ul>
+<p>The preference setting <cite>Battery current</cite> is available for Hardware
+  Monitor only. It is not displayed in Temperature Monitor. The setting controls
+  what policy the application should follow when displaying and recording amperage
+  values for battery units. Some versions of Mac OS X and certain battery units
+  allow that the sign of amperage value reflects whether the battery is currently
+  charging or discharging. So a current of 1.5 amps can be displayed as <cite>1.5
+  A</cite> if the current flows from battery to computer, and as <cite>-1.5 A</cite> when
+  the same current flows in the opposite direction from computer to battery.
+  Press the button at <cite>Always use positive numbers for battery currents</cite>,
+  if you want to make sure the values are always greater than 0. Select the option <cite>Use
+  different signs when charging/discharging if supported</cite> when you like
+  to allow the sign to change. Note that some battery units and some older versions
+  of Mac OS X are unable to support this. </p>
+<p>The sliders displayed under <cite>Update Interval</cite> control how often
+  the application will perform the measurements. It also controls how often the
+  displayed values are updated. You can select between different time intervals
+  ranging from one second to one hour. The recommended update interval is 2 seconds.</p>
+<p>Separated from the general update preference is the time interval for requests sent to hard disk sensors. Some hard disk models may temporarily go into diagnostic mode or move their read/write heads when the sensors are read out, so it is no recommended to make the update interval too short. Otherwise, repeated queries to the sensors might reduce performance of your hard disk(s).</p>
+<p>Note that access to disk sensors built into the drives themselves
+  will be interpreted as &quot;user activity&quot; by the drives. If you have enabled sleep
+  mode for hard drives in Mac OS X, monitoring these sensors could cause your
+  drives to no longer enter sleep mode as expected. For this reason, the application
+  contains a <cite>Disk Saver</cite> feature: When you are inactive and the computer
+  is not really in use for some period of time, the program can automatically
+  stop all sensor communication with your hard drive(s). This allows the standard
+  sleep feature of the hard drives to become active. Set the pop-up menu at <cite>Disk
+  Saver</cite> to
+  the desired time interval.</p>
+<p class="infocell">The Disk Saver feature in the application is intentionally independent of
+  your personal Energy Saver preferences of Mac OS X. </p>
+<p align="center"><img src="Images/PrefGeneral.png" alt="Hardware Monitor Preferences" width="620" height="539" /></p>
+<h2>Storing display mode and window positions</h2>
+<p>In addition to the general preference settings, the application automatically remembers which output windows you have used for the display of readings. This includes the position of the windows on screen. You don't need to care about those settings. The next time you are starting the application, it will automatically restore the state that was effective the last time you have used the program.</p>
+<h2>Machine-specific settings in a network</h2>
+<p>If you are using the monitor program as &quot;roaming user&quot; on different computers in a network, and your private folder is located on a common file server (which is a standard setup in large companies and schools), the software is able to remember machine-specific settings for each computer and computer type you have used.</p>
+<ul>
+  <li>If you launch the program later on exactly the same computer (with identical sensor equipment), the application will automatically use the preferences you had set earlier.</li>
+  <li>If you launch the program later on a similar computer (of the same type,
+    with a sensor equipment that might be identical but also could be different),
+    the application will automatically ask whether you want to take over preference
+    settings that have been stored for a different computer. A list of available
+    settings of compatible computers you have used will be displayed. You can
+    alternatively choose not to reuse any settings but begin with a fresh new
+  set of preferences for this computer.</li>
+  <li>If you launch the program on a machine type which you have never used before, the application will automatically use a fresh set of preference values for this computer (because the sensor equipment is probably very different from that of other computers). You will not lose any preference settings stored for other  models.</li>
+</ul>
+<p class="infocell">The settings in <cite>General</cite> and <cite>Sensors</cite> become
+  valid for all of your computers, all other preference areas are defined individually
+  per each computer, when you are roaming between them. </p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

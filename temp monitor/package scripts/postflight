@@ -1,0 +1,27 @@
+#!/bin/bash
+
+launchctl load /Library/LaunchDaemons/com.trmacs.pinotify.plist
+# loads the just installed launchdaemon.  If previously loaded, was unloaded in Preflight.
+vers="temp_chck_postflight_v.0.1"
+
+echo "$vers"
+
+
+# symlink the tempmonitor cli app to /usr/local/bin
+
+ln -s /Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor /usr/local/bin/tempmonitor
+
+#Set headers for templog csv
+/usr/local/bin/tempmonitor -th >> /Library/Logs/com.trmacs/templog.csv
+
+
+
+echo "loading templog and tempnotify launchd's."
+
+launchctl load -w /Library/LaunchDaemons/com.trmacs.templog.plist
+launchctl load -w /Library/LaunchDaemons/com.trmacs.tempnotify.plist
+
+echo "done"
+echo "exiting"
+
+exit 0

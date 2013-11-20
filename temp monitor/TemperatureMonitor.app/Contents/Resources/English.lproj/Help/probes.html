@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Defining artificial operating system sensors</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="9" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /></td>
+    <td><h1>Defining artificial operating system sensors</h1></td>
+  </tr>
+</table>
+<h2>Introduction</h2>
+<p>In addition to  &quot;real&quot; sensors Apple has built into your Mac, Hardware
+  Monitor can also monitor other operational values of your computer. This is
+  done by creating artificial software sensors, which are called <cite>Probes</cite>. This
+  feature is available in Hardware Monitor only.</p>
+<p>You can define an unlimited number of probes that monitor the following aspects
+  of the operating system:</p>
+<ul>
+  <li>the current <strong>load on each processor core</strong>. Load is defined as percentage
+    of time where the processor is actually &quot;doing&quot; anything, as opposed to the
+    time where it is idle.</li>
+  <li>the current <strong>average load of all processor cores</strong>. If your
+    computer contains multiple processing units, the load characterstics will
+    be combined into one single value.</li>
+  <li>the current <strong>number of processes</strong> handled by the operating system. </li>
+  <li><strong>disk usage</strong> on each volume. Usage is defined as percentage of allocated
+    storage space in relation to total storage space.</li>
+  <li><strong>free storage space</strong> on each volume, measured in bytes.</li>
+  <li><strong>used storage space</strong> on each volume, measured in bytes.</li>
+  <li><strong>free memory</strong>, measured in bytes of physical RAM.</li>
+  <li><strong>used active memory</strong>, measured in bytes of physical RAM. This is memory in
+    use by running applications and the operating system, which has been accessed
+    in the last few milliseconds.</li>
+  <li><strong>used inactive memory</strong>, measured in bytes of physical RAM. This is memory
+    in use by running applications and the operating system, which has not been
+    accessed in the last few milliseconds. Although this memory is allocated
+    and in use, these blocks are candidates to be moved out to swap files on
+    the hard disk, in case other applications are needing physical RAM at a more
+    active rate.</li>
+  <li><strong>used non-pageable memory</strong>, measured in bytes of physical
+    RAM. This is memory in use by running applications and the operating system
+    which is not allowed to be moved out to swap files on the hard disk.</li>
+  <li><strong>number of page-ins</strong>. This is the number of 4 KB blocks
+    currently being moved from the hard disk into physical memory. This includes
+    swap operations (blocks that were moved out to swap files and are now loaded
+    back), but also includes normal load operations, when applications use optimized
+    access techniques for reading files.</li>
+  <li><strong>number of page-outs</strong>. This is the number of 4 KB blocks
+    currently being moved from physical memory to the hard disk. This includes
+    swap operations (blocks that are being moved out to swap files), but also
+    includes normal save operations, when applications use optimized access techniques
+    for writing files.</li>
+  <li><strong>allocated swap space</strong>, measured in bytes of storage space.
+    This is the  number of bytes currently pre-allocated on the hard drive
+    for use during swap operations.</li>
+  <li><cite>swap space in use</cite>, measured in bytes. This is the actual amount of virtual
+    memory currently swapped out to disk.</li>
+  <li><strong>network interface outgoing packets</strong>: The number of data packets currently
+    being transferred from the computer to the network on a selected network
+    interface. Hardware Monitor handles this as a unitless counter, but because
+    the interfaces are monitored at a rate of one sample per second, the reading
+    will be equivalent to the transfer speed, measured in packets per second.</li>
+  <li><strong>network interface incoming packets</strong>: as before, but for incoming data packets.</li>
+  <li><strong>network interface outgoing bytes</strong>: The number of bytes (displayed as kilobytes)
+    currently being transferred from the computer to the network on a selected
+    network interface. Hardware Monitor handles this as memory size, but because
+    the interfaces are monitored at a rate of one sample per second, the reading
+    will be equivalent to the transfer speed, measured in kilobytes per second.</li>
+  <li><strong>network interface outgoing bytes (total)</strong>: The number of bytes in total
+    (displayed as megabytes) which have been transferred from the computer to
+    the network on a selected network interface since the operating system has
+    been started.</li>
+  <li><strong>network interface incoming bytes</strong>: analog to the number of outgoing bytes,
+    this probe monitors the incoming bytes.</li>
+  <li><strong>network interface incoming bytes (total)</strong>: analog to the number of outgoing
+    bytes (total), this probe monitors the total number of incoming bytes.</li>
+  <li><strong>network interface output errors</strong>: the current number of network errors when
+    the selected interface is trying to send data to the network. Hardware Monitor
+    handles this as a unitless counter, but because the interfaces are monitored
+    at a rate of one sample per second, the reading will be equivalent to the
+    number of errors per second.</li>
+  <li><strong>network interface input errors</strong>: the current number of network errors when
+    the selected interface is receiving data from the network. Hardware Monitor
+    handles this as a unitless counter, but because the interfaces are monitored
+    at a rate of one sample per second, the reading will be equivalent to the
+    number of errors per second.</li>
+  <li><strong>network interface collisions</strong>: the current number of network
+    collisions seen by the selected interface. Hardware Monitor
+    handles this as a unitless counter, but because the interfaces are monitored
+    at a rate of one sample per second, the reading will be equivalent to the
+    number of collisions per second. Note that only certain network technologies
+    can experience data collisions, for example 10Base-5 shared Ethernet.</li>
+  <li><strong>S.M.A.R.T. drive verification status</strong>, for each connected
+    drive which is online and supports self monitoring via the S.M.A.R.T. industry
+    standard. The value will be 1 if the drive's diagnostic processor estimates
+    that the drive will survive the near future without failure. The value will
+    be 0 if the drive is estimating that its lifetime is about to end. See also
+    the section <a href="sysinfo.html">Displaying
+      disk monitoring data</a> for more information on S.M.A.R.T. technology.</li>
+  <li><strong>RAID operation status</strong>, for each software RAID set created by Mac OS X.
+    The value will be 1 if the RAID set is OK and fully operational. The value
+    will be 0 if the status of the RAID set is degraded, e.g. if one disk of
+    the RAID set has failed. Only RAID sets based on Mac OS X system software
+    are supported. You cannot create probes for third-party RAID solutions because
+    there is no common standard to support this.</li>
+  <li><strong>electrical power</strong>, for each pair of physical voltage and
+    current sensors you define. If your computer contains a voltage and an amperage
+    sensor which both monitor the same object, e.g. a battery unit, or a processor
+    card, you can define a virtual power sensor which automatically computes
+    the electrical power of this object. <strong>Note: </strong>You are responsible
+    for selecting a pair of sensors for which the definition of power makes sense.
+    Hardware Monitor will allow that you combine electrical sensors which monitor
+    different devices, e.g. the voltage sensor of a battery combined with the
+    amperage sensor of a CPU card, but the resulting power value won't make any
+    sense in this case. </li>
+  <li><strong>remaining battery capacity,</strong> defined as percentage of current
+    battery capacity in relation to total battery capacity. This is a virtual
+    sensor you can define for each battery unit.</li>
+</ul>
+<p class="infocell">Note: If you are using internal &quot;hot-swap&quot; drives, or external eSATA drives,
+  a probe of the type <cite>S.M.A.R.T. drive verification status</cite> will also register
+  a hard disk error when you are switching off or removing the drive. </p>
+<p align="center"><img src="Images/PrefProbes.png" alt="Hardware Monitor Preferences: Probes" width="620" height="538" /></p>
+<h2 align="left">Creating and editing probes</h2>
+<p align="left">Creating a new probe is possible with the section <cite>Probes</cite> in
+  the Preferences window of Hardware Monitor. Select the desired type of probe,
+  then press the button <cite>+</cite> below the left bottom corner of the probe
+  table. If it is necessary, Hardware
+  Monitor will ask for additional data to create the probe, e.g. the processor
+  number for a CPU load sensor, or the hard drive for a virtual S.M.A.R.T. sensor.
+  The probe will be added immediately.</p>
+<p align="left">Probes behave the same way as &quot;real&quot; sensors. You can use them
+  without any restrictions, for example to define alerts, to record history data,
+  to display them in output windows, etc. </p>
+<p align="left">To delete a probe, select its entry in the table, then press
+  the <cite>-</cite> button below. History data of a deleted probe will be deleted
+  as well. It is not possible to recover history data of a deleted probe even
+  if you attempt to recreate the same probe later. </p>
+<p align="left" class="infocell">It is not possible to create two identical probes,
+  i.e. probes of the same type which monitor the very same object.<br />
+  Hardware Monitor
+    can create probes for the local computer only. It is possible to monitor
+  probes on remote computers as well, but in this case you'll have to create
+  them with a copy of Hardware Monitor running on the remote computer first.</p>
+<h2 align="left">Importing and exporting probe definitions</h2>
+<p align="left">If you have created a complex setup of artificial sensors, you
+  might like to reuse this definition on other computers of the same model series.
+  This is possible even if you don't use a Mac OS X network with roaming user
+  accounts: You can export and import the probe definitions using files.</p>
+<p align="left">To export the current list of probe definitions, select the menu
+  item <cite>Export probes…</cite> from the pull-down menu <cite>Import/Export</cite> in
+  the upper right corner of the pane <cite>Probes</cite>. After specifying a
+  file name, the definitions will be saved.</p>
+<p align="left">To import a file with probe definitions, select the menu item
+  <cite>Import probes…</cite> from the pull-down menu <cite>Import/Export</cite>.
+  After selecting a file, the definitions will be loaded, hereby <em>replacing</em> all
+  your current probes.</p>
+<p align="left" class="infocell">It is recommended to use this feature among
+  computers of the same model series only. If you are trying to import a probe
+  definition which refers to a device unknown on the current hardware (like a
+  network interface, or an electrical sensor unavailable on that system), Hardware
+  Monitor will either discard this probe automatically, or create a non-working
+  probe which always gives the reading &quot;---&quot;, depending on case. After importing
+  artificial sensors from a different model series, it is recommended to review
+  the list of probes afterwards.</p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Using the application in the menu-bar only</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="14" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Controlling performance on Intel-based systems</h1></td>
+  </tr>
+</table>
+<p>Some specific Mac models with Intel processors released after October 2008
+  are affected by a technical problem which has influence on the system load
+  the monitor application is consuming to perform its job. On such computers,
+  the application may need considerably more processing power than usual.</p>
+<p class="infocell">You don't need to read this chapter if you are using a PowerPC-based
+  Mac, or a computer manufactured before October 2008.</p>
+<p>All programs of the Hardware Monitor and Temperature Monitor application suite
+  are optimized to execute their jobs without interfering with any other processes.
+  They should consume almost no  resources for their monitoring work,
+  so that nearly all processing power is left to your standard applications.
+  You can perform the following test to verify if the monitor application works
+  as expected:</p>
+<ol>
+  <li>Close all open windows in the monitor application. This includes the Screen
+    Display feature. The menu-bar output and Dock icon can remain active.</li>
+  <li>Open the <cite>Activity Monitor</cite> application from the <cite>Utilities</cite> folder in <cite>Applications</cite>.
+    Ensure the window <cite>Activity Monitor</cite> is open.</li>
+  <li>Click on the column <cite>CPU</cite> to sort all running processes by descending
+    CPU load (highest values first). The values in the column represent the percentage
+    of available processing time each process is currently consuming
+    from the available amount of total processing time. The percentage is expressed
+    relative to one processor. A sleeping process doing nothing has a value of
+    0. A process consuming 10 percent of the computing power of 1 processor shows
+    a value of 10. A process consuming all available processing power (100%)
+    of 2 processors in a 2-core system shows a value of 200.</li>
+  <li>Search for the monitoring application in the table. If you are monitoring
+    a medium amount of sensors with the default refresh interval of 2 seconds,
+    the CPU value should be less than 2%. If you are monitoring a high amount
+    of sensors with a refresh interval of 1 second, the CPU value should be less
+    than 4%.</li>
+</ol>
+<p>However,
+    if the values are significantly higher (the CPU value is 10 or more), your
+  system could be affected by the problem mentioned above.</p>
+<p class="infocell">It is normal that the CPU load taken by the monitor process
+  will increase if you have several windows open or enable the Screen Display
+  feature. Refreshing all graphical contents in regular intervals needs continuous
+  processing power.</p>
+<h2>Technical background</h2>
+<p>Intel-based Apple computers use a customized chip, the <strong>Apple
+    System Management Controller (SMC)</strong>, to collect  data from most sensors,
+    to control the fans, and to perform other services necessary to manage the
+    computer. The central processor communicates with the SMC over
+    a special internal data line.</p>
+<p>On specific computer models, this communication bus to transfer data to and
+  from the SMC appears to be relatively slow, so the main CPU sometimes has to
+  wait for data to arrive at the other end of the communication line. If a lot
+  of data has to be transferred over the SMC bus, access has to be delayed and
+  to be coordinated very often when the communication line is busy.</p>
+<p>Applications like Hardware Monitor and Temperature Monitor need to communicate
+  with the SMC to get updated values from the system's sensors, so they have
+  to use the SMC bus very intensively. <strong>On certain systems,
+  Mac OS X forces the monitor applications to spend an unusually high amount
+  of processing power for actively coordinating access to the SMC bus.</strong> This
+  causes the affected application to consume much more active CPU time for SMC
+  communication. Note that such an application cannot control access to the SMC
+  via its own code. It has to use services and drivers of Mac OS X to do that.
+  The processing time is consumed by indirectly called code parts within the
+  Mac OS X kernel, not by code of the monitor application itself.</p>
+<p>It is currently unknown if this effect is caused by a general design flaw
+  in the bus hardware of specific chipsets, or by immature drivers
+  in current versions of Mac OS X.</p>
+<h2>Optimizing SMC access</h2>
+<p>To avoid the problem that the monitor application may need an unusually high
+  amount of processor performance to receive data from SMC-controlled sensors,
+  the application can be configured to reduce SMC communication. Please note
+  that not all sensors are operated by the SMC.</p>
+<p class="infocell">To check whether a specific sensor is controlled via the
+  SMC, open the <cite>Sensor
+  Overview</cite> window in the application and double-click the table row of
+  the sensor in question. If the line <cite>Hardware</cite> in the sensor's detail
+  information window shows the result <cite>Apple
+  System Management Controller</cite>, each access to this sensor will require
+  SMC communication.</p>
+<p align="center"><img src="Images/SMCPanel.png" alt="Optimizing access to the System Management Controller" width="520" height="359" /></p>
+<p>If you like to optimize access to the System Management Controller, please
+  do the following:</p>
+<ol>
+  <li>Select the menu item <cite>Monitor &gt; Optimize sensor access performance…</cite>.</li>
+  <li>Check the value displayed at <cite>Reduced access rate recommended</cite> in
+    the middle of the window. If the value is <cite>No</cite>, your computer
+    appears not to be affected by the problem. If the value is <cite>Yes</cite>,
+    you should reduce the rate at which SMC-controlled sensors are being updated.</li>
+  <li>Use the slider to select between one of the available access rates. For
+    a <cite>No</cite> value, select <cite>normal access</cite>, for a <cite>Yes</cite> value,
+    select one of the reduced rates.</li>
+</ol>
+<p>For the setting <cite>normal</cite>, the application will access the SMC
+    sensors whenever it needs to. With the setting <cite>reduced</cite>, the
+    application ensures to avoid accessing each SMC-controlled sensor more than
+    once within a time interval of 10 seconds. At <cite>very reduced</cite>,
+    access to each SMC sensor will be guaranteed to occur no more than once per
+    minute.</p>
+<p>When reducing the access rate, the time resolution of the measurements taken
+  for SMC sensors won't be as accurate as before. The values recorded in the
+  sensor history appear to remain constant within the access time interval. When
+  displaying a history graph, the curves won't be as smooth in vertical direction,
+  they will be more &quot;stepped&quot;. Sensors not controlled by the SMC are not affected
+  by the access rate setting.</p>
+<p align="center"><img src="Images/SMCExample.png" alt="Example of sensor history graphs" width="600" height="206" /></p>
+<p align="center">Left: normal access rate * Right: reduced access rate</p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+#!/bin/bash
+# Preflight script for combined temp notify and templog
+# Need to create log files/log destination.
+vers="temp_chck_preflight_v.0.4"
+
+# check for Log directory
+
+echo "$vers"
+
+log_root="/Library/Logs/com.trmacs/"
+
+if [ -d "$log_root" ]; then
+	
+echo ""$log_root" exists."
+
+else
+	echo "Creating "$log_root"."
+	mkdir -p "$log_root"
+	echo "done."
+fi
+
+# checking for previous trdaily and renaming.
+when=$(date +%Y-%m-%d-%H-%M)
+
+# Checks to see if the launchd is loaded, and if not null (-n), then unload it.
+launchd_chk="$(launchctl list | grep trmacs.tempnotify)"
+
+echo "checking for previously loaded plist."
+
+if [ -n "$launchd_chk" ]; then
+
+	echo "previous version found, unloading"
+	launchctl unload -w /Library/LaunchDaemons/com.trmacs.tempnotify.plist
+	launchctl unload -w /Library/LaunchDaemons/com.trmacs.templog.plist
+	echo "done"
+else
+	echo "No previous version found, nothing to unload."
+fi
+
+echo "exiting"
+exit 0

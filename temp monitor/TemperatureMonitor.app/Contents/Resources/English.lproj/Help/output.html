@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Displaying sensor data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AppleOrder" content="4" />
+<link href="mbshelp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+    <td width="100"><img src="Images/HWIcon48.png" alt="Hardwaremonitor" width="48" height="48" /><img src="Images/TMIcon48.png" alt="Temperaturmonitor" width="48" height="48" /></td>
+    <td><h1>Displaying sensor data</h1></td>
+  </tr>
+</table>
+<h2>The reading “---”</h2>
+<p>Under special circumstances, the normal readings of a sensor may be replaced
+  by the display “---” (three dashes). It has the meaning “no value available”.
+  Such a situation can occur when a sensor had been detected during the start
+  of the application but currently has gone offline for some reason. Typical
+  situations are:</p>
+<ul>
+  <li>The sensor no longer has power. It is part of a device which has gone to
+    sleep mode, e.g. a hard disk or a processor core.</li>
+  <li>Mac OS X has technical problems retrieving a value from this sensor.</li>
+  <li>The application detected a technical failure of this sensor. It will suppress
+    all values until the sensor recovers.</li>
+  <li>There is a communication problem on the hardware bus used to get data from
+    the sensor.</li>
+  <li>A hardware error occurred within the sensor.</li>
+</ul>
+<p>If technically possible, the application will automatically reconnect to the
+  sensor when it becomes ready again. No user intervention is necessary.</p>
+<h2>General defaults for sensors</h2>
+<p>Each sensor has a set of general preferences which fundamentally define how
+  readings should be displayed. Select the menu item <cite>Preferences&#8230;</cite> in
+  the main menu or press <kbd>⌘</kbd>+<kbd>,</kbd>. Open the pane <cite>Sensors</cite>.
+  The application displays an overview of all sensors which had been monitored
+  from this computer in the past. This includes all sensors of the local system
+  and sensors of remote computers. The list is automatically sorted by computer
+  names and sensor names.</p>
+<p>Click on the triangles left to the computer names to disclose the sensor list
+  of the selected computer. After selecting one of the sensors, its preference
+  settings are displayed in the lower half of the window.
+  For every sensor the following defaults can be set:</p>
+<ul>
+  <li><cite>Customized name:</cite> this text will be used as headline in all output windows to identify this sensor. The monitor application automatically tries to generate a meaningful name from the hardware description of your computer. If you don't like the default name, you can enter your own description here.</li>
+  <li><cite>Short name:</cite> this setting defines an additional short name for this sensor. Short names are used to display readings in the menu bar. Because screen real estate in the menu-bar is relatively small, especially on computers with a small display, you should use abbreviations here.</li>
+  <li><cite>Customized speech output:</cite> this text will be used as 
+    label for speech output of the selected sensor, if you tell the application
+    to use speech output for this sensor and let it speak the sensor names as
+    well. </li>
+  <li><cite>Data query:</cite> makes it possible to exclude a sensor from data
+    acquisition. In this case, the sensor is no longer accessed but it is still
+    kept in all output channels for which it has been configured. This feature
+    is useful to hide detected sensors which are not  working correctly due to
+    system errors. Note that this setting doesn't switch off a sensor. It is
+    still used by the cooling control of Mac OS X. When you exclude the sensor
+    you only tell the application to no longer ask Mac OS X for current readings.</li>
+  <li><cite>Value display format:</cite> this menu sets the default how many
+    digits after the decimal point should be used when displaying the readings.
+    Select between ####### (no digit after decimal point), ######.# (one digit
+    after decimal point),  #####.## (two digits after decimal point), #####.###
+    (three digits after decimal point), or ####.#### (four digits after decimal
+    point). </li>
+  <li><cite>Default color:</cite> in history graphs it is necessary to visualize the different curves using different colors to better differentiate between them. The default color for each sensor can be selected here. The colors can optionally be used at other places as well, for example for the display of readings in the standard output window.</li>
+</ul>
+<p>If the application detects that a sensor is no longer available on a particular
+  computer, it will display a warning indicating the sensor is offline. This
+  could happen for example when you replace a graphics card or a hard disk which
+  was equipped with sensors. To finally delete preferences of a disconnected
+  sensor, press the button <cite>Delete</cite> right below the table. When selecting
+  a computer name, you can also delete the complete preferences set of a remotely
+  monitored computer as long as that system is currently not connected to the
+  local system. </p>
+<p align="center"><img src="Images/PrefSensors.png" alt="Hardware Monitor Preferences" width="620" height="539" /></p>
+<h2>Changing preferences for all sensors at a time </h2>
+<p>If you have more than 20 or even more than 100 sensors online, it can be a
+  tedious task to change preferences for them. Typical tasks for modifying
+  <strong>all</strong> sensor settings <strong>in one single step</strong> can
+  be executed using two special features:</p>
+<p>If you haven't set any colors yet, the display color for each sensor will
+    be black. By selecting the menu item <cite>Monitor &gt; Set Colors for all
+    Sensors, </cite>all
+    currently defined color preferences will be replaced by a colorful palette
+    of new settings that will show good results for most cases. Please
+    note that all previously defined colors for all sensors monitored by the
+    current computer will be overridden.</p>
+<p>Different aspects of the sensor presentation preferences can be reset by selecting
+  the menu item <cite>Monitor &gt; Reset preferences for all Sensors…</cite>.
+  After selecting the item, you can choose which settings should be reverted
+  to factory defaults:</p>
+<ul>
+  <li><cite>Reset customized names:</cite> You can reset all customized sensor
+    labels, reverting them back to their initial values. This feature is
+    particularly helpful after you have used an outdated version of the monitor
+    application on a new computer. In that case the old version might not have
+    &quot;known&quot; all sensors of the up-to-date computer yet, and was forced
+    to use
+    &quot;raw&quot; internal sensor designations instead, saving them to your
+    personal preferences. Those designations typically are not very user-friendly
+    and are not translated into your current language.</li>
+  <li><cite>Reset short names for menu bar:</cite> As before, but affecting the
+    smaller labels that are used to display readings in the menu bar.</li>
+  <li><cite>Reset customized speech output:</cite> As before, but affecting the
+    talking texts for English speech synthesis.</li>
+  <li><cite>Enable data acquisition:</cite> After you have deactivated some sensors
+    in the preferences panel with the checkmark at <cite>Data query</cite>, you
+    can re-enable them all.</li>
+  <li><cite>Reset value display format:</cite> This option will reset the number
+    of digits behind the decimal point used to display readings.</li>
+  <li><cite>Set presentation color to black:</cite> Sets all colors used to present
+    sensors back to black.</li>
+</ul>
+<p>You can also use the button <cite>Reset all… </cite>in the <cite>Sensors</cite> pane of
+  the Preferences window to access the reset panel.</p>
+<h2>Showing detail information about sensors</h2>
+<p>The monitor program can display detailed technical information about each sensor found. This includes the following items:</p>
+<ul>
+  <li>location of the sensor,</li>
+  <li>type of probe used,</li>
+  <li>sensor category, e.g. hardware sensors in contrast to virtual software sensors,</li>
+  <li>physical quantity,</li>
+  <li>precision of the sensor,</li>
+  <li>expected accuracy (each sensor is affected by errors, so there can be deviations from the actual values),</li>
+  <li>last value measured</li>
+  <li>admissible maximum and minimum limits for readouts at this sensor location,
+    as specified by Apple. If no values are indicated here, limits will either
+    make no sense for this sensor, or they are a trade secret of Apple.</li>
+</ul>
+<p>To show this data, first open the sensor overview by selecting the menu item <cite>Window &gt; Show
+    overview</cite> or press the key combination <kbd>⌘</kbd>+<kbd>1</kbd>.
+    Then click on a sensor line in the table. The detail information will be
+    displayed in an additional window.</p>
+<p class="infocell">The overview table is for quick orientation only. The order
+  of sensors and the display formats cannot be changed.</p>
+<p align="center"><img src="Images/Overview.png" alt="Sensor Overview Window" width="755" height="671" /></p>
+<h2>Showing readings in a standard window </h2>
+<p>To display the current readings of sensors, you can either select a default
+window or a transparent display (or both). To open the default window select
+  the menu item<cite> Window &gt; Show sensor window </cite>or press <kbd>⌘</kbd>+<kbd>2</kbd>.
+To close it, click the standard close button of the window. </p>
+<p>The defaults for the standard window are set in the pane <cite>Window</cite> of
+  the <a href="prefs.html">preferences
+    function.</a> The placement of readings can be varied by selecting
+    a <cite>horizontal or vertical layout</cite> preference.The window can either
+    use the colors defined for each sensor, or use a common color that can be
+    set here. Additionally you can set the background color. Font type and font
+    size can be modified after pressing the button <cite>Select font&hellip;</cite>.
+    Note that only type and size of a font can be set, other parameters are ignored.
+    Using the three buttons above the sample area you can also change the text
+    alignment for the readouts. The little slider <cite>Ratio value to label</cite> defines
+    in what size proportion the font for the sensor label should be displayed
+    in relation to the sensor value. By default, the labels are 2.4 times smaller
+    than the reading. You can select a different value between 1.0 and 2.5, or
+    press the button <cite>Default</cite> to return to the standard ratio.</p>
+<p align="center"><img src="Images/PrefWindow.png" alt="Window" width="620" height="538" /></p>
+<p>Which sensors should be displayed in the window can be defined by the table
+  in the lower half of the panel:</p>
+<ul>
+  <li>Pressing the button <cite>+</cite> wil open a drawer containing all available
+    sensors of all currently connected computers. To insert a sensor into a window,
+    select it in the drawer and drag it to the table while holding down the mouse
+    button. You can also select multiple sensors at the same time. Please note
+    that a table cannot contain the same sensor twice.</li>
+  <li>To remove one or more sensors from an overview, select the affected entries and press the <cite>-</cite> button left to the table.</li>
+  <li>To change the display order within a window, use the mouse to drag one
+    or more sensors to a different position.</li>
+</ul>
+<p>All changes will be effective immediately and will become visible with the next update interval.</p>
+<h2>Showing readings via the screen display </h2>
+<p>The screen display  is a special window which doesn't contain any buttons
+  or other elements selectable by the user. It only shows the current values,
+  either hovering transparently &quot;over&quot; the
+  contents of the screen, or &quot;under&quot; all windows directly on the Desktop background.
+  You can move the screen display by grabbing the displayed text by the mouse
+  and dragging it to a different position on screen, holding down the mouse button.</p>
+<p>To display the screen display, select the menu item <cite>Window &gt; Show
+    screen display </cite> or press <kbd>⌘</kbd>+<kbd>3</kbd>. With the menu
+    item <cite>Window &gt; Hide screen display </cite> or by repeating the key
+combination the window will be closed again.</p>
+<p align="center"><img src="Images/PrefFloating.png" alt="Floating" width="620" height="538" /></p>
+<p>The defaults for this display are set in the pane <cite>Screen</cite> of
+  the <a href="prefs.html">preferences function.</a> The placement of readings
+  can be varied by selecting a <cite>horizontal or vertical layout</cite> preference.
+  Additionally <cite>Transparency</cite> and the use of a <cite>Shadow</cite> can
+  be set. The display
+  can either use the colors defined for each sensor, or use a common color that
+  can be set here. The display can either be
+  <cite>floating</cite> or be shown as a <cite>backdrop</cite> window. Font
+  type and font size can be modified after pressing the button <cite>Select font&hellip;</cite>.
+Note that only type and size of a font can be set, other parameters are ignored.
+  Using the three buttons above the sample area you can also change the text
+alignments for the readouts. The little slider <cite>Ratio value to label</cite> defines
+in what size proportion the sensor label should be displayed in relation to the
+sensor value. By default, the labels are 2.4 times smaller than the reading.
+You can select a different value between 1.0 and 2.5, or press the button <cite>Default</cite> to
+return to the standard ratio.</p>
+<p>The button <cite>Center on screen</cite> causes the display to be moved back
+  to the center of the main screen. This feature can be helpful if you have made
+  modifications to the display which moved it out of the visible part of the
+  screen. Checking the option <cite>Fix display at current position</cite> makes
+  sure you cannot move the screen display by mistake, e.g. when you inadvertantly
+  hit it with the mouse cursor while moving other objects on your Desktop. </p>
+<p>To select the sensors that should be displayed and to change their order,
+use the table <cite>Sensors to display</cite> in the fashion mentioned earlier.</p>
+<h2>Showing readings in the Dock</h2>
+<p>One or two readings can optionally be displayed in the Dock tile of the application. Select between one of the following modes:</p>
+<ul>
+  <li>Displaying one reading: Select the menu item <cite>Monitor &gt; Dock Icon&gt; Show Single Value</cite> or press <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>D</kbd>.</li>
+  <li>Displaying two readings: Select the menu item <cite>Monitor &gt; Dock Icon &gt; Show Two Values</cite>.</li>
+  <li>Disabling Dock display: Select the menu item <cite>Monitor &gt; Dock Icon &gt; Show Application Icon</cite>.</li>
+</ul>
+<p>Which sensors will be displayed in which fashion can be set with the <a href="prefs.html">preferences window</a>. Open the <cite>Dock</cite> pane. The application can show values either in style of an LC display or by using one or two text lines. The text lines can be displayed with a common color or by using the defined sensor colors. To select the sensors that should be displayed and to change their order, use the table <cite>Sensors to display</cite> in the  fashion mentioned earlier.</p>
+<p align="center"><img src="Images/PrefDock.png" alt="Dock" width="620" height="538" /></p>
+<h2>Showing readings in the menu-bar</h2>
+<p>Readings can also be displayed in the menu-bar of Mac OS X. The output will be visible right to the menu items of the currently running program and left to the system's own menu extras. The following picture shows an example:</p>
+<p align="center"><img src="Images/MenuBar.png" alt="Menu-bar" width="304" height="22" /></p>
+<p>The menu bar  itself can contain no, one, or up to eight readings. The rest
+  of the sensors will be displayed in an associated menu when the menu-bar item
+  is clicked in its active area. You can select between one of the following
+  modes of operation:</p>
+<ul>
+  <li>one reading: Select the menu item <cite>Monitor &gt; Menu Bar &gt; Show single value</cite>.</li>
+  <li>2 or up to 8 readings: Select the menu item <cite>Monitor &gt; Menu Bar &gt; Show
+      x values</cite>.</li>
+  <li>disabling this feature: Select the menu item<cite> Monitor &gt; Menu Bar &gt; Disable menu bar display</cite>.</li>
+</ul>
+<p class="infocell">You should avoid to display too much readings in the menu-bar. If your screen
+  is not wide enough, Mac OS X will automatically remove the entire menu section
+  of the monitor application when another program needs the space to display
+  its menu. </p>
+<p>To further configure the items displayed in the menu-bar, open the section <cite>Menu
+    Bar</cite> in the <a href="prefs.html">preferences window</a>. By setting
+    the checkmark <cite>Display short sensor names in front of each value</cite> you
+    define the preference, whether only the reading itself, or additionally the
+    short name defined for each sensor should be visible in the bar. The option
+    <cite>Use sensor colors</cite> can be switched on to have the readings be
+    displayed in their defined sensor colors instead of the usual black.</p>
+<p>The table in the lower
+      area allows you to define the sensors that should be displayed. To make
+  sure a value is displayed in the menu-bar itself and not in the menu that originates
+      from it, you'll have to drag the sensor to the first or second position
+  of the table. Performing table operations is done the same way as discussed
+      earlier.</p>
+<p align="center"><img src="Images/PrefMenu.png" alt="Menu-Bar" width="618" height="536" /></p>
+<p class="infocell">These preferences will automatically become active for the <a href="lite.html">Lite
+    version</a> of the application. The Lite version is capable of displaying
+    readings in the menu-bar only, without needing space in the Dock or other
+    parts of the screen.</p>
+<p>You can easily switch between the full version and the Lite version by pressing
+  the button <cite>Quit application and launch Lite version</cite>.</p>
+<hr />
+<p><a href="index.html">Table of contents</a></p>
+</body>
+</html>
