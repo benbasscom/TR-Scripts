@@ -1,7 +1,7 @@
 #!/bin/bash
 # Smart check
 # Created by Ben Bass
-vers="SMARTcheck-0.6.0-a"
+vers="SMARTcheck-0.6.1-a"
 # Copyright 2012 Technology Revealed. All rights reserved.
 # This script checks the Serial ATA bus for devices and checks their SMART status.
 # It then logs the information to a file and will send a notification e-mail if port 25 is open and the SMART fails.
@@ -9,13 +9,14 @@ vers="SMARTcheck-0.6.0-a"
 # 0.5.4 added version as a live variable
 # 0.6.0 changed "to" variable to pull from address.plist
 # 0.6.0-a Updated for 4 drives for silverman
+# 0.6.1-a to pulled from settings.plist
 
 log="/Library/Logs/com.trmacs/SMARTcheck.log"
 err_log="/Library/Logs/com.trmacs/SMARTcheck-err.log"
 exec 1>> "${log}" 
 exec 2>> "${err_log}"
 
-to=`/usr/libexec/PlistBuddy -c  "Print :alerts" /Library/Scripts/trmacs/address.plist`
+to=`/usr/libexec/PlistBuddy -c  "Print :alerts" /Library/Scripts/trmacs/settings.plist`
 
 sw_smart_check_raw="$(system_profiler SPSerialATADataType)"
 sw_smart_status_1=$(echo "$sw_smart_check_raw" | grep "S.M.A.R.T" | awk '{print $3" "$4}' | head -1)

@@ -17,7 +17,7 @@ exec 1>> "${log}"
 exec 2>> "${err_log}"
 
 when="$(date +%m/%d/%Y%t%H:%M)"
-to=`/usr/libexec/PlistBuddy -c  "Print :alerts" /Library/Scripts/trmacs/address.plist`
+to=`/usr/libexec/PlistBuddy -c  "Print :alerts" /Library/Scripts/trmacs/settings.plist`
 
 ####
 # Calling diskutil once, and setting variables.  Not all are needed if the RAID is good
