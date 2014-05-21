@@ -6,7 +6,7 @@ vers="temp_chck_postflight_v.0.1"
 
 echo "$vers"
 
-
+#Need to mkdir if usr/local/bin isn't there.
 # symlink the tempmonitor cli app to /usr/local/bin
 
 ln -s /Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor /usr/local/bin/tempmonitor
