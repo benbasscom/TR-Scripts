@@ -13,7 +13,7 @@ vers="appleraidcheck-0.9.6"
 log="/Library/Logs/com.trmacs/appleraidcheck.log"
 err_log="/Library/Logs/com.trmacs/appleraidcheck-err.log"
 
-exec 1>> "${log}" 
+exec 1>> "${log}"
 exec 2>> "${err_log}"
 
 when="$(date +%m/%d/%Y%t%H:%M)"
@@ -40,7 +40,7 @@ host_raw="$(scutil --get HostName)"
 
 if [ -z "$host_raw" ]; then
 	host_name="$(scutil --get ComputerName)"
-else	
+else
 	host_name="$host_raw"
 fi
 
@@ -57,18 +57,18 @@ if [ "$sw_raid_status" != "$raid_good" ]; then
 hw_info_raw="$(system_profiler SPHardwareDataType)"
 hw_info_sn="$(echo "$hw_info_raw" | grep "Serial Number" | awk '{print $4}')"
 hw_info_model="$(echo "$hw_info_raw" | grep "Model Identifier" | awk '{print $3}')"
-hw_info_model_chck="$(echo "$hw_info_model" | cut -c -7)" 
+hw_info_model_chck="$(echo "$hw_info_model" | cut -c -7)"
 os_chck="$(system_profiler SPSoftwareDataType | grep "System Version:" | cut -d : -f2 | sed 's/ //')"
 
 sw_smart_check_raw="$(system_profiler SPSerialATADataType)"
 
 	if [ "$hw_info_model_chck" = "Macmini" ]; then
-		sw_smart_dev_name_1=$(echo "$sw_smart_check_raw" | grep "Bay Name:" | cut -d : -f 2 | sed 's/^.//g' | head -1) 
-		sw_smart_dev_name_2=$(echo "$sw_smart_check_raw" | grep "Bay Name:" | cut -d : -f 2 | sed 's/^.//g' | tail -1)  
+		sw_smart_dev_name_1=$(echo "$sw_smart_check_raw" | grep "Bay Name:" | cut -d : -f 2 | sed 's/^.//g' | head -1)
+		sw_smart_dev_name_2=$(echo "$sw_smart_check_raw" | grep "Bay Name:" | cut -d : -f 2 | sed 's/^.//g' | tail -1)
 
-	else 
-		sw_smart_dev_name_1=$(echo "$sw_smart_check_raw" | grep "Serial Number:" | cut -d : -f 2 | awk '{print $1}' | head -1) 
-		sw_smart_dev_name_2=$(echo "$sw_smart_check_raw" | grep "Serial Number:" | cut -d : -f 2 | awk '{print $1}' | tail -1) 
+	else
+		sw_smart_dev_name_1=$(echo "$sw_smart_check_raw" | grep "Serial Number:" | cut -d : -f 2 | awk '{print $1}' | head -1)
+		sw_smart_dev_name_2=$(echo "$sw_smart_check_raw" | grep "Serial Number:" | cut -d : -f 2 | awk '{print $1}' | tail -1)
 	fi
 
 	echo -e \
